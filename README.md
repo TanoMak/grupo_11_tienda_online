@@ -3,6 +3,8 @@ Mi nombre es Lucas Sanjurjo, tengo 27 años y soy de CABA, Buenos Aires, Argenti
 
 Mi nombre es Luis Gómez, tengo 40 años y soy de Ocaña, Colombia. Trabajo como QA Engineer y me dedico a criar a mis hijos. :) 
 
+Mi nombbre es Martin Macchia, tengo 37 años. Soy de San Miguel, Bs As. Me gradué de Licenciado en Adminsitracion hace 10 años. Hace varios años administro una empresa familiar dedicada a la venta de indumentaria. Me gusta la música e incroporar nuevas hablidades y cococimientos. 
+
  --------------------------------------------
 *¿Qué productos o servicios brindará nuestro sitio? 
 indumentaria 'especifica' 
