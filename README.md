@@ -9,20 +9,23 @@ Mi nombre es Facundo Nogueira, tengo 30 años y soy de Buenos Aires. Estudio pro
 
  --------------------------------------------
 *¿Qué productos o servicios brindará nuestro sitio? 
-Indumentaria 'específica' 
+linea basica y comoda, a puntada a los que trabajan en casa o queiren estar comododos/as. Para hombres y mujeres. 'Trabaja sin vueltas' 
 
 
 *¿Quién será nuestra audiencia objetivo? 
-Publico segmentado por el rubro 
+a puntada a los que trabajan o estudian en casa y/o queiren estar comododos/as. Para hombres, mujeres y niños
 
  
 *¿Cómo ajustaremos nuestra oferta a ese público? 
-Especificando nuestra misión como e-comerce 
+imagenes sugerentes a la comiodidad de las prendas, al hogar, a la familia. compartiendo y desarrollando cada uno en su area desde su propia comodidad.
 
  <!-- //respondí de manera general, para que vayamos construyendo. -->
 
 
 *Referentes: 
+
+https://www.elepants.com.ar/ : marca que desarrolla y se orienta al mismo publico que nosotros.
+
 http://baybaysurf.com/ : por su estética en general, la interacción que propone con el usuario. No hace referencia a la venta de productos sino a la de servicios. 
 
  
