@@ -19,7 +19,6 @@ a puntada a los que trabajan o estudian en casa y/o queiren estar comododos/as. 
 *¿Cómo ajustaremos nuestra oferta a ese público? 
 imagenes sugerentes a la comiodidad de las prendas, al hogar, a la familia. compartiendo y desarrollando cada uno en su area desde su propia comodidad.
 
- <!-- //respondí de manera general, para que vayamos construyendo. -->
 
 
 *Referentes: 
@@ -41,3 +40,5 @@ https://terzo.com.ar/ : e-commerce de venta segmentada para indumentaria médica
 
 
 https://www.yagmour.com.ar/ : e-commerce, gama de colores a destacar, con un bot que aparece al inicio para hacer consultas. Catálogo con videos (en algunos casos). Hace mucho énfasis en las ofertas.
+
+WireFrame del sitio : https://miro.com/app/board/uXjVOgvmqXo=/?share_link_id=214675884703
