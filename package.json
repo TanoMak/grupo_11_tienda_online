@@ -1,0 +1,24 @@
+{
+  "name": "grupo_11_tienda_online",
+  "version": "1.0.0",
+  "description": "Mi nombre es Lucas Sanjurjo, tengo 27 años y soy de CABA, Buenos Aires, Argentina. ¡Me dedico a la música y a la danza, y la programación es un camino de desarrollo personal e inserción laboral!",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanoMak/grupo_11_tienda_online.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TanoMak/grupo_11_tienda_online/issues"
+  },
+  "homepage": "https://github.com/TanoMak/grupo_11_tienda_online#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
