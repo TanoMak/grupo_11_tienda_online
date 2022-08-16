@@ -41,4 +41,8 @@ https://terzo.com.ar/ : e-commerce de venta segmentada para indumentaria médica
 
 https://www.yagmour.com.ar/ : e-commerce, gama de colores a destacar, con un bot que aparece al inicio para hacer consultas. Catálogo con videos (en algunos casos). Hace mucho énfasis en las ofertas.
 
+ --------------------------------------------------------------- 
+
 WireFrame del sitio : https://miro.com/app/board/uXjVOgvmqXo=/?share_link_id=214675884703
+
+Tablero de Trabajo : https://trello.com/b/5azf2mM3/grupo-11
