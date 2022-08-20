@@ -25,11 +25,9 @@ label.logo {
     color: #000000;
     font-size: 2.20rem;
     line-height: 5rem;
-    padding: 0 6.25rem;
+    padding: 0, 3em, 0, 2em;
     font-weight: bold;
-    
-
-    
+   
 }
 
 label.logo a {
@@ -39,7 +37,7 @@ label.logo a {
 nav ul {
     float: right;
     margin-right: 1.25rem;
-    
+
 }
 
 nav ul li {
@@ -50,7 +48,7 @@ nav ul li {
 
 nav ul li a {
     color: #000000;
-    font-size: 1.5rem ;
+    font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
     border-radius: 0.2rem;
     text-transform: uppercase;
@@ -71,24 +69,53 @@ a:hover {
     display: none;
 }
 
-#check{
+#check {
     display: none;
 }
 
 
-@media(max-width:952px) {
-    label.logo {
-        font-size: 1.8rem;
-        padding-left: 3rem;
-    }
+/* ---------------- ---------------- */
 
-    nav ul li a {
-        font-size: 1rem;
+#sidebar {
+    position: fixed;
+    width: 12.5rem;
+    height: 100%;
+    background-color: #F1FF64;
+    left: -12.5rem;
 
-    }
 }
 
-@media(max-width: 858px) {
+#sidebar.active{
+    left:0;
+}
+
+#sidebar ul li,
+h3 {
+    color: rgb(0, 0, 0, .7);
+    text-align: center;
+    margin: 3px;
+    padding: 5px 3px;
+
+}
+
+.toggle-btn {
+    visibility: visible; 
+    cursor: pointer;
+}
+
+.toggle-btn i {
+    width: 2.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-left: 10px;  
+
+}
+
+
+/*  ----------  ------------- ------------- */
+
+
+@media(max-width: 750px) {
     .checkbutton {
         display: block;
     }
@@ -124,6 +151,25 @@ a:hover {
     #check:checked~ul {
         left: 0;
     }
+
+    .toggle-btn {
+        visibility: hidden;        
+    }
+
+}
+
+
+@media(max-width:952px) {
+    label.logo {
+        font-size: 1.8rem;
+        padding-left: 3rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+
+    }
+    
 }
 
 
