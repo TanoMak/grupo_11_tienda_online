@@ -27,7 +27,7 @@ label.logo {
     line-height: 5rem;
     padding: 0, 3em, 0, 2em;
     font-weight: bold;
-   
+
 }
 
 label.logo a {
@@ -74,7 +74,7 @@ a:hover {
 }
 
 
-/* ---------------- ---------------- */
+/* ---------------- SIDE-BAR ---------------- */
 
 #sidebar {
     position: fixed;
@@ -85,8 +85,8 @@ a:hover {
 
 }
 
-#sidebar.active{
-    left:0;
+#sidebar.active {
+    left: 0;
 }
 
 #sidebar ul li,
@@ -98,8 +98,30 @@ h3 {
 
 }
 
+#sidebar h3:hover {
+    background-color: #42FE1D;
+    transition: .5s;
+}
+
+#sidebar li:hover {
+    background-color: #42FE1D;
+    transition: .5s;
+}
+
+#sidebar .xMark {
+    text-align: right;
+    padding: 5px;
+    margin: 3px;
+}
+
+#sidebar #xMark {
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
 .toggle-btn {
-    visibility: visible; 
+    visibility: visible;
     cursor: pointer;
 }
 
@@ -107,12 +129,12 @@ h3 {
     width: 2.5rem;
     text-align: center;
     font-size: 1.8rem;
-    margin-left: 10px;  
+    margin-left: 10px;
 
 }
 
 
-/*  ----------  ------------- ------------- */
+/*  ----------   MEDIA-QUERIES ------------- */
 
 
 @media(max-width: 750px) {
@@ -153,7 +175,7 @@ h3 {
     }
 
     .toggle-btn {
-        visibility: hidden;        
+        visibility: hidden;
     }
 
 }
@@ -169,7 +191,7 @@ h3 {
         font-size: 1rem;
 
     }
-    
+
 }
 
 

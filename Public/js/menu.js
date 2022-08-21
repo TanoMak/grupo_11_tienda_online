@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
 
 }) 
 
-// SIDEBAR DEL NAVBAR
+// SIDEBAR DEL NAV
 
 const toggleBtn = document.querySelector('.toggle-btn');
 
@@ -15,5 +15,11 @@ toggleBtn.addEventListener('click', () => {
    document.getElementById('sidebar').classList.toggle('active');
 })
 
-console.log()
+const xMark = document.getElementById('xMark');
+
+xMark.addEventListener('click', () => {
+   document.getElementById('sidebar').classList.toggle('active');
+})
+
+
 
