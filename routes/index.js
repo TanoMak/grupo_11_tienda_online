@@ -15,7 +15,7 @@ router.get('/carrito', (req, res) => {
     } );
   
 router.get('/detalleDeProducto', (req, res) => {
-      res.sendFile(path.resolve(__dirname,'./views/productDetail.html'))
+      res.sendFile(path.resolve(__dirname,'/views/productDetail.html'))
     } );
   
 router.get('/registro', (req, res) => {

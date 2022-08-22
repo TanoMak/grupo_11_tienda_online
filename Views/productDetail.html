@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/product-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,8 +24,7 @@
             <ul>
                 <li><a class="active" href="./login.html">Mi cuenta</a></li>
                 <li><a href="./register.html">Registrate</a></li>
-                <li><a href="productCart.html">Mis Compras</a></li>
-                
+                <li><a href="productCart.html">Mis Compras</a></li>          
             </ul>
 
         </nav>
@@ -33,51 +32,89 @@
 
     </header>
 
-    <!-- <main>
-        <div>
-            <i class="fas fa-angle-left"></i><img src="" alt=""><i class="fas fa-angle-right"></i>
-            <div>
-                <div>
-                    <h2>Nombre del producto</h2>
-                    <p>precio</p>
+<main>
+        <div class="general-div">
+            <!-- <div class="icon-left"> -->
+            <i class="fas fa-angle-left"></i>
+            <!-- </div> -->
+
+             <div class="image-div">
+                 <img src="images/Pants.jpg" alt="">
+             </div>
+
+            <!-- </div class="icon-right"> -->
+            <i class="fas fa-angle-right"></i>
+            <!-- </div> -->
+
+            <div class="main-detail-div">
+
+                <div class="product-detail-div">
+                    <h2>Pant escoses</h2>
+                    <p>$3500</p>
                     <p>
                         <i class="fas fa-credit-card"></i> 6 cuotas sin interes "valor por cuota"
                         <i class="fas fa-credit-card"></i> pago con debito "valor"
                         <i class="fas fa-money-bill"></i> 10% efectivo "valor"
                     </p>
                 </div>
-                    <input type="text">talle
-                    <input type="text">cantidad
+
+                <label for="talles">Talles</label>
+                    <select name="talles" id="">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+              
+                <label for="cantidad">Cantidad</label>
+                    <select name="cantidad" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
+            </div>
+
+            <div>
+                <div class="product-description-div">
+                    <p>
+                        Descripcion del producto
+                    </p>
                 </div>
-                <p>
-                    Descripcion del producto
-                </p>
-                    <div>
+
+                <div class="sizes">
                     tabla de talles
                     <img src="" alt="">
                 </div>
-                <div>
+
+                <div class="send-cart">
                     Agregar al carrito
                 </div>
             </div>
+
         </div>
+
     </main>
 
     <footer>
-        <div>
-            <h4>Seguinos</h4>
-            <a href="redes">Instagram</a>
-            <a href="redes">Facebook</a>
-            <a href="redes">Twitter</a>
-            <a href="redes">TikTok</a>
+        <div class="follow">
+        <h2>Seguinos</h2>
         </div>
-        <div>
+
+        <div class="links">
+            <a href="redes" class="instagram">Instagram</a>
+            <a href="redes" class="facebook">Facebook</a>
+            <a href="redes" class="twitter">Twitter</a>
+            <a href="redes" class="tiktok">TikTok</a>
+        </div>
+        <div class="job">
             <h4>Sumate a Nuestro Staff</h4>
         </div>
-        <div>
+        <div class="copyright">
             <h4>Copyright © 1999-2022 TiendaOnline S.R.L.</h4>
         </div>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

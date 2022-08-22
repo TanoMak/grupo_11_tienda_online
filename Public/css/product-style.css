@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+/* --------------------HEADER--------------------*/
+
+nav {
+    background-color: #F1FF64;
+    font-weight: bolder;
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+}
+
+
+label.logo {
+    color: #000000;
+    font-size: 2.20rem;
+    line-height: 5rem;
+    padding: 0, 3em, 0, 2em;
+    font-weight: bold;
+}
+
+label.logo a {
+    color: #000000;
+}
+
+nav ul {
+    float: right;
+    margin-right: 1.25rem;
+
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 5rem;
+    margin: 0 0.30rem;
+}
+
+nav ul li a {
+    color: #000000;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+}
+
+a:hover {
+    background-color: #42FE1D;
+    transition: .5s;
+}
+
+.checkbutton {
+    font-size: 1.2rem;
+    color: #000000;
+    float: right;
+    line-height: 5rem;
+    margin-right: 2.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+/* ---------------- SIDE-BAR ---------------- */
+
+#sidebar {
+    position: fixed;
+    width: 12.5rem;
+    height: 100%;
+    background-color: #F1FF64;
+    left: -12.5rem;
+
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar ul li,
+h3 {
+    color: rgb(0, 0, 0, .7);
+    text-align: center;
+    margin: 3px;
+    padding: 5px 3px;
+
+}
+
+#sidebar h3:hover {
+    background-color: #42FE1D;
+    transition: .5s;
+}
+
+#sidebar li:hover {
+    background-color: #42FE1D;
+    transition: .5s;
+}
+
+#sidebar .xMark {
+    text-align: right;
+    padding: 5px;
+    margin: 3px;
+}
+
+#sidebar #xMark {
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.toggle-btn {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.toggle-btn i {
+    width: 2.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-left: 10px;
+
+}
+
+
+/* --------------------MAIN--------------------*/
+.send-cart {
+    border: solid 2px salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+}
+
+.sizes {
+    border: solid 2px salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+}
+.product-description-div {
+    border: solid 2px salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.main-detail-div {
+    border: solid 2px salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+}
+
+.general-div {
+    border: solid 2px salmon;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+.image-div {
+    border: solid 2px salmon;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* --------------------FOOTER--------------------*/
+.follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 15px;
+    margin: 10px;
+}
+.instagram {
+    color: white;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 15px;
+    text-decoration: none;
+}
+.facebook {
+    color: white;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 15px;
+    text-decoration: none;
+}
+.twitter {
+    color: white;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 15px;
+    text-decoration: none;
+}
+.tiktok {
+    color: white;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 15px;
+    text-decoration: none;
+}
+a:hover{
+    color: brown;
+}
+
+.job {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blueviolet;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: greenyellow;
+    border-radius: 15px;
+    margin: 10px;
+}
