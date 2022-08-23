@@ -239,34 +239,46 @@ a {
 .links {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     border-radius: 15px;
     margin: 10px;
 }
 .instagram {
     color: white;
+    text-align: center;
+    width: 100px;
     padding: 10px;
+    margin: 10px;
     background-color: blue;
     border-radius: 15px;
     text-decoration: none;
 }
 .facebook {
     color: white;
+    width: 100px;
+    text-align: center;
     padding: 10px;
+    margin: 10px;
     background-color: blue;
     border-radius: 15px;
     text-decoration: none;
 }
 .twitter {
     color: white;
+    width: 100px;
+    text-align: center;
     padding: 10px;
+    margin: 10px;
     background-color: blue;
     border-radius: 15px;
     text-decoration: none;
 }
 .tiktok {
     color: white;
+    width: 100px;
     padding: 10px;
+    margin: 10px;
+    text-align: center;
     background-color: blue;
     border-radius: 15px;
     text-decoration: none;
