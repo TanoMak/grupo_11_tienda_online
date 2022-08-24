@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/styleCart.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,42 +32,56 @@
 
     </header>
 
-    <!-- <main>
-        <section>
+    <main>
+        <section class = "product-cart-section">
             <h2>Carrito de compras</h2>
-            <article>
-                <img src="" alt="">
-                <div>
-                    <h4>Nombre del producto</h4>
-                    <i class="fas fa-truck"></i>
-                    <p>Precio</p>
+         
+            <article class ="product-cart">
+                    <img src="/images/buzo.jpg" alt="buzo" class =product-cart-image>
+                </div>
+                <div class = "product-cart-details">
+                    <p class="product-cart-title">Buzo Home Office</p>
+                    <p class="price">$5000</p>
                     <div>
-                       <p>cantidad</p>
+                       <label for="cantidad">Cantidad</label>
+                       <input type="number" value="1" name="" id="">
                     </div>
                 </div>
             </article>
-        </section>
-        <div>
-            <h3>costo del envio</h3>
+            <article class ="product-cart">
+                    <img src="/images/remera negra.jpg" alt="remera-negra" class="product-cart-image">
+                </div>
+                <div class = "product-cart-details">
+                    <p class="product-cart-title">Remera coding</p>
+                    <p class ="price">$3000</p>
+                    <div>
+                       <label for="cantidad">Cantidad</label>
+                       <input type="number" value="1" name="" id="">
+                    </div>
+                </div>
+            </article><br>
+
+        </section><br>
+
+        <section class ="delivery-cost-section">
+            <p class= "delivery-cost-title" >Costo del envio</p>
             <input type="text">codigo postal
             <input type="button" value="Calcular">
-        </div>
-        <div>
-            <h3>
-                subtotal
-            </h3>
-            <h3>
-                envio
-            </h3>
-        </div>
-        <div>
-            <h3>
-                total
-            </h3>
-        </div>
-        <input type="button" value="iniciar compra">
-        <input type="button" value="ver mas productos">
+        </section>
 
+        <section class = "total-cost">
+            <div>
+                <p class ="subtotal">Subtotal</p>
+                <p class ="Costo-de-envio">Costo de envio</p>
+                <p class ="Total">Total</p>
+            </div>
+        </section>
+
+        <section class ="purchase-submit">
+            <input type="button" value="Finalizar Compra">
+            <input type="button" value="Seguir comprando">
+        </section>
+    
     </main>
 
     <footer>
