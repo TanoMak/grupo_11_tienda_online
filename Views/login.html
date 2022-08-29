@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log in</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/login-style.css" rel="stylesheet">
+</head>
+
 <body>
     <header>
         <nav>
@@ -18,53 +21,73 @@
             <label for="check" class="checkbutton">
                 <i class="fas fa-bars"></i>
             </label>
-            <label class="logo" ><a href="./index.html">EntreCasa</a></label>
+            <label class="logo"><a href="./index.html">EntreCasa</a></label>
             <ul>
                 <li><a class="active" href="./login.html">Mi cuenta</a></li>
                 <li><a href="./register.html">Registrate</a></li>
                 <li><a href="productCart.html">Mis Compras</a></li>
-                
+
             </ul>
 
         </nav>
-    
+
     </header>
 
-    <!-- <main>
-        <h1>Logeate</h1>
-        <div>
-            <div>
-                <h3>Email</h3>
-                <input type="text">
+    <main>
+
+        <!-- <h2>Ingresá con tu cuenta</h2> -->
+
+        <form class="container" action="#" method="post">
+
+
+
+            <input type="text" id="username" placeholder="Teléfono,e-mail o usuario" required>
+
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+
+
+            <div><button type="submit">Continuar</button></div>
+
+
+
+
+
+            <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+
+            <button class="google"><i class="fab fa-google"></i> Google</button>
+
+
+            <div class='bottom-form'>
+                <a href="#">
+                    <h4>Crear una cuenta</h4>
+                </a>
+
+                <br>
+
+                <a href="#">
+                    <h4>Necesito ayuda para ingresar</h4>
+                </a>
             </div>
-            <div>
-                <h3>Contraseña</h3>
-                <input type="text">
-            </div>
-            <div>
-                <h3>Repetir contraseña</h3>
-                <input type="text">
-            </div>
-        </div>
-        <div>
-            <input type="button" value="Log in">
-        </div>
+
+        </form>
+
+
+
+
     </main>
 
     <footer>
         <div>
-            <h4>Seguinos</h4>
             <a href="redes">Instagram</a>
             <a href="redes">Facebook</a>
             <a href="redes">Twitter</a>
             <a href="redes">TikTok</a>
         </div>
-        <div>
-            <h4>Sumate a Nuestro Staff</h4>
-        </div>
+
         <div>
             <h4>Copyright © 1999-2022 TiendaOnline S.R.L.</h4>
         </div>
-    </footer> -->
+    </footer>
 </body>
+
 </html>

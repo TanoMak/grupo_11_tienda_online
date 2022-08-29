@@ -1,0 +1,70 @@
+main {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.container {
+    height: auto;
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+    font-size: large;
+
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;   
+}
+
+button {
+    background-color: #04AA6D;
+    max-width: 450px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.google,
+.facebook {
+    width: 150px;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+.bottom-form {
+    margin-top: 9rem;
+
+}
+
+footer {
+    background-color: #F1FF64;
+    opacity: 0.8;
+    font-weight: bolder;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    z-index: -100;
+}
+
+
+@media(min-width: 750px) {
+    .container{
+        max-width: 500px;
+        margin-top: 300px;
+    }
+
+}
