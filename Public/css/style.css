@@ -18,6 +18,7 @@ nav {
     height: 5rem;
     width: 100%;
     position: fixed;
+    z-index: 100;
     top: 0;
 }
 
@@ -33,6 +34,7 @@ label.logo {
 
 label.logo a {
     color: #000000;
+    padding: 10px;
 }
 
 nav ul {
@@ -74,6 +76,11 @@ a:hover {
     display: none;
 }
 
+a:hover,
+a.active {
+    background: none;
+    color: #2E920C;
+}
 
 /* ---------------- SIDE-BAR ---------------- */
 
@@ -83,7 +90,9 @@ a:hover {
     height: 100%;
     background-color: #F1FF64;
     left: -12.5rem;
-    
+    z-index: 100;
+    transition: all 0.5s;
+
 
 }
 
@@ -199,4 +208,79 @@ h3 {
 
 
 /* ------MAIN----- */
+
+main {
+    margin-top: 5rem;
+}
+
+
+/* Slider */
+
+/* Slideshow container */
+.slideshow-container {
+    max-height: 1500px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* ------FOOTER----- */
