@@ -11,7 +11,8 @@ main {
     font-size: large;
 
 }
-
+input[type=email],
+input[type=number],
 input[type=text],
 input[type=password] {
     width: 100%;
