@@ -1,10 +1,12 @@
 const express = require('express');
+const { join } = require('path');
 const path = require('path');
 const app = express();
 const indexRoutes = require('../grupo_11_tienda_online/routes/index');
 
-
 app.use(express.static(path.join(__dirname,'./public')));
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, "views"));
 
 
 app.use(express.json());
