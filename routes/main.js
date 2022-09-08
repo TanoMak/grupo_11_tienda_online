@@ -13,7 +13,10 @@ router.get("/carrito", mainController.cart);
 
 router.get("/detalleDeProducto", mainController.productDetail);
 
-module.exports = {
+/* module.exports = {
   router,
   default: router,
 };
+ */
+
+module.exports = router

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <%- include("./partials/head.ejs") %>
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,11 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/login-style.css" rel="stylesheet">
-</head>
+</head> -->
 
 <body>
-    <header>
+    <%- include("./partials/header.ejs") %>
+<!--     <header>
         <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbutton">
@@ -31,7 +33,7 @@
 
         </nav>
 
-    </header>
+    </header> -->
 
     <main>
 
@@ -76,18 +78,8 @@
 
     </main>
 
-    <footer>
-        <div>
-            <a href="redes">Instagram</a>
-            <a href="redes">Facebook</a>
-            <a href="redes">Twitter</a>
-            <a href="redes">TikTok</a>
-        </div>
+    <%- include("./partials/footer.ejs") %>
 
-        <div>
-            <h4>Copyright © 1999-2022 TiendaOnline S.R.L.</h4>
-        </div>
-    </footer>
-</body>
+   
 
 </html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <%- include("./partials/head.ejs") %>
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,11 @@
     <link href="css/all.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet">
-</head>
+</head> -->
 
 <body>
-    <header>
+    <%- include("./partials/header.ejs") %>
+<!--     <header>
 
         <nav>
             <input type="checkbox" id="check">
@@ -28,11 +30,11 @@
             </label>
 
             <label class="logo"><a href="index">EntreCasa</a></label>
-            <ul>
+            <ul> -->
 
                 <!-- a class="active" -->
                 <!-- COMO MANTENER EL HOVER EN LA PAGINA ELEGIDA?? -->
-                <li><a href="login">Mi cuenta</a></li>
+<!--                 <li><a href="login">Mi cuenta</a></li>
                 <li><a href="registro">Registrate</a></li>
                 <li><a href="carrito">Mis Compras</a></li>
 
@@ -64,7 +66,7 @@
         </div>
 
 
-    </header>
+    </header> -->
 
     <main>
 
@@ -256,9 +258,11 @@
         </div>
     </footer>  -->
 
-    <script src="/js/menu.js"></script>
+    <!-- <script src="/js/menu.js"></script> -->
     <script src="/js/slider.js"></script>
 
+    <%- include("./partials/footer.ejs") %>
 </body>
+
 
 </html>

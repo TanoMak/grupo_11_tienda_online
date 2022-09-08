@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
-    font-family: 'DynaPuff', cursive;
+    /* font-family: 'DynaPuff', cursive; */
   }
   
   /* --------------------HEADER--------------------*/
   
-  nav {
+/*   nav {
     background-color: #ff9551;
     font-weight: bolder;
     height: 5rem;
@@ -13,7 +13,6 @@
   
     padding: 5px;
     border-radius: 5px;
-    /* position: fixed; */
   }
   
   label.logo {
@@ -71,12 +70,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
   
   /* ---------------- SIDE-BAR ---------------- */
   
-  #sidebar {
-    /* position: fixed; */
+ /*  #sidebar {
     width: 12.5rem;
     height: 100%;
     background-color: #f1ff64;
@@ -127,7 +125,7 @@
     text-align: center;
     font-size: 1.8rem;
     margin-left: 10px;
-  }
+  } */
   
   /* --------------------MAIN--------------------*/
   body {

@@ -135,13 +135,16 @@ main{
     opacity: 90%;
 }
 
+
 .products-cart-section{
     padding: 25px;
+    text-align: center;
 }
 
 .product-section {
     position: relative;
     top: 100px;
+    text-align: center;
 }
 
 .product-cart-image{
@@ -150,9 +153,10 @@ main{
     height: 110X;
 }
 
-.product-cart{
+article.product-cart{
     display: flex;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-cart-details{
