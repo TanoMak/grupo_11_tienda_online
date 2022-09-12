@@ -14,7 +14,7 @@ main {
 
 }
 
-input[type=file]
+input[type=file],
 input[type=email],
 input[type=number],
 input[type=text],
