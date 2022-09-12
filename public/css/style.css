@@ -245,6 +245,10 @@ main {
     user-select: none;
 }
 
+.prev {
+    left: 0;
+}
+
 /* Position the "next button" to the right */
 .next {
     right: 0;
@@ -284,3 +288,9 @@ main {
 
 
 /* ------FOOTER----- */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+}
