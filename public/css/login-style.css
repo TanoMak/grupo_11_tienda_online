@@ -1,7 +1,9 @@
 main {
-    /* margin-top: 150px; */
+    margin-top: 150px;
     text-align: center;
 }
+
+
 
 .container {
     height: auto;
@@ -11,6 +13,7 @@ main {
     font-size: large;
 
 }
+
 input[type=email],
 input[type=number],
 input[type=text],
@@ -20,23 +23,27 @@ input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;   
+    border: 1px solid #ccc;
 }
 
 button {
-    background-color: #04AA6D;
+    background-color: black;
     max-width: 450px;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
     cursor: pointer;
     width: 100%;
+
 }
 
 .google,
 .facebook {
+    font-size: large;
     width: 150px;
+    padding: 0.5rem;
+    border-radius: 80px;
+
 
 }
 
@@ -50,20 +57,9 @@ button:hover {
 
 }
 
-footer {
-    background-color: #F1FF64;
-    opacity: 0.8;
-    font-weight: bolder;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    z-index: -100;
-}
-
 
 @media(min-width: 750px) {
-    .container{
+    .container {
         max-width: 500px;
         margin-top: 300px;
     }

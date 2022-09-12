@@ -13,7 +13,7 @@ body {
 /* -----HEADER----- */
 
 nav {
-    background-color: #F1FF64;
+    background-color: rgba(0, 0, 0, 0.8);
     font-weight: bolder;
     height: 5rem;
     width: 100%;
@@ -24,7 +24,7 @@ nav {
 
 
 label.logo {
-    color: #000000;
+    color: white;
     font-size: 2.20rem;
     line-height: 5rem;
     padding: 0, 3em, 0, 2em;
@@ -33,7 +33,7 @@ label.logo {
 }
 
 label.logo a {
-    color: #000000;
+    color: white;
     padding: 10px;
 }
 
@@ -50,7 +50,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000000;
+    color: white;
     font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
     border-radius: 0.2rem;
@@ -58,13 +58,13 @@ nav ul li a {
 }
 
 a:hover {
-    background-color: #42FE1D;
+    background-color: #2E920C;
     transition: .5s;
 }
 
 .checkbutton {
     font-size: 1.2rem;
-    color: #000000;
+    color: white;
     float: right;
     line-height: 5rem;
     margin-right: 2.5rem;
@@ -88,7 +88,7 @@ a.active {
     position: fixed;
     width: 12.5rem;
     height: 100%;
-    background-color: #F1FF64;
+    background-color: black;
     left: -12.5rem;
     z-index: 100;
     transition: all 0.5s;
@@ -102,7 +102,7 @@ a.active {
 
 #sidebar ul li,
 h3 {
-    color: rgb(0, 0, 0, .7);
+    color: rgb(255, 255, 255, 0.9);
     text-align: center;
     margin: 3px;
     padding: 5px 3px;
@@ -110,12 +110,12 @@ h3 {
 }
 
 #sidebar h3:hover {
-    background-color: #42FE1D;
+    background-color: #2E920C;
     transition: .5s;
 }
 
 #sidebar li:hover {
-    background-color: #42FE1D;
+    background-color: #2E920C;
     transition: .5s;
 }
 
@@ -134,6 +134,7 @@ h3 {
 .toggle-btn {
     visibility: visible;
     cursor: pointer;
+    color: white;
 }
 
 .toggle-btn i {
@@ -157,7 +158,7 @@ h3 {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background-color: #F1FF64;
+        background-color: black;
         top: 5rem;
         left: -100%;
         text-align: center;
@@ -289,8 +290,114 @@ main {
 
 /* ------FOOTER----- */
 
-footer{
+footer {
+    background-color: black;
+    opacity: 0.9;
+    font-weight: bolder;
     position: fixed;
+    text-align: center;
+    width: 100%;
     bottom: 0;
     z-index: 200;
+    color: white;
 }
+
+footer .follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  footer .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 10px;
+  }
+  footer .instagram {
+    color: white;
+    text-align: center;
+    width: 100px;
+    padding: 2px;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition-duration: 1s;
+  }
+  footer .facebook {
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding: 2px;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition-duration: 1s;
+  }
+  footer .twitter {
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding: 2px;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition-duration: 1s;
+  }
+  footer .tiktok {
+    color: white;
+    width: 100px;
+    padding: 2px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    text-decoration: none;
+    /* transition-duration: 2000ms;
+    transition-delay: 1000ms; */
+    transition: all 3s;
+  
+  }
+  
+  i {
+    font-size: 25px;
+  }
+  
+  .twitter :hover {
+    color: #00acee;
+    position: relative;
+    bottom: 10px;
+  }
+  .facebook :hover {
+    color: #3b5998;
+    position: relative;
+    bottom: 10px;
+  }
+  .instagram :hover {
+    color: #dd2a7b;
+    position: relative;
+    bottom: 10px;
+  }
+  .tiktok :hover {
+    color: #ff2a56;
+    position: relative;
+    bottom: 10px;
+  
+  }
+  
+  .job {
+    width: 200px;
+    height: auto;
+    padding: 1px;
+    text-align: center;
+    margin: auto;
+    border-radius: 15px;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin: auto;
+  }
+  
+
+
