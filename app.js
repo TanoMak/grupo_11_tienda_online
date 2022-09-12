@@ -2,12 +2,14 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const indexRoutes = require("../grupo_11_tienda_online/routes/main");
+const productsRoutes = require("../grupo_11_tienda_online/routes/products");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
 app.use('/', indexRoutes); 
+app.use('/', productsRoutes);
 
 
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<header>
+    <%- include("./partials/head.ejs") %>
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/login-style.css" rel="stylesheet">
+</header>
+
+<body>
+
+    <!-- header -->
+    <%- include("./partials/header.ejs") %>
+
+
+    <!-- main -->
+    <main>
+        <h1>Registro de producto</h1>
+        <form class="container" action="#" method="post">
+        <div>
+			<div>
+                <input type="number" placeholder="Id">
+            </div>
+            <div>
+                <input type="text" placeholder="Nombre">
+            </div>
+            <div>
+                <input type="text" placeholder="Descripción">
+            </div>
+            <div>
+                <input type="file" placeholder="Imagen">
+            </div>            
+        </div>
+        <h3>
+            <div><button type="submit">Registrar</button></div> 
+        </h3>
+    </form>
+        
+    </main>
+
+
+    <!-- footer -->
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>
