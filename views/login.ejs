@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
     <%- include("./partials/head.ejs") %>
+        <link href="/css/all.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="css/login-style.css" rel="stylesheet">
+
+</head>
+
 
 <!-- <head>
     <meta charset="UTF-8">
@@ -17,7 +25,7 @@
 
 <body>
     <%- include("./partials/header.ejs") %>
-<!--     <header>
+        <!--     <header>
         <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbutton">
@@ -35,51 +43,51 @@
 
     </header> -->
 
-    <main>
+        <main>
 
-        <!-- <h2>Ingresá con tu cuenta</h2> -->
+            <!-- <h2>Ingresá con tu cuenta</h2> -->
 
-        <form class="container" action="#" method="post">
-
-
-
-            <input type="text" id="username" placeholder="Teléfono,e-mail o usuario" required>
-
-            <input type="password" name="password" id="password" placeholder="Contraseña" required>
-
-
-            <div><button type="submit">Continuar</button></div>
+            <form class="container" action="#" method="post">
 
 
 
+                <input type="text" id="username" placeholder="Teléfono,e-mail o usuario" required>
+
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
 
 
-            <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
-
-            <button class="google"><i class="fab fa-google"></i> Google</button>
-
-
-            <div class='bottom-form'>
-                <a href="#">
-                    <h4>Crear una cuenta</h4>
-                </a>
-
-                <br>
-
-                <a href="#">
-                    <h4>Necesito ayuda para ingresar</h4>
-                </a>
-            </div>
-
-        </form>
+                <div><button type="submit">Continuar</button></div>
 
 
 
 
-    </main>
 
-    <%- include("./partials/footer.ejs") %>
+                <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
 
-   
+                <button class="google"><i class="fab fa-google"></i> Google</button>
+
+
+                <div class='bottom-form'>
+                    <a href="#">
+                        <h4>Crear una cuenta</h4>
+                    </a>
+
+                    <br>
+
+                    <a href="#">
+                        <h4>Necesito ayuda para ingresar</h4>
+                    </a>
+                </div>
+
+            </form>
+
+
+
+
+        </main>
+
+        <%- include("./partials/footer.ejs") %>
+
+
 
 </html>
