@@ -1,10 +1,10 @@
 * {
-    box-sizing: border-box;
-    /* font-family: 'DynaPuff', cursive; */
-  }
-  
-  /* --------------------HEADER--------------------*/
-  
+  box-sizing: border-box;
+  /* font-family: 'DynaPuff', cursive; */
+}
+
+/* --------------------HEADER--------------------*/
+
 /*   nav {
     background-color: #ff9551;
     font-weight: bolder;
@@ -71,10 +71,10 @@
     justify-content: space-between;
     align-items: center;
   } */
-  
-  /* ---------------- SIDE-BAR ---------------- */
-  
- /*  #sidebar {
+
+/* ---------------- SIDE-BAR ---------------- */
+
+/*  #sidebar {
     width: 12.5rem;
     height: 100%;
     background-color: #f1ff64;
@@ -126,249 +126,262 @@
     font-size: 1.8rem;
     margin-left: 10px;
   } */
-  
-  /* --------------------MAIN--------------------*/
-  body {
-    background-color: #fff;
-  }
-  
-  .small-container {
-    max-width: 1000px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 20px;
-  }
-  .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #c2d5d4;
-    box-shadow: 10px 10px;
-  }
-  
-  .single-product {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .small-img-row {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5px;
-  }
-  
-  .col-2 img {
-    max-width: 100%;
-    padding: 50px 0px;
-  }
-  
-  .small-img-col {
-    flex-basis: 24%;
-    cursor: pointer;
-  }
-  
-  .single-product .col-2 img {
-    padding: 0;
-  }
-  
-  .single-product .col-2 {
-    padding: 20px;
-  }
-  
-  .col-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-basis: 50%;
-    min-width: 200px;
-  }
-  
-  .col-2 h1 {
-    font-size: 50px;
-  }
-  
-  .single-product select {
-    display: block;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  
-  .single-product h4 {
-    margin: 20px;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  .single-product input {
-    width: 50px;
-    height: 40px;
-    padding-left: 10px;
-    font-size: 20px;
-    margin-right: 10px;
-  }
-  
-  input:focus {
-    outline: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #555;
-  }
-  
-  .single-product .fa {
-    color: #ff523b;
-    margin-left: 10px;
-  }
-  
-  p {
-    color: rgb(9, 5, 5);
-  }
-  
-  .cant {
-    margin: 5px;
-  }
-  .select {
-    text-align: center;
-    margin: 25px 5px;
-    padding: 0px;
-  }
-  
-  .button {
-    border-radius: 10px;
-    background-color: #59ce8f;
-    border: none;
-    color: #ffffff;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button span {
-    cursor: pointer;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: "\00bb";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-  
-  /* --------------------FOOTER--------------------*/
-  .follow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 15px;
-    margin: 10px;
-  }
-  .instagram {
-    color: black;
-    text-align: center;
-    width: 100px;
-    padding: 2px;
-    margin: 10px;
-    border-radius: 15px;
-    text-decoration: none;
-    transition-duration: 1s;
-  }
-  .facebook {
-    color: black;
-    width: 100px;
-    text-align: center;
-    padding: 2px;
-    margin: 10px;
-    border-radius: 15px;
-    text-decoration: none;
-    transition-duration: 1s;
-  }
-  .twitter {
-    color: black;
-    width: 100px;
-    text-align: center;
-    padding: 2px;
-    margin: 10px;
-    border-radius: 15px;
-    text-decoration: none;
-    transition-duration: 1s;
-  }
-  .tiktok {
-    color: black;
-    width: 100px;
-    padding: 2px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 15px;
-    text-decoration: none;
-    /* transition-duration: 2000ms;
+
+/* --------------------MAIN--------------------*/
+body {
+  background-color: #fff;
+}
+
+.small-container {
+  max-width: 1000px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #c2d5d4;
+  box-shadow: 10px 10px;
+}
+
+.single-product {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.small-img-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.col-2 img {
+  max-width: 100%;
+  padding: 50px 0px;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+.single-product .col-2 img {
+  padding: 0;
+}
+
+.single-product .col-2 {
+  padding: 20px;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 50%;
+  min-width: 200px;
+}
+
+.col-2 h1 {
+  font-size: 50px;
+}
+
+.single-product select {
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.single-product h4 {
+  margin: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.single-product input {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+.single-product .fa {
+  color: #ff523b;
+  margin-left: 10px;
+}
+
+p {
+  color: rgb(9, 5, 5);
+}
+
+.cant {
+  margin: 5px;
+}
+
+.select {
+  text-align: center;
+  margin: 25px 5px;
+  padding: 0px;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #59ce8f;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* --------------------FOOTER--------------------*/
+footer {
+  position: fixed;
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.instagram {
+  color: black;
+  text-align: center;
+  width: 100px;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition-duration: 1s;
+}
+
+.facebook {
+  color: black;
+  width: 100px;
+  text-align: center;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition-duration: 1s;
+}
+
+.twitter {
+  color: black;
+  width: 100px;
+  text-align: center;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition-duration: 1s;
+}
+
+.tiktok {
+  color: black;
+  width: 100px;
+  padding: 2px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+  text-decoration: none;
+  /* transition-duration: 2000ms;
     transition-delay: 1000ms; */
-    transition: all 3s;
-  
-  }
-  
-  i {
-    font-size: 25px;
-  }
-  
-  .twitter :hover {
-    color: #00acee;
-    position: relative;
-    bottom: 10px;
-  }
-  .facebook :hover {
-    color: #3b5998;
-    position: relative;
-    bottom: 10px;
-  }
-  .instagram :hover {
-    color: #dd2a7b;
-    position: relative;
-    bottom: 10px;
-  }
-  .tiktok :hover {
-    color: #ff2a56;
-    position: relative;
-    bottom: 10px;
-  
-  }
-  
-  .job {
-    width: 200px;
-    height: auto;
-    padding: 1px;
-    text-align: center;
-    margin: auto;
-    border-radius: 15px;
-  }
-  
-  .copyright {
-    text-align: center;
-    margin: auto;
-  }
-  
+  transition: all 3s;
+
+}
+
+i {
+  font-size: 25px;
+}
+
+.twitter :hover {
+  color: #00acee;
+  position: relative;
+  bottom: 10px;
+}
+
+.facebook :hover {
+  color: #3b5998;
+  position: relative;
+  bottom: 10px;
+}
+
+.instagram :hover {
+  color: #dd2a7b;
+  position: relative;
+  bottom: 10px;
+}
+
+.tiktok :hover {
+  color: #ff2a56;
+  position: relative;
+  bottom: 10px;
+
+}
+
+.job {
+  width: 200px;
+  height: auto;
+  padding: 1px;
+  text-align: center;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.copyright {
+  text-align: center;
+  margin: auto;
+}

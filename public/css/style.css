@@ -86,13 +86,12 @@ a.active {
 
 #sidebar {
     position: fixed;
-    width: 12.5rem;
+    width: 18rem;
     height: 100%;
     background-color: black;
-    left: -12.5rem;
+    left: -18rem;
     z-index: 100;
     transition: all 0.5s;
-
 
 }
 
@@ -105,7 +104,8 @@ h3 {
     color: rgb(255, 255, 255, 0.9);
     text-align: center;
     margin: 3px;
-    padding: 5px 3px;
+    padding: 8px 5px;
+    font-size: 20px;
 
 }
 
@@ -219,8 +219,8 @@ main {
 
 /* Slideshow container */
 .slideshow-container {
-    max-height: 1500px;
-    position: relative;
+    /* max-height: 1200px
+    position: relative; */
     margin: auto;
 }
 
@@ -279,6 +279,83 @@ main {
 }
 
 
+/* NUEVA TEMPORADA */
+
+ .nueva-temporada {}
+
+
+ /* titulo de la seccion */
+ #ofertas,
+ #nueva-temporada{
+    margin-top: 5rem;
+    color: black;
+    font-size: 25px;
+ }
+
+
+ .ofertas .products article,
+ .nueva-temporada .products article {    
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border-top: 1px solid white;
+}
+
+
+.products article img{
+    max-width: 428px;
+    max-height: 620px;
+}
+
+ .ofertas.products article .main-article,
+ .nueva-temporada .products article .main-article {
+    width: 100%;
+    border-top: #ebebeb solid 1px;
+    position: relative;
+
+}
+
+ .ofertas .products article .main-article-numbers,
+ .nueva-temporada .products article .main-article-numbers {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 5px;
+}
+
+ .ofertas .products article .price, 
+ .nueva-temporada .products article .price {
+    align-self: center;
+}
+
+ .ofertas .products article .description,
+ .nueva-temporada .products article .description {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+@media (min-width: 700px) and (max-width:1199px) {
+    
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .products article {
+        width: 40vw;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .products {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
 
 
 
@@ -294,12 +371,14 @@ footer {
     background-color: black;
     opacity: 0.9;
     font-weight: bolder;
-    position: fixed;
     text-align: center;
     width: 100%;
     bottom: 0;
     z-index: 200;
     color: white;
+    margin-top: 5rem;
+    position: relative;
+
 }
 
 footer .follow {
@@ -307,15 +386,17 @@ footer .follow {
     justify-content: center;
     align-items: center;
     margin: auto;
-  }
-  footer .links {
+}
+
+footer .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
     border-radius: 15px;
     margin: 10px;
-  }
-  footer .instagram {
+}
+
+footer .instagram {
     color: white;
     text-align: center;
     width: 100px;
@@ -324,8 +405,9 @@ footer .follow {
     border-radius: 15px;
     text-decoration: none;
     transition-duration: 1s;
-  }
-  footer .facebook {
+}
+
+footer .facebook {
     color: white;
     width: 100px;
     text-align: center;
@@ -334,8 +416,9 @@ footer .follow {
     border-radius: 15px;
     text-decoration: none;
     transition-duration: 1s;
-  }
-  footer .twitter {
+}
+
+footer .twitter {
     color: white;
     width: 100px;
     text-align: center;
@@ -344,8 +427,9 @@ footer .follow {
     border-radius: 15px;
     text-decoration: none;
     transition-duration: 1s;
-  }
-  footer .tiktok {
+}
+
+footer .tiktok {
     color: white;
     width: 100px;
     padding: 2px;
@@ -356,48 +440,48 @@ footer .follow {
     /* transition-duration: 2000ms;
     transition-delay: 1000ms; */
     transition: all 3s;
-  
-  }
-  
-  i {
+
+}
+
+i {
     font-size: 25px;
-  }
-  
-  .twitter :hover {
+}
+
+.twitter :hover {
     color: #00acee;
     position: relative;
     bottom: 10px;
-  }
-  .facebook :hover {
+}
+
+.facebook :hover {
     color: #3b5998;
     position: relative;
     bottom: 10px;
-  }
-  .instagram :hover {
+}
+
+.instagram :hover {
     color: #dd2a7b;
     position: relative;
     bottom: 10px;
-  }
-  .tiktok :hover {
+}
+
+.tiktok :hover {
     color: #ff2a56;
     position: relative;
     bottom: 10px;
-  
-  }
-  
-  .job {
+
+}
+
+.job {
     width: 200px;
     height: auto;
     padding: 1px;
     text-align: center;
     margin: auto;
     border-radius: 15px;
-  }
-  
-  .copyright {
+}
+
+.copyright {
     text-align: center;
     margin: auto;
-  }
-  
-
-
+}
