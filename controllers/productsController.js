@@ -1,11 +1,11 @@
 const path = require("path");
 const productsController = {
 	register: (req, res) => {
-    res.render("productRegister");
+    res.render("products/productRegister");
   },
 
   list: (req, res) =>{
-    res.render ("productList")
+    res.render ("products/productList")
   }
 	
 }
