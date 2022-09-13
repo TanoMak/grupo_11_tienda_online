@@ -294,7 +294,7 @@ main {
 
 
  .ofertas .products article,
- .nueva-temporada .products article {    
+ .nueva-temporada .products article{    
     padding: 15px;
     margin: 10px;
     text-align: center;
@@ -305,6 +305,7 @@ main {
 .products article img{
     max-width: 428px;
     max-height: 620px;
+    border-radius: 1cm;
 }
 
  .ofertas.products article .main-article,
@@ -334,6 +335,71 @@ main {
     font-weight: normal;
 }
 
+.product-list-title{
+    color: black;
+    font-size: xx-large;
+}
+
+ div .products{
+    display: flex;
+    align-items:flex-end;
+    border: solid pink;
+
+}
+.product-list{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin: 5px;
+    text-align: center;
+}
+
+.product-list-article{
+    border: solid 2px grey ;
+    border-radius: 1cm;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-right: 30px;
+}
+
+.product-list-article{
+    transition : box-shadow 100ms
+}
+
+.product-list-article:hover{
+    box-shadow: 5px 5px 5px black
+}
+
+
+
+
+
+
+
+
+.add-to-cart i{
+    font-size: 30px;
+    }
+
+
+
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.price {
+    font-size: 25px;
+}
+
+.description{
+    font-size: 30px;
+
+}
 
 @media (min-width: 700px) and (max-width:1199px) {
     
