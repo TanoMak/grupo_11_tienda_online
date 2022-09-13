@@ -168,6 +168,14 @@ body {
 .small-img-col {
   flex-basis: 24%;
   cursor: pointer;
+  transition: all 0.5s;
+  transition-delay: 0.2s;
+  text-decoration: none;
+}
+
+.small-img-col:hover {
+  position: relative;
+  bottom: 5px;
 }
 
 .single-product .col-2 img {
