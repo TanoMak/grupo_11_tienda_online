@@ -3,8 +3,8 @@
    
 <header>
     <%- include("../partials/head.ejs") %>
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/login-style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/login-style.css" rel="stylesheet">
 </header>
 
 <body>
@@ -15,20 +15,20 @@
 
     <!-- main -->
     <main>
-        <form class="container" action="#" method="post">
+        <form class="container" enctype="multipart/form-data" action="/products/create" method="POST">
         <h1>Registro de producto</h1>        
         <div>
-			<div>
-                <input type="number" placeholder="Id">
+            <div>
+                <input type="text" name="name" placeholder="Nombre">
             </div>
             <div>
-                <input type="text" placeholder="Nombre">
+                <input type="text" name="description" placeholder="Descripción">
             </div>
             <div>
-                <input type="text" placeholder="Descripción">
+                <input type="number" name="price" placeholder="Precio">
             </div>
             <div>
-                <input type="file" placeholder="Imagen">
+                <input type="file" name="image" placeholder="Imagen">
             </div>            
         </div>
         <h3>

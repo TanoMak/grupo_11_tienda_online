@@ -2,8 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
-const mainRouter = require("./routes/main");
-const productsRouter = require("./routes/products");
+const mainRouter = require("./routes/mainRoutes");
+const productsRouter = require("./routes/productsRoutes");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

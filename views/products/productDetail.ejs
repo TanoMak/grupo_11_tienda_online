@@ -4,7 +4,7 @@
 <head>
   <%- include("../partials/head.ejs") %>
     <link href="/css/style.css" rel="stylesheet">
-    <link href="css/product-style.css" rel="stylesheet" />
+    <link href="/css/product-style.css" rel="stylesheet" />
 </head>
 
 
@@ -18,26 +18,26 @@
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
-          <img src="images/Pants.jpg" width="100%" id="ProductImg" />
+          <img src="/images/Pants.jpg" width="100%" id="ProductImg" />
           <div class="small-img-row">
             <div class="small-img-col">
-              <img src="images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
             </div>
           </div>
         </div>
         <div class="col-2">
           <p>Home / Pants</p>
-          <h1>Pants</h1>
-          <h4>$Precio</h4>
+          <h1><%= prenda.name %></h1>
+          <h4><%= prenda.price %></h4>
           <select name="" id="" class="select">
             <option value="">Select Size</option>
             <option value="">XXL</option>
@@ -53,11 +53,9 @@
               <span>Añadir al carrito</span>
             </button>
           </div>
-          <h3>Producr details</h3>
+          <h3>Producto details</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            maxime fugit aut voluptate minus id perspiciatis atque, fugiat ea
-            eaque sed iste similique, amet ab deleniti? A odit expedita ea?
+            <%= prenda.description %>
           </p>
         </div>
       </div>
