@@ -1,0 +1,252 @@
+[
+    {
+        "id": 1,
+        "name": "Rooibos Caramelo",
+        "description": "suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst",
+        "price": 2838.99,
+        "discount": 21,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "banner"
+    },
+    {
+        "id": 2,
+        "name": "Albaricoque Maracuyá",
+        "description": "tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a",
+        "price": 3140.79,
+        "discount": 36,
+        "category": "te",
+        "image": "PRODUCTS-ROOIBOS-CARAMELO.jpg",
+        "type": "nuevo"
+    },
+    {
+        "id": 3,
+        "name": "Gold en Monkey",
+        "description": "nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus",
+        "price": 1377.11,
+        "discount": 39,
+        "category": "te",
+        "image": "PRODUCTS-te-blanco-albaricoque-maracuya.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 4,
+        "name": "Filtro Tacita",
+        "description": "dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate",
+        "price": 4240.78,
+        "discount": 38,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 5,
+        "name": "Albaricoque Maracuyá",
+        "description": "nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla",
+        "price": 3446.43,
+        "discount": 3,
+        "category": "café",
+        "image": "PRODUCTS-ROOIBOS-CARAMELO.jpg",
+        "type": "banner"
+    },
+    {
+        "id": 6,
+        "name": "Rooibos Caramelo",
+        "description": "vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo",
+        "price": 3864.06,
+        "discount": 41,
+        "category": "café",
+        "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg",
+        "type": "banner"
+    },
+    {
+        "id": 7,
+        "name": "Albaricoque Maracuyá",
+        "description": "vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec",
+        "price": 3631.69,
+        "discount": 13,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "nuevo"
+    },
+    {
+        "id": 8,
+        "name": "Café Origen Tolima",
+        "description": "turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est",
+        "price": 3465.67,
+        "discount": 21,
+        "category": "café",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 9,
+        "name": "Gold en Monkey",
+        "description": "pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc",
+        "price": 3250.84,
+        "discount": 29,
+        "category": "insumos",
+        "image": "PRODUCTS-golden-monkey.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 10,
+        "name": "Canela Paraiso",
+        "description": "interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt",
+        "price": 2106.69,
+        "discount": 27,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "nuevo"
+    },
+    {
+        "id": 11,
+        "name": "Rooibos Caramelo",
+        "description": "platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent",
+        "price": 3866.8,
+        "discount": 38,
+        "category": "café",
+        "image": "PRODUCTS-xanela-paraiso.jpg",
+        "type": "nuevo"
+    },
+    {
+        "id": 12,
+        "name": "Gold en Monkey",
+        "description": "nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin",
+        "price": 4525.14,
+        "discount": 34,
+        "category": "café",
+        "image": "PRODUCTS-golden-monkey.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 13,
+        "name": "Café Orgánico Balanceado",
+        "description": "neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac",
+        "price": 4404.05,
+        "discount": 16,
+        "category": "café",
+        "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg",
+        "type": "banner"
+    },
+    {
+        "id": 14,
+        "name": "Albaricoque Maracuyá",
+        "description": "dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio",
+        "price": 938.39,
+        "discount": 26,
+        "category": "café",
+        "image": "PRODUCTS-golden-monkey.jpg",
+        "type": "banner"
+    },
+    {
+        "id": 15,
+        "name": "Gold en Monkey",
+        "description": "platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at",
+        "price": 4776.66,
+        "discount": 0,
+        "category": "insumos",
+        "image": "PRODUCTS-xanela-paraiso.jpg",
+        "type": "nuevo"
+    },
+    {
+        "id": 16,
+        "name": "Canela Paraiso",
+        "description": "duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam",
+        "price": 3956.41,
+        "discount": 13,
+        "category": "café",
+        "image": "PRODUCTS-xanela-paraiso.jpg",
+        "type": "banner"
+    },
+    {
+        "id": 17,
+        "name": "Canela Paraiso",
+        "description": "eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis",
+        "price": 4665.31,
+        "discount": 29,
+        "category": "insumos",
+        "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png",
+        "type": "banner"
+    },
+    {
+        "id": 18,
+        "name": "Albaricoque Maracuyá",
+        "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien",
+        "price": 1010.34,
+        "discount": 26,
+        "category": "te",
+        "image": "PRODUCTS-ROOIBOS-CARAMELO.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 19,
+        "name": "Rooibos Caramelo",
+        "description": "ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer",
+        "price": 2494.84,
+        "discount": 41,
+        "category": "café",
+        "image": "PRODUCTS-te-blanco-albaricoque-maracuya.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 20,
+        "name": "Rooibos Caramelo",
+        "description": "vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio",
+        "price": 2531.03,
+        "discount": 37,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "nuevo"
+    },
+    {
+        "id": 21,
+        "name": "Canela Paraiso",
+        "description": "arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus",
+        "price": 4645.2,
+        "discount": 2,
+        "category": "te",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "banner"
+    },
+    {
+        "id": 22,
+        "name": "Café Orgánico Balanceado",
+        "description": "bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id",
+        "price": 2181.27,
+        "discount": 38,
+        "category": "insumos",
+        "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png",
+        "type": "nuevo"
+    },
+    {
+        "id": 23,
+        "name": "Café Orgánico Balanceado",
+        "description": "vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo",
+        "price": 1575.25,
+        "discount": 41,
+        "category": "café",
+        "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png",
+        "type": "banner"
+    },
+    {
+        "id": 24,
+        "name": "Rooibos Caramelo",
+        "description": "ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique",
+        "price": 1799.48,
+        "discount": 5,
+        "category": "te",
+        "image": "PRODUCTS-te-blanco-albaricoque-maracuya.jpg",
+        "type": "mas-vendido"
+    },
+    {
+        "id": 25,
+        "name": "Filtro Tacita",
+        "description": "quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci",
+        "price": 1398.77,
+        "discount": 41,
+        "category": "café",
+        "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png",
+        "type": "mas-vendido"
+    }
+]
