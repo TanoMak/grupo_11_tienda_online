@@ -11,7 +11,7 @@ router.get("/registro", mainController.register);
 
 router.get("/carrito", mainController.cart);
 
-router.get("/detalleDeProducto", mainController.productDetail);
+
 
 /* module.exports = {
   router,

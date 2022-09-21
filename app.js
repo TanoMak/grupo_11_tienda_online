@@ -1,15 +1,17 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const indexRoutes = require("../grupo_11_tienda_online/routes/main");
-const productsRoutes = require("../grupo_11_tienda_online/routes/products");
+const methodOverride = require("method-override");
+const mainRouter = require("./routes/main");
+const productsRouter = require("./routes/products");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
+app.use(methodOverride("_method"));
 
-app.use('/', indexRoutes); 
-app.use('/', productsRoutes);
+app.use('/', mainRouter); 
+app.use('/products', productsRouter);
 
 
 
