@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif ;
 }
 
 
@@ -58,9 +59,73 @@ article.product-cart{
     width: 100px;
 }
 
-footer{
-    position: fixed;
+.delivery-cost-section{
+    text-align: center;
 }
+.delivery-cost-section  {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    text-align:center;
+    margin: 0 auto;
+    height: 30px;
+    border-radius: 2cm ;
+}
+
+#postal-code-calc{
+    flex-wrap:wrap;
+    width: 80%;
+}
+
+#postal-code-btn{
+    padding: 6px;
+}
+
+#postal-code-calc,
+#postal-code-btn {
+    border-radius:2cm
+}
+
+
+
+.total-cost{
+    display: flex;
+    width: 20%;
+    position: relative;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.subtotal, .costo-de-envio, .total{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1px;
+}
+
+.total{
+    font-size: x-large;
+}
+
+.purchase-submit{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.iniciar-compra-btn,
+.seguir-comprando-btn{
+    /* font-size:large; */
+    border-radius:2CM ;
+    padding: 6PX;
+}
+
+.iniciar-compra-btn{
+    background-color: black;
+    color: whitesmoke;
+}
+
+
+
 
 
 
