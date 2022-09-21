@@ -53,6 +53,7 @@ article.product-cart{
 #q{
     width: 50px;
     border-radius: 10%;
+    text-align: center;
 }
 
 #postal-code-calc{
@@ -73,12 +74,14 @@ article.product-cart{
 }
 
 #postal-code-calc{
-    flex-wrap:wrap;
-    width: 80%;
+    flex-grow: 1;
+    width: 100%;
 }
 
 #postal-code-btn{
     padding: 6px;
+ /*    position: relative;
+    right: 50px; */
 }
 
 #postal-code-calc,
@@ -123,6 +126,8 @@ article.product-cart{
     background-color: black;
     color: whitesmoke;
 }
+
+
 
 
 
