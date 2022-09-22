@@ -21,13 +21,22 @@ input[type=file],
 input[type=email],
 input[type=number],
 input[type=text],
-input[type=password] {
+input[type=password],
+input[list=category],
+input[list=line],
+input[type=checkbox]{
     width: 100%;
     max-width: 450px;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
+}
+
+.color-selection-register{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 button {

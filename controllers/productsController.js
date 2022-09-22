@@ -34,14 +34,19 @@ const productsController = {
     const data = findAll();
 
     const newProduct = {
-      id: data.length++,
+      id: data.length+1,
       name: req.body.name,
-      price: Number(req.body.price),
       description: req.body.description,
+      price:Number(req.body.price),
+      line: req.body.line,
+      category: req.body.category,
+      color: req.body.color,
       image: req.file.filename,
     };
 
     data.push(newProduct);
+
+    console.log(newProduct)
 
     writeFile(data);
 

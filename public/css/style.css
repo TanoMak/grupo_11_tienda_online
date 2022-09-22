@@ -303,6 +303,8 @@ main {
 .products article img{
     max-width: 428px;
     max-height: 620px;
+    min-width: 428px;
+    min-height: 620px;
     border-radius: 1cm;
 }
 
