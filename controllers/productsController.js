@@ -98,17 +98,12 @@ const productsController = {
 
 destroy: (req, res) =>{
   const data = findAll();
-  const prendaEncontrada = data.find(function(prenda){
+  const prendaEncontrada = data.findIndex(function(prenda){
       return prenda.id == req.params.id
       
 
 
   })
-
-/*   let prendaAElininar = data.indexOf(prendaEncontrada.id)
-  if (prendaAElininar !==-1){
-    data.splice(prendaAElininar,1)
-  } */
 
   data.splice(prendaEncontrada, 1)
 

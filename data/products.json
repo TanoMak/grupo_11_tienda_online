@@ -105,21 +105,6 @@
         "image": "buzo.jpg"
     },
     {
-        "id": 10,
-        "name": "Pantalon",
-        "description": "para trabajar",
-        "price": 17000,
-        "line": "Hombre",
-        "category": "Accesorios",
-        "color": "Blanco",
-        "size": [
-            "S",
-            "M"
-        ],
-        "offerlist": true,
-        "image": "buzo.jpg"
-    },
-    {
         "id": 11,
         "name": "Pantalon",
         "description": "para trabajar",
@@ -148,8 +133,48 @@
         ],
         "offerlist": false,
         "image": "buzo.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Short",
+        "description": "Corto",
+        "price": 15000,
+        "line": "Hombre",
+        "category": "Pantalones",
+        "color": "Blanco",
+        "size": [
+            "M",
+            "L"
+        ],
+        "offerlist": true,
+        "image": "image1663930305759-.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Remera MC",
+        "description": "Remera comoda",
+        "price": 8000,
+        "line": "Hombre",
+        "category": "Remeras",
+        "color": "Blanco",
+        "size": [
+            "M",
+            "L",
+            "X"
+        ],
+        "offerlist": true,
+        "image": "image1663930392053-.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Pantalaon",
+        "description": "Pantalon1",
+        "price": 19000,
+        "line": "Mujer",
+        "category": "Pantalones",
+        "color": "Blanco",
+        "size": "L",
+        "offerlist": true,
+        "image": "image1663930453925-.jpg"
     }
-
-
-
 ]
