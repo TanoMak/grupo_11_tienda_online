@@ -1,11 +1,15 @@
 * {
-    box-sizing: border-box;}
+    box-sizing: border-box;
+}
 
 main {
     /*margin-top: 150px;*/
     text-align: center;
 }
 
+body{
+    padding-bottom: 15px;
+}
 
 
 .container {
@@ -37,6 +41,38 @@ input[type=checkbox]{
     display: flex;
     justify-content: space-around;
     text-align: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+}
+
+.size-selection-register{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    
+    border: 1px solid #ccc;
+}
+
+.offer-selection-register{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+
 }
 
 button {
@@ -70,9 +106,6 @@ button:hover {
 
 }
 
-footer {
-    position: fixed;
-}
 
 
 @media(min-width: 750px) {

@@ -16,15 +16,15 @@
     <!-- main -->
     <main>
         <form class="container" enctype="multipart/form-data" action="/products/create" method="POST">
-        <h1>Registro de producto</h1>        
-        <br>
-        <div>
-            <div>
+            <h1>Registro de producto</h1>        
+            <br>
+         <div>
+             <div>
                 <input type="text" name="name" placeholder="Nombre">
-            </div>
-            <div>
+             </div>
+             <div>
                 <input type="text" name="description" placeholder="Descripción">
-            </div>
+             </div>
             <div>
                 <input type="number" name="price" placeholder="Precio">
             </div>
@@ -47,23 +47,53 @@
             <br>
 
             <div class ="color-selection-register">
-                <label for="color"> Disponible en color</label><br>
+                <label for="color">Disponible en color</label><br>
                 <label><input type="checkbox" name ="color", value="Blanco">Blanco</label><br>
                 <label><input type="checkbox" name ="color", value="Negro">Negro</label><br>
-            
+        
+            </div>
+            <br>
+            <br>
 
+            <div class ="size-selection-register">
+                <label for="size">Disponible en talles </label><br>
+                <label><input type="checkbox" name ="size", value="S">S</label><br>
+                <label><input type="checkbox" name ="size", value="M">M</label><br>
+                <label><input type="checkbox" name ="size", value="L">L</label><br>
+                <label><input type="checkbox" name ="size", value="X">XL</label><br>
+        
+            </div>
+            <br>
+            <br>
+
+            <div class = "offer-selection-register">
+                <label for="offerlist">Sección de Ofertas</label>
+                <input type="radio" name="offerlist" value= false checked="yes">NO
+                <input type="radio" name="offerlist" value= true>SI
 
             </div>
+            <br>
+
 
 
             <div>
                 <input type="file" name="image" placeholder="Imagen">
             </div>            
-        </div>
-        <h3>
+            </div>
+      
             <div><button type="submit"> Agregar Producto </button></div> 
-        </h3>
-    </form>
+        </form>
+
+        <div>
+            <a href="/products/list">
+                <button class="back-to-product-list-btn" type="button">Volver al listado de productos
+                </button>
+            </a>
+        </div>
+
+        
+
+
         
     </main>
 

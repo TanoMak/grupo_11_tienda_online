@@ -308,26 +308,26 @@ main {
     border-radius: 1cm;
 }
 
- .ofertas.products article .main-article,
+ /* .ofertas.products article .main-article,
  .nueva-temporada .products article .main-article {
     width: 100%;
     border-top: #ebebeb solid 1px;
     position: relative;
 
-}
+} */
 
- .ofertas .products article .main-article-numbers,
+/*  .ofertas .products article .main-article-numbers,
  .nueva-temporada .products article .main-article-numbers {
     display: flex;
     justify-content: center;
     align-self: center;
     margin: 5px;
-}
+} */
 
- .ofertas .products article .price, 
+/*  .ofertas .products article .price, 
  .nueva-temporada .products article .price {
     align-self: center;
-}
+} */
 
  .ofertas .products article .description,
  .nueva-temporada .products article .description {
@@ -340,28 +340,26 @@ main {
     font-size: xx-large;
 }
 
- div .products{
-    display: flex;
-    align-items:flex-end;
-    border: solid pink;
 
-}
-.product-list{
+.products{
     display: flex;
-    justify-content: space-between;
-    align-self: center;
-    margin: 5px;
+    justify-content:flex-start;
     text-align: center;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding-left: 170px;
 }
 
 .product-list-article{
-    border: solid 2px grey ;
+    border: solid 2px grey;
+    text-align: center;
     border-radius: 1cm;
     padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 10px;
+    padding-left: 30px;
+    padding-top: 15px;
     padding-bottom: 20px;
     margin-right: 30px;
+    margin-bottom: 40px;
 }
 
 .product-list-article{
@@ -373,24 +371,11 @@ main {
 }
 
 
-
-
-
-
-
-
 .add-to-cart i{
     font-size: 30px;
     }
 
 
-
-
-.product-list {
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-}
 
 .price {
     font-size: 25px;
@@ -399,6 +384,19 @@ main {
 .description{
     font-size: 30px;
 
+}
+
+.update-form-fields{
+    color: red
+}
+
+.delete-product-btn{
+    background-color: red;
+}
+
+.back-to-product-list-btn{
+    background-color: whitesmoke;
+    color: black;
 }
 
 @media (min-width: 700px) and (max-width:1199px) {
@@ -411,16 +409,23 @@ main {
     .products article {
         width: 40vw;
     }
+
+    .products article img{
+        max-width: 428px;
+        max-height: 620px;
+        border-radius: 1cm;
+    }
 }
+
 
 @media(min-width: 1200px) {
 
-    .products {
+/*     .products {
         display: flex;
         justify-content: space-between;
     }
 }
-
+ */
 
 
 

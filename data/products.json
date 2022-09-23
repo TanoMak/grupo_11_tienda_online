@@ -1,35 +1,155 @@
 [
     {
-        "id": 1,
-        "name": "Remera1",
-        "description": "Remera algodon",
-        "price": 1000,
-        "line": "Mujer",
-        "category": "Remeras",
-        "color": "Negro",
-        "image": "image1663814158839-.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Remera 2",
-        "description": "Remera larga",
-        "price": 2000,
-        "line": "Mujer",
-        "category": "Remeras",
-        "color": [
-            "Blanco",
-            "Negro"
-        ],
-        "image": "image1663814311259-.jpg"
-    },
-    {
         "id": 3,
-        "name": "Pantalon 1",
-        "description": "Pantalon ",
-        "price": 2000,
-        "line": "Hombre",
-        "category": "Pantalones",
+        "name": "Remera",
+        "description": "Remera larga",
+        "price": 17000,
+        "line": "Mujer",
+        "category": "Remeras",
         "color": "Blanco",
-        "image": "image1663815343312-.jpg"
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "image1663900526527-.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Jogging",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "image1663900573923-.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Jogging",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Jogging",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Pantalon",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Buzo",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Pantalon",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Pantalon",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Pantalon",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "buzo.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Pantalon",
+        "description": "para trabajar",
+        "price": 17000,
+        "line": "Hombre",
+        "category": "Accesorios",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": false,
+        "image": "buzo.jpg"
     }
+
+
+
 ]

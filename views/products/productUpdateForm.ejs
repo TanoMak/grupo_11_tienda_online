@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<header>
+    <%- include("../partials/head.ejs") %>
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/login-style.css" rel="stylesheet">
+</header>
+
+<body>
+
+    <!-- header -->
+    <%- include("../partials/header.ejs") %>
+
+
+    <!-- main -->
+    <main>
+        <form class="container" enctype="multipart/form-data" action="/products/edit/<%= prenda.id %>?_method=PUT" method="POST">
+            <h1>Editar Producto</h1>
+            <label class="update-form-fields"><%= prenda.name %> </label>        
+            <br>
+            <div>
+                <div>
+                    <input type="text" name="name" placeholder="Nombre" value="<%= prenda.name %>">
+                </div>
+                <div>
+                    <input type="text" name="description" placeholder="Descripción" value="<%= prenda.description %>">
+                </div>
+                <div>
+                    <input type="number" name="price" placeholder="Precio" value="<%= prenda.price %>">
+                </div>
+                <div>
+                    <input list="line" name="line" placeholder="<%= prenda.line%>">
+                    <datalist id ="line">
+                        <option value="Mujer"></option>
+                        <option value="Hombre"></option>
+                    </datalist>
+                </div>
+                <div>
+                    <input list="category" name="category" placeholder="<%= prenda.category%>">
+                    <datalist id = "category">
+                        <option value="Pantalones"></option>
+                        <option value="Remeras"></option>
+                        <option value="Camperas"></option>
+                        <option value="Accesorios"></option>
+                    </datalist>
+                </div>
+                <br>
+
+                <div class ="color-selection-register">
+                    <label for="color">Disponible en color</label><br>
+                    <label class="update-form-fields"><%= prenda.color %></label>
+                    <label><input type="checkbox" name ="color">Blanco</label><br>
+                    <label><input type="checkbox" name ="color">Negro</label><br>
+            
+                </div>
+                <br>
+                <br>
+
+                <div class ="size-selection-register">
+                    <label>Disponible en</label>
+                    <br>
+
+                    <label class="update-form-fields"><%= prenda.size %></label>
+                    <label><input type="checkbox" name ="size", value="S">S</label><br>
+                    <label><input type="checkbox" name ="size", value="M">M</label><br>
+                    <label><input type="checkbox" name ="size", value="L">L</label><br>
+                    <label><input type="checkbox" name ="size", value="X">XL</label><br>
+            
+                </div>
+                <br>
+                <br>
+
+                <div class = "offer-selection-register">
+                    <label for="offerlist">Sección de Ofertas </label>
+                    <input type="radio" name="offerlist" value= false checked="yes">NO
+                    <input type="radio" name="offerlist" value= true>SI
+
+                </div>
+                <br>
+
+
+
+                <div>
+                    <input type="file" name="image" placeholder="Imagen">
+                </div>            
+            </div>
+            <h3>
+                <div><button type="submit"> Editar Producto </button></div> 
+            </h3>
+        </form>
+
+    
+
+        <form action="/products/delete/<%= prenda.id %>?_method=DELETE" method="POST">
+            <button class = "delete-product-btn">Borrar</button>
+        </form>
+        
+    </main>
+
+
+    <!-- footer -->
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>
