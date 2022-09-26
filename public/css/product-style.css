@@ -285,9 +285,7 @@ p {
 }
 
 /* --------------------FOOTER--------------------*/
-footer {
-  position: fixed;
-}
+
 
 .follow {
   display: flex;

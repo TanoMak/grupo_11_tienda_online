@@ -21,14 +21,14 @@ body{
 
 }
 
-input[type=file],
-input[type=email],
-input[type=number],
-input[type=text],
-input[type=password],
-input[list=category],
-input[list=line],
-input[type=checkbox]{
+.container input[type=file],
+.container input[type=email],
+.container input[type=number],
+.container input[type=text],
+.container input[type=password],
+.container input[list=category],
+.container input[list=line],
+.container input[type=checkbox]{
     width: 100%;
     max-width: 450px;
     padding: 12px 20px;
@@ -75,7 +75,7 @@ input[type=checkbox]{
 
 }
 
-button {
+.container button {
     background-color: black;
     max-width: 450px;
     color: white;
@@ -83,6 +83,7 @@ button {
     margin: 8px 0;
     cursor: pointer;
     width: 100%;
+    border-radius: 80px;
 
 }
 
@@ -96,12 +97,12 @@ button {
 
 }
 
-button:hover {
+.container button:hover {
     opacity: 0.8;
 }
 
 
-.bottom-form {
+.container .bottom-form {
     margin-top: 9rem;
 
 }

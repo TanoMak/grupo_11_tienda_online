@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif ;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -10,12 +10,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-main{
+main {
     opacity: 90%;
 }
 
 
-.products-cart-section{
+.products-cart-section {
     padding: 25px;
     text-align: center;
 }
@@ -26,72 +26,74 @@ main{
     text-align: center;
 }
 
-.product-cart-image{
+.product-cart-image {
     position: relative;
     width: 90pX;
     height: 110X;
 }
 
-article.product-cart{
+article.product-cart {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.product-cart-details{
+.product-cart-details {
     text-align: justify;
     padding: 10px;
-    margin: top -1px;;
-  
+    margin: top -1px;
+    ;
+
 }
 
-.product-cart-title{
-    font-size:20px;
+.product-cart-title {
+    font-size: 20px;
     text-decoration: bold;
 }
 
-#q{
+#q {
     width: 50px;
     border-radius: 10%;
     text-align: center;
 }
 
-#postal-code-calc{
+#postal-code-calc {
     width: 100px;
 }
 
-.delivery-cost-section{
+.delivery-cost-section {
     text-align: center;
 }
-.delivery-cost-section  {
+
+.delivery-cost-section {
     display: flex;
     justify-content: space-around;
     width: 20%;
-    text-align:center;
+    text-align: center;
     margin: 0 auto;
     height: 30px;
-    border-radius: 2cm ;
+    border-radius: 2cm;
 }
 
-#postal-code-calc{
+#postal-code-calc {
     flex-grow: 1;
     width: 100%;
 }
 
-#postal-code-btn{
+#postal-code-btn {
     padding: 6px;
- /*    position: relative;
+    /*    position: relative;
     right: 50px; */
 }
 
 #postal-code-calc,
 #postal-code-btn {
-    border-radius:2cm
+    border-radius: 2cm
 }
 
 
 
-.total-cost{
+.total-cost {
     display: flex;
     width: 20%;
     position: relative;
@@ -99,40 +101,32 @@ article.product-cart{
     margin: 0 auto;
 }
 
-.subtotal, .costo-de-envio, .total{
+.subtotal,
+.costo-de-envio,
+.total {
     display: flex;
     justify-content: space-between;
     padding-top: 1px;
 }
 
-.total{
+.total {
     font-size: x-large;
 }
 
-.purchase-submit{
+.purchase-submit {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
 }
 
 .iniciar-compra-btn,
-.seguir-comprando-btn{
+.seguir-comprando-btn {
     /* font-size:large; */
-    border-radius:2CM ;
+    border-radius: 2CM;
     padding: 6PX;
 }
 
-.iniciar-compra-btn{
+.iniciar-compra-btn {
     background-color: black;
     color: whitesmoke;
 }
-
-
-
-
-
-
-
-
-
-

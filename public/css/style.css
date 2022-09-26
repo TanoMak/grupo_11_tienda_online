@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+
 }
 
 /* -----HEADER----- */
@@ -82,6 +83,96 @@ a.active {
     color: #2E920C;
 }
 
+
+
+/* ------------ SEARCH-BAR ------------------ */
+
+.search-box,
+.search-box-sidebar {
+    right: 3rem;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 1rem;
+    left: 65%;
+    color: white;
+    display: block;
+}
+
+.search-box-sidebar {
+    top: 1rem;
+    left: 5%;
+}
+
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: white;
+    padding-right: 40px;
+    color: white;
+}
+
+.input-search::placeholder {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: black;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:hover {
+    background-color: #2E920C;
+    color: white;
+}
+
+.btn-search:focus~.input-search {
+    color: white;
+    position: relative;
+    right: auto;
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+
+.search-box-sidebar {
+    display: none;
+}
+
+
+
 /* ---------------- SIDE-BAR ---------------- */
 
 #sidebar {
@@ -106,7 +197,6 @@ h3 {
     margin: 3px;
     padding: 8px 5px;
     font-size: 20px;
-
 }
 
 #sidebar h3:hover {
@@ -146,6 +236,9 @@ h3 {
 }
 
 
+
+
+
 /*  ----------   MEDIA-QUERIES ------------- */
 
 
@@ -164,13 +257,16 @@ h3 {
         text-align: center;
         transition: all .5s;
     }
+   
 
     nav ul li {
+        
         display: block;
         margin: 3rem 0;
         line-height: 1.8rem;
 
     }
+    
 
     nav ul li a {
         font-size: 1.25rem;
@@ -189,6 +285,15 @@ h3 {
     .toggle-btn {
         visibility: hidden;
     }
+
+    .search-box {
+        display: none;
+    }
+
+    .search-box-sidebar {
+        display: block;
+    }
+
 
 }
 
@@ -283,24 +388,24 @@ main {
 
 
 
- /* titulo de la seccion */
- #ofertas,
- #nueva-temporada{
+/* titulo de la seccion */
+#ofertas,
+#nueva-temporada {
     margin-top: 5rem;
     color: black;
     font-size: 25px;
- }
+}
 
 
- .ofertas .products article,
- .nueva-temporada .products article{    
+.ofertas .products article,
+.nueva-temporada .products article {
     padding: 15px;
     margin: 10px;
     text-align: center;
 }
 
 
-.products article img{
+.products article img {
     max-width: 428px;
     max-height: 620px;
     min-width: 428px;
@@ -308,7 +413,7 @@ main {
     border-radius: 1cm;
 }
 
- /* .ofertas.products article .main-article,
+/* .ofertas.products article .main-article,
  .nueva-temporada .products article .main-article {
     width: 100%;
     border-top: #ebebeb solid 1px;
@@ -329,28 +434,29 @@ main {
     align-self: center;
 } */
 
- .ofertas .products article .description,
- .nueva-temporada .products article .description {
+.ofertas .products article .description,
+.nueva-temporada .products article .description {
     font-size: 16px;
     font-weight: normal;
 }
 
-.product-list-title{
+.product-list-title {
     color: black;
     font-size: xx-large;
 }
 
 
-.products{
+.products {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     text-align: center;
     flex-wrap: wrap;
     margin: 5px;
-    padding-left: 170px;
+    /* padding-left: 170px; */
+    /* lo comenté porque chocaba con el mediaquery.  */
 }
 
-.product-list-article{
+.product-list-article {
     border: solid 2px grey;
     text-align: center;
     border-radius: 1cm;
@@ -362,18 +468,18 @@ main {
     margin-bottom: 40px;
 }
 
-.product-list-article{
-    transition : box-shadow 100ms
+.product-list-article {
+    transition: box-shadow 100ms
 }
 
-.product-list-article:hover{
+.product-list-article:hover {
     box-shadow: 5px 5px 5px black
 }
 
 
-.add-to-cart i{
+.add-to-cart i {
     font-size: 30px;
-    }
+}
 
 
 
@@ -381,26 +487,26 @@ main {
     font-size: 25px;
 }
 
-.description{
+.description {
     font-size: 30px;
 
 }
 
-.update-form-fields{
+.update-form-fields {
     color: red
 }
 
-.delete-product-btn{
+.delete-product-btn {
     background-color: red;
 }
 
-.back-to-product-list-btn{
+.back-to-product-list-btn {
     background-color: whitesmoke;
     color: black;
 }
 
 @media (min-width: 700px) and (max-width:1199px) {
-    
+
     .products {
         display: flex;
         flex-wrap: wrap;
@@ -410,7 +516,7 @@ main {
         width: 40vw;
     }
 
-    .products article img{
+    .products article img {
         max-width: 428px;
         max-height: 620px;
         border-radius: 1cm;
@@ -420,19 +526,12 @@ main {
 
 @media(min-width: 1200px) {
 
-/*     .products {
+    .products {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+
     }
 }
- */
-
-
-
-
-
-
-
 
 
 
@@ -444,12 +543,11 @@ footer {
     font-weight: bolder;
     text-align: center;
     width: 100%;
-    bottom: 0;
+    /* bottom: 0; */
     z-index: 200;
     color: white;
     margin-top: 5rem;
-    position: relative;
-
+    /* position: absolute; */
 }
 
 footer .follow {
