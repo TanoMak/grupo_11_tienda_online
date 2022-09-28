@@ -19,3 +19,22 @@ Resultado de retrospectiva
 5. *Dejar de hacer*: -
 
 
+
+**Sprint #4**
+
+Resultado de retrospectiva
+
+1. *Comenzar a hacer*: Aprender y empezar a utilizar diferentes "branchs" en github para asi evitar contratiempos y agilizar el proceso de codeo en grupo.
+2. *Hacer más* : Mejorar los commits, ser mas precisos en ellos y dejar una mayor constancia de los avances.
+3. *Continuar haciendo* : Seguiremos manteniendonos al dia con trello y gitHub. Seguiremos usando y colaborando en actividades del curso por medio de whatsapp. Seguiremos utilizando google meet para las meetings.
+4. *Hacer ménos* : -
+5. *Dejar de hacer*: Dejar de utilizar la rama main y priorizar las branchs individuales para avanzar con el proyecto.
+
+
+
+
+
+
+
+
+
