@@ -30,21 +30,6 @@
         "image": "image1663900573923-.jpg"
     },
     {
-        "id": 5,
-        "name": "Jogging",
-        "description": "para trabajar",
-        "price": 17000,
-        "line": "Hombre",
-        "category": "Accesorios",
-        "color": "Blanco",
-        "size": [
-            "S",
-            "M"
-        ],
-        "offerlist": true,
-        "image": "buzo.jpg"
-    },
-    {
         "id": 6,
         "name": "Jogging",
         "description": "para trabajar",

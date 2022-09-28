@@ -498,11 +498,24 @@ main {
 
 .delete-product-btn {
     background-color: red;
+    max-width: 450px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 80px;
 }
 
 .back-to-product-list-btn {
     background-color: whitesmoke;
+    max-width: 450px;
     color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 80px;
 }
 
 @media (min-width: 700px) and (max-width:1199px) {
