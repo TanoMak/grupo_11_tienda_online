@@ -20,20 +20,38 @@
         <h1>Registro</h1>
         <div>
             <div>
-                <input type="text" placeholder="Nombre Completo">
+                <input type="text" placeholder="Nombre" name="name">
             </div>
+
             <div>
-                <input type="number" placeholder="Teléfono">
+                <input type="text" placeholder="Apellido" name="last-name">
             </div>
+
             <div>
-                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Teléfono" name="phone">
             </div>
+
             <div>
-                <input type="password" placeholder="Contraseña">
+                <input type="email" placeholder="Email" name="email">
             </div>
+
+            <div>
+                <input type="text" placeholder="Direccion" name="adress">
+            </div>
+
+            <div>
+                <input type="password" placeholder="Contraseña" name="password">
+            </div>
+
             <div>
                 <input type="password" placeholder="Repetir contraseña">
-            </div>
+            </div><br>
+
+            <div>
+                <label for="avatar"> Subir foto de perfil</label>
+                <br>
+                <input type="file" name="image" placeholder="Imagen">
+            </div> 
         </div>
         <h3>
             <div><button type="submit">Crear Cuenta</button></div> 

@@ -8,5 +8,5 @@ footer {
     z-index: 200;
     color: white;
     margin-top: 5rem;
-    position: absolute;
+    /* position: relative; */
 }

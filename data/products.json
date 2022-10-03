@@ -15,21 +15,6 @@
         "image": "image1663900526527-.jpg"
     },
     {
-        "id": 4,
-        "name": "Jogging",
-        "description": "para trabajar",
-        "price": 17000,
-        "line": "Hombre",
-        "category": "Accesorios",
-        "color": "Blanco",
-        "size": [
-            "S",
-            "M"
-        ],
-        "offerlist": true,
-        "image": "image1663900573923-.jpg"
-    },
-    {
         "id": 6,
         "name": "Jogging",
         "description": "para trabajar",
@@ -161,5 +146,20 @@
         "size": "L",
         "offerlist": true,
         "image": "image1663930453925-.jpg"
+    },
+    {
+        "id": 12,
+        "name": "123",
+        "description": "123",
+        "price": 500,
+        "line": "Hombre",
+        "category": "Remeras",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "image1664837690236-.jpg"
     }
 ]
