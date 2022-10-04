@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
    
-<header>
+<head>
     <%- include("../partials/head.ejs") %>
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/login-style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/login-style.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/footer.css">
-</header>
+</head>
 
 <body>
 
@@ -16,7 +16,7 @@
 
     <!-- main -->
     <main>
-    <form class="container" action="#" method="post">
+    <form class="container" action="/users/login" method="post" enctype="multipart/form-data">
         <h1>Registro</h1>
         <div>
             <div>
@@ -44,13 +44,13 @@
             </div>
 
             <div>
-                <input type="password" placeholder="Repetir contraseña">
+                <input type="password" placeholder="Repetir contraseña" name = "password-confim">
             </div><br>
 
             <div>
                 <label for="avatar"> Subir foto de perfil</label>
                 <br>
-                <input type="file" name="image" placeholder="Imagen">
+                <input type="file" name="image-user" placeholder="Imagen">
             </div> 
         </div>
         <h3>

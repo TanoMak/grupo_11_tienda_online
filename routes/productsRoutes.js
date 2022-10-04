@@ -25,4 +25,6 @@ router.get("/edit/:id", productsController.edit);
 router.put("/edit/:id", upload.single("image"),productsController.update)
 router.delete("/delete/:id", productsController.destroy)
 
+// Carrito de compras //
+
 module.exports = router;
