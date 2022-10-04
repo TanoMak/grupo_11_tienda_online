@@ -3,8 +3,8 @@
    
 <header>
     <%- include("../partials/head.ejs") %>
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/login-style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/login-style.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/footer.css">
 </header>
 
@@ -16,7 +16,7 @@
 
     <!-- main -->
     <main>
-    <form class="container" action="#" method="post">
+    <form class="container" action="/users/register" method="post" enctype="multipart/form-data">
         <h1>Registro</h1>
         <div>
             <div>

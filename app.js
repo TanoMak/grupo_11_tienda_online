@@ -3,7 +3,9 @@ const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
 const mainRouter = require("./routes/mainRoutes");
+const userRouter = require("./routes/userRoutes");
 const productsRouter = require("./routes/productsRoutes");
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -12,6 +14,7 @@ app.use(methodOverride("_method"));
 
 app.use('/', mainRouter); 
 app.use('/products', productsRouter);
+app.use('/users', userRouter);
 
 
 
