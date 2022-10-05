@@ -6,10 +6,17 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Roboto', sans-serif;
-
 }
+
+main {
+    min-height: 80vh;
+}
+
+
+
 
 /* -----HEADER----- */
 
@@ -257,16 +264,16 @@ h3 {
         text-align: center;
         transition: all .5s;
     }
-   
+
 
     nav ul li {
-        
+
         display: block;
         margin: 3rem 0;
         line-height: 1.8rem;
 
     }
-    
+
 
     nav ul li a {
         font-size: 1.25rem;
@@ -560,6 +567,7 @@ footer {
     z-index: 200;
     color: white;
     margin-top: 5rem;
+    position: relative;
     /* position: absolute; */
 }
 

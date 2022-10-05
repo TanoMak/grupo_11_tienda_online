@@ -1,15 +1,12 @@
-* {
-    box-sizing: border-box;
-}
 
 main {
     /*margin-top: 150px;*/
     text-align: center;
 }
 
-body{
+/* body{
     padding-bottom: 15px;
-}
+} */
 
 
 .container {
@@ -84,6 +81,7 @@ body{
     cursor: pointer;
     width: 100%;
     border-radius: 80px;
+    font-size: 20px;
 
 }
 
