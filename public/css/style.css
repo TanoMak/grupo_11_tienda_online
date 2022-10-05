@@ -563,12 +563,12 @@ footer {
     font-weight: bolder;
     text-align: center;
     width: 100%;
-    /* bottom: 0; */
+    bottom: 0;
     z-index: 200;
     color: white;
     margin-top: 5rem;
     position: relative;
-    /* position: absolute; */
+    
 }
 
 footer .follow {
