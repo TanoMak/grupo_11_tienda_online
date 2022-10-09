@@ -28,7 +28,8 @@ body{
 .container input[type=password],
 .container input[list=category],
 .container input[list=line],
-.container input[type=checkbox]{
+.container input[type=checkbox]
+{
     width: 100%;
     max-width: 450px;
     padding: 12px 20px;
@@ -87,8 +88,9 @@ body{
     cursor: pointer;
     width: 100%;
     border-radius: 80px;
-
 }
+
+
 
 .google,
 .facebook {

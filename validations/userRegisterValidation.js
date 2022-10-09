@@ -9,7 +9,7 @@ module.exports = {
             .bail()
             .isLength({min:2})
             .withMessage('Completar con su nombre completo'),
-        body ("last-name")
+        body ("lastName")
             .notEmpty()
             .withMessage('Por favor escriba su apellido')
             .bail()
@@ -40,18 +40,33 @@ module.exports = {
             .isLength({min:8})
             .isAlphanumeric()
             .withMessage('La contraseña debe tener como mínimo 8 caracteres y ser alfanumérica'),
-        /* body ("password-confirm")
+        body ("passwordConfim")
             .notEmpty()
-            .withMessage("Por favor vuelva a escribar la contraseña") */
-           /*  .bail() */
-    /*         .custom(async (confirmPassword, {req}) => {
+            .withMessage("Por favor vuelva a escribar la contraseña")
+            .bail()
+            .custom(async (confirmPassword, {req}) => {
                 const password = req.body.password
            
-                // Confirma si la contraseñas coinciden 
+                // Comprueba si la contraseñas coinciden 
                 if(password !== confirmPassword){
                   throw new Error('Las contraseñas no coinciden')
                 }
-            }) */
+            }),
+        body('imageUser').custom((value, { req }) => {
+                let file = req.file;
+                let acceptedExtensions = ['.jpg', '.png', '.gif'];
+                
+                if (!file) {
+                    throw new Error('Tienes que subir una imagen');
+                } else {
+                    let fileExtension = path.extname(file.originalname);
+                    if (!acceptedExtensions.includes(fileExtension)) {
+                        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                    }
+                }
+        
+                return true;
+            }) 
            
 
     ]

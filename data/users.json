@@ -298,5 +298,32 @@
         "email": "2931711578",
         "password": "Čapljina",
         "gender": "Male"
+    },
+    {
+        "id": 31,
+        "name": "jhjh",
+        "lastName": "asdasd",
+        "phone": 54654654654,
+        "adress": "asdasd",
+        "password": "martin123456",
+        "imageUser": "imageUser1665006483372-.jpg"
+    },
+    {
+        "id": 32,
+        "name": "fdfdfd",
+        "lastName": "asdasd",
+        "phone": 123456789546,
+        "adress": "5454634",
+        "password": "martin123456",
+        "imageUser": "imageUser1665007187909-.jpg"
+    },
+    {
+        "id": 33,
+        "name": "dasd",
+        "lastName": "sdsds",
+        "phone": 212131313213123,
+        "adress": "asdasd",
+        "password": "martin123456",
+        "imageUser": "imageUser1665007302559-.jpg"
     }
 ]
