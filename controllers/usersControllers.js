@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require ("bcryptjs")
+const bcryptjs = require ("bcryptjs")
 
 
 function findAll() {
@@ -37,18 +37,13 @@ module.exports = {
         id: data.length+1,
         name: req.body.name,
         lastName: req.body.lastName,
-        phone:Number(req.body.phone),
-        email: req.body.emial,
+        phone:req.body.phone,
+        email: req.body.email,
         adress: req.body.adress,
-        password: req.body.password,
+        password: bcryptjs.hashSync(req.body.password, 10 ),
         imageUser: req.file.filename
       }
 
-      let password = req.body.password
-      let passwordEncriptada = bcrypt.hashSync(password, 10)
-
-
-    
       data.push(newUser);
     
       console.log(newUser)

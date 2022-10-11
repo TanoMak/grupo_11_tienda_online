@@ -38,8 +38,14 @@
             </div>
 
             <div>
-                <input type="text" placeholder="Apellido" name="lastName">
+                <input 
+                    type="text" 
+                    placeholder="Apellido" 
+                    name="lastName"
+                    value="<%= locals.oldData ? oldData.lastName : null %>"   
+                >
 
+                
                 <% if (locals.errors && errors.lastName){ %>
                     <div class="text-danger">
                         <%= errors.lastName.msg %> 
@@ -48,7 +54,12 @@
             </div>
 
             <div>
-                <input type="text" placeholder="Teléfono" name="phone">
+                <input 
+                    type="text" 
+                    placeholder="Teléfono" 
+                    name="phone"
+                    value="<%= locals.oldData ? oldData.phone : null %>"
+                >
 
                 <% if (locals.errors && errors.phone){ %>
                     <div class="text-danger">
@@ -60,7 +71,12 @@
 
         
             <div>
-                <input type="text" placeholder="Email" name="email">
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    name="email"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                >
 
                 <% if (locals.errors && errors.email){ %>
                     <div class="text-danger">
@@ -70,7 +86,13 @@
             </div>
 
             <div>
-                <input type="text" placeholder="Direccion" name="adress">
+                <input 
+                    type="text" 
+                    placeholder="Direccion" 
+                    name="adress"
+                    value="<%= locals.oldData ? oldData.adress : null %>"
+                    
+                >
 
                 <% if (locals.errors && errors.adress){ %>
                     <div class="text-danger">

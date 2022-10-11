@@ -1,5 +1,12 @@
 const {body} = require ("express-validator");
 const path = require("path");
+const fs = require("fs");
+
+function findAll(){
+    const jsonData = fs.readFileSync(path.join(__dirname, "../data/users.json"))
+    const data = JSON.parse(jsonData);
+    return data;
+}
 
 module.exports = {
     registerFormValidation:[
@@ -21,12 +28,22 @@ module.exports = {
             .bail()
             .isLength({min:10})
             .withMessage('El número de telefono debe tener como mínimo 10 caracteres'),
-        body ("email")
+        body("email")
             .notEmpty()
-            .withMessage("Por favor complete su dirección de e-mail")
-            .bail()
+            .withMessage("Campo email incompleto")
             .isEmail()
-            .withMessage('Debes escribir un formato de correo válido'),
+            .withMessage("formato de email invalido")
+            .custom(function(value, {req}){
+                const users = findAll()
+                const usuarioEncontrado = users.find(function(user){
+                    return user.email == value;
+                })
+                if(usuarioEncontrado){
+                    return false
+                }else{
+                    return true
+                }
+            }).withMessage("Email ya registrado") ,
         body ("adress")
             .notEmpty()
             .withMessage("Por favor complete su direccion, calle, número y depto si corresponde")
@@ -36,7 +53,6 @@ module.exports = {
         body("password")
             .notEmpty()
             .withMessage("Por favor escriba una contraseña")
-            .bail()
             .isLength({min:8})
             .isAlphanumeric()
             .withMessage('La contraseña debe tener como mínimo 8 caracteres y ser alfanumérica'),

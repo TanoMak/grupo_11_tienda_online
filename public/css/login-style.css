@@ -90,6 +90,11 @@ body{
     border-radius: 80px;
 }
 
+.text-danger{
+    text-align: left;
+    padding: 12px 20px;
+    color: red;
+}
 
 
 .google,
