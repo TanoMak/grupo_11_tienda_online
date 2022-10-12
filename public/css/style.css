@@ -101,14 +101,42 @@ a.active {
     height: fit-content;
     position: absolute;
     top: 1rem;
-    left: 65%;
+    left: 70%;
     color: white;
     display: block;
 }
 
 .search-box-sidebar {
     top: 1rem;
+    left: 15%;
+}
+
+
+.logIcon,
+.logIcon i,
+.logIcon-sidebar,
+.logIcon-sidebar i {
+    font-size: 35px;
+    right: 3rem;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0.8rem;
+    left: 68%;
+    color: white;
+    display: block;
+}
+
+.logIcon-sidebar,
+.logIcon-sidebar i {
+    top: 0.7rem;
     left: 5%;
+    display: none;
+}
+
+.logIcon i:hover,
+.logIcon-sidebar i:hover {    
+    color: #2E920C;
 }
 
 .input-search {
@@ -191,6 +219,8 @@ a.active {
     z-index: 100;
     transition: all 0.5s;
 
+    opacity: 0.8;
+
 }
 
 #sidebar.active {
@@ -254,7 +284,7 @@ h3 {
         display: block;
     }
 
-    ul {
+    nav ul {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -269,9 +299,13 @@ h3 {
     nav ul li {
 
         display: block;
-        margin: 3rem 0;
+        margin: 1.5rem 0;
         line-height: 1.8rem;
 
+    }
+
+    nav ul li:nth-child(1) {
+        margin-top: 8rem;
     }
 
 
@@ -301,6 +335,15 @@ h3 {
         display: block;
     }
 
+    .logIcon,
+    .logIcon i {
+        display: none;
+    }
+
+    .logIcon-sidebar,
+    .logIcon-sidebar i {
+        display: block;
+    }
 
 }
 
@@ -568,7 +611,7 @@ footer {
     color: white;
     margin-top: 5rem;
     position: relative;
-    
+
 }
 
 footer .follow {
