@@ -1,16 +1,26 @@
 const express = require("express");
+const session = require("express-session");
 const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
 const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
 const productsRouter = require("./routes/productsRoutes");
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+
+app.use(userLoggedMiddleware);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 app.use(methodOverride("_method"));
+
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized: false
+}))
 
 app.use('/', mainRouter); 
 app.use('/products', productsRouter);

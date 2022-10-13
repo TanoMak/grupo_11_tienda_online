@@ -12,22 +12,23 @@
 
         <label class="logo"><a href="/">EntreCasa</a></label>
 
-
-
-
-
-
-
         <ul>
-
+            
+             
+            
             <div class="search-box">
                 <button class="btn-search"><i class="fas fa-search"></i></button>
                 <input type="text" class="input-search" placeholder="Buscá acá...">
             </div>
 
-            <li><a href="/users/login">Mi cuenta</a></li>
-            <li><a href="/users/register">Registrate</a></li>
-            <li><a href="/carrito">Mis Compras</a></li>
+            
+            <% if (locals.isLogged) { %>
+                <li><a href="/users/profile">Mi cuenta</a></li>
+                <li><a href="/carrito">Mis Compras</a></li>
+            <% } else {
+                <li><a href="/users/login">Logeate</a></li>
+                <li><a href="/users/register">Registrate</a></li>
+            } %>
 
             <li>
                 <div class="search-box-sidebar">

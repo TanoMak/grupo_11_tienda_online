@@ -25,6 +25,12 @@
 
             <form class="container" action="#" method="post">
 
+                <% if (locals.errors && errors.email){ %> 
+                    <div class="text-danger">
+                        <%= errors.email.msg %> 
+
+                    </div>
+                <% } %> 
                 <input type="text" id="username" placeholder="Teléfono,e-mail o usuario" required>
 
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>

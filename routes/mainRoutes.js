@@ -7,12 +7,4 @@ router.get("/", mainController.home);
 router.get("/carrito", mainController.cart);
 
 
-
-
-/* module.exports = {
-  router,
-  default: router,
-};
- */
-
 module.exports = router
