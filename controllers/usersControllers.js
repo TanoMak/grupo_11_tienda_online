@@ -56,5 +56,11 @@ module.exports = {
 
   login: (req, res) => {
 		return res.render('users/login');
-  }
+  },
+
+  profile: (req, res) => {
+		return res.render('users/userProfile');
+  },
+
+
 }

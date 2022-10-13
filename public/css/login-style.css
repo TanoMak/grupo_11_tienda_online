@@ -96,6 +96,12 @@ body{
     color: red;
 }
 
+.profile-user-image img{
+    border-radius: inherit;
+    width: 200px;
+    height: 150px;
+}
+
 
 .google,
 .facebook {

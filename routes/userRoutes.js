@@ -46,6 +46,9 @@ router.post('/registro', upload.single('imageUser'), validations.registerFormVal
 // Formulario de login
 router.get('/login', usersController.login);
 
+// Perfil de usuario
+router.get('/micuenta', usersController.profile);
+
 module.exports = router
 
 
