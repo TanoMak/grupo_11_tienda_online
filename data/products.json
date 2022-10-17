@@ -1,4 +1,4 @@
-[
+git[
     {
         "id": 3,
         "name": "Remera",
@@ -161,5 +161,20 @@
         ],
         "offerlist": true,
         "image": "image1664837690236-.jpg"
+    },
+    {
+        "id": 12,
+        "name": "remera",
+        "description": "remera blanca ",
+        "price": 2900,
+        "line": "Mujer",
+        "category": "Remeras",
+        "color": "Blanco",
+        "size": [
+            "S",
+            "M"
+        ],
+        "offerlist": true,
+        "image": "image1666045639170-.jpg"
     }
 ]
