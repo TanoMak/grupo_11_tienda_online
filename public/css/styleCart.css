@@ -1,8 +1,10 @@
 /* ---------------- MAIN PRODUCT CART ---------------- */
 
-/* main {
+ main {
     opacity: 90%;
-} */
+} 
+
+
 
 h1 {
     display: block;
@@ -18,15 +20,18 @@ h1 {
 .products-cart-section {
     padding: 25px;
     text-align: center;
-    /* max-width: 1600px; */
+    /* max-width: 1400px; */
+    
+
     margin: auto;
-    margin-top: 10rem;    
+    margin-top: 10rem;       
+  
 }
 
 .product-section {
     position: relative;
     top: 100px;
-    text-align: center;
+    text-align: center;    
 }
 
 .product-cart-image {
@@ -37,15 +42,21 @@ h1 {
 
 article.product-cart {
     display: flex;
+    width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
+
+    
+    
+    
 }
 
 .product-cart-details {
     text-align: justify;
     padding: 10px;
     margin: top -1px;
-    ;
+    border-top: solid 1px black;
+  
 
 }
 
@@ -61,11 +72,13 @@ article.product-cart {
 }
 
 #postal-code-calc {
-    width: 100px;
+    width: 50%;
 }
 
 .delivery-cost-section {
     text-align: center;
+
+    
 }
 
 .delivery-cost-section {
@@ -76,12 +89,14 @@ article.product-cart {
     margin: 0 auto;
     height: 30px;
     border-radius: 2cm;
+
+    
 }
 
-#postal-code-calc {
+/* #postal-code-calc {
     flex-grow: 1;
     width: 100%;
-}
+} */
 
 #postal-code-btn {
     /*    position: relative;
@@ -93,7 +108,7 @@ article.product-cart {
 
     cursor: pointer;
     
-    font-size: 15px;  
+    font-size: 18px;  
 }
 
 #postal-code-calc,
@@ -110,6 +125,7 @@ article.product-cart {
     flex-direction: column;
     margin: 0 auto;
   
+    
 }
 
 .subtotal,
@@ -118,10 +134,15 @@ article.product-cart {
     display: flex;
     justify-content: space-between;
     padding-top: 1px;
+
+    
 }
 
 .total {
     font-size: x-large;
+
+    border-top: solid 1px black;
+    
 }
 
 .purchase-submit {
