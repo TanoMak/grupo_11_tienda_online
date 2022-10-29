@@ -85,12 +85,21 @@ main {
 
 }
 
+#btn-continuar,
+#btn-crear {
+background-color: white;
+color: black;
+}
+
+
 .google,
 .facebook {
     font-size: large;
     width: 150px;
     padding: 0.5rem;
     border-radius: 80px;
+
+    
 
 
 }
