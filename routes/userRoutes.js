@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
-const usersController = require("../controllers/userscontrollers");
+const usersController = require("../controllers/userController");
 
 const validations = require ("../validations/userRegisterValidation")
 
@@ -35,6 +35,9 @@ const upload = multer({
       cb(null, result);
   } 
 })
+
+// Formulario de registro
+router.get('/registro', usersController.register);
 
 // Procesar el registro
 router.post('/registro', upload.single('imageUser'), validations.registerFormValidation, usersController.processRegister);

@@ -85,6 +85,12 @@ main {
 
 }
 
+.text-danger{
+    color: red;
+    text-align: left;
+    padding: 10px
+}
+
 #btn-continuar,
 #btn-crear {
 background-color: white;

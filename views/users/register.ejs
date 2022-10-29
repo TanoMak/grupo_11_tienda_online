@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
    
-<header>
+<head>
     <%- include("../partials/head.ejs") %>
     <link href="/css/style.css" rel="stylesheet">
 	<link href="/css/login-style.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/footer.css">
-</header>
+</head>
 
 <body>
 
@@ -16,78 +16,126 @@
 
     <!-- main -->
     <main>
-    <form class="container" action="/users/register" method="post" enctype="multipart/form-data">
+    <form class="container" action="/users/registro" method="POST" enctype="multipart/form-data">
         <h1>Registro</h1>
+        <br>
+        <br>
+
         <div>
             <div>
+
                 <input 
-                type="text" 
-                name="name" 
-                class="form-select <%= locals.errors && errors.name ? "is-invalid" : null%>"
-                value="<%= locals.oldData ? oldData.name : null%>" >
-                <% if (locals.errors && errors.name) { %>
-                    <div>
-                        * <%= errors.name.msg %> 
+                    type="text" 
+                    placeholder="Nombre" 
+                    name="name" 
+                    value="<%= locals.oldData ? oldData.name : null %>"
+                >
+                <% if (locals.errors && errors.name){ %>
+                    <div class="text-danger">
+                        <%= errors.name.msg %> 
                     </div>
                 <% } %>
             </div>
-            <div>
-                <input 
-                type="number" 
-                name="phoneNumber" 
-                placeholder="Teléfono" 
-                class="form-select <%= locals.errors && errors.phoneNumber ? "is-invalid" : null%>" 
-                value="<%= locals.oldData ? oldData.name : null%>">
-                <% if (locals.errors && errors.phoneNumber) { %>
-                    <div>
-                        * <%= errors.phoneNumber.msg %> 
-                    </div>
-                <% } %>
-            </div>
+
             <div>
                 <input 
-                type="email" 
-                name="email" 
-                placeholder="Email" 
-                class="form-select <%= locals.errors && errors.email ? "is-invalid" : null%>"
-                value="<%= locals.oldData ? oldData.name : null%>">
-                <% if (locals.errors && errors.email) { %>
-                    <div>
-                        * <%= errors.email.msg %> 
+                    type="text" 
+                    placeholder="Apellido" 
+                    name="lastName"
+                    value="<%= locals.oldData ? oldData.lastName : null %>"   
+                >
+
+                
+                <% if (locals.errors && errors.lastName){ %>
+                    <div class="text-danger">
+                        <%= errors.lastName.msg %> 
                     </div>
                 <% } %>
             </div>
+
             <div>
                 <input 
-                type="password" 
-                name="password" 
-                placeholder="Contraseña" 
-                class="form-select <%= locals.errors && errors.password ? "is-invalid" : null%>">
-                <% if (locals.errors && errors.password) { %>
-                    <div>
-                        * <%= errors.password.msg %> 
+                    type="text" 
+                    placeholder="Teléfono" 
+                    name="phone"
+                    value="<%= locals.oldData ? oldData.phone : null %>"
+                >
+
+                <% if (locals.errors && errors.phone){ %>
+                    <div class="text-danger">
+                        <%= errors.phone.msg %> 
                     </div>
                 <% } %>
+
             </div>
+
+        
             <div>
-                <input type="password" placeholder="Repetir contraseña">
-                <% if (locals.errors && errors.password) { %>
-                    <div>
-                        * <%= errors.password.msg %> 
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    name="email"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                >
+
+                <% if (locals.errors && errors.email){ %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %> 
                     </div>
                 <% } %>
             </div>
+
             <div>
-                <input type="file" name="profileImage" id="">
-                <% if (locals.errors && errors.profileImage) { %>
-                    <div>
-                        * <%= errors.profileImage.msg %> 
+                <input 
+                    type="text" 
+                    placeholder="Direccion" 
+                    name="adress"
+                    value="<%= locals.oldData ? oldData.adress : null %>"
+                    
+                >
+
+                <% if (locals.errors && errors.adress){ %>
+                    <div class="text-danger">
+                        <%= errors.adress.msg %> 
                     </div>
                 <% } %>
             </div>
+
+            <div>
+                <input type="password" placeholder="Contraseña" name="password">
+
+                <% if (locals.errors && errors.password){ %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %> 
+                    </div>
+                <% } %>
+            </div>
+
+            <div>
+                <input type="password" placeholder="Repetir contraseña" name = "passwordConfim">
+                <% if (locals.errors && errors.passwordConfim){ %>
+                    <div class="text-danger">
+                        <%= errors.passwordConfim.msg %> 
+                    </div>
+                <% } %>
+
+
+            </div><br>
+
+            <div>
+                <label for="avatar"> Subir foto de perfil</label>
+                <br>
+                <input type="file" name="imageUser" placeholder="Imagen">
+
+                <% if (locals.errors && errors.imageUser){ %>
+                    <div class="text-danger">
+                        <%= errors.imageUser.msg %> 
+                    </div>
+                <% } %>
+            </div> 
         </div>
         <h3>
-            <div><button type="submit" id="btn-crear">Crear Cuenta</button></div> 
+            <div><button type="submit">Crear Cuenta</button></div> 
         </h3>
         <div>
             <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>

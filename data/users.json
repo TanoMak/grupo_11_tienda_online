@@ -298,5 +298,35 @@
         "email": "2931711578",
         "password": "Čapljina",
         "gender": "Male"
+    },
+    {
+        "id": 31,
+        "name": "martin",
+        "lastName": "pescador",
+        "phone": "1111111111",
+        "email": "martin@mail.com",
+        "adress": "hasdhasd",
+        "password": "$2a$10$Cx7slBiWOl7Oku44SJyKqOQC3ptNCXQ79VF6AasaocuWi.3CZrN46",
+        "imageUser": "imageUser1667052040256-.jpg"
+    },
+    {
+        "id": 32,
+        "name": "martin",
+        "lastName": "macc",
+        "phone": "2121212121",
+        "email": "martinmmmm@gmail.com",
+        "adress": "juan carlos 2016",
+        "password": "$2a$10$5hmlcO40iLruUSSFqIGMmewdMmrVZUIT8dMWYddwsmhWoP/AYjr3K",
+        "imageUser": "imageUser1667052563558-.jpg"
+    },
+    {
+        "id": 33,
+        "name": "martin",
+        "lastName": "macc",
+        "phone": "5546546555",
+        "email": "martin@gmail.com",
+        "adress": "juan carlos 2016",
+        "password": "$2a$10$VbfaOTww3NCPsw5Y3aqnjeieQyt7UNJAU9Pu1twEkGnLmzBVG.JOW",
+        "imageUser": "imageUser1667053149063-.jpg"
     }
 ]
