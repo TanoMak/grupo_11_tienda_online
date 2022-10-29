@@ -4,11 +4,7 @@ const path = require("path");
 const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.home);
-<<<<<<< HEAD
-router.get("/login", mainController.login);
-/* router.get("/registro", mainController.register); */
-=======
->>>>>>> main
+/* router.get("/login", mainController.login); */
 router.get("/carrito", mainController.cart);
 
 

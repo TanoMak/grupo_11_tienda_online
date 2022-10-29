@@ -99,7 +99,7 @@ const productsController = {
 destroy: (req, res) =>{
   const data = findAll();
   const prendaEncontrada = data.findIndex(function(prenda){
-      return prenda.id == req.params.id
+    return prenda.id == req.params.id
       
 
 
