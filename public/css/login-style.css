@@ -1,15 +1,12 @@
-* {
-    box-sizing: border-box;
-}
 
 main {
     /*margin-top: 150px;*/
     text-align: center;
 }
 
-body{
+/* body{
     padding-bottom: 15px;
-}
+} */
 
 
 .container {
