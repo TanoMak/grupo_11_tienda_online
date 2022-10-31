@@ -7,9 +7,7 @@ const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
 const productsRouter = require("./routes/productsRoutes");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-
-
-app.use(userLoggedMiddleware);
+const cookies = require('cookie-parse');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +19,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+app.use(cookies());
+
+app.use(userLoggedMiddleware);
+
 
 app.use('/', mainRouter); 
 app.use('/products', productsRouter);

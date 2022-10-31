@@ -22,11 +22,11 @@ router.post("/login", userController.loginProcess);
 
 //usuario
 router.get("/profile",authMiddleware , userController.profile);
-router.get("/logout",authMiddleware , userController.profile);
+router.get("/logout",authMiddleware , userController.logout);
 
 
 //form registro
-router.get("/register",userController.logout);
+router.get('/register', guestMiddleware, userController.register);
 //proceso registro
 router.post("/register", uploadFile.single("profile-image"), validationRegister, userController.processRegister);
 
