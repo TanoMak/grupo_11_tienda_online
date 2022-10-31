@@ -7,7 +7,7 @@ const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
 const productsRouter = require("./routes/productsRoutes");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-const cookies = require('cookie-parse');
+const cookies = require('cookie-parser');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
