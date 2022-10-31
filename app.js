@@ -9,10 +9,12 @@ const productsRouter = require("./routes/productsRoutes");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
 
-// view engine setup
+// view engine setup (revisar)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
 app.use(session({
   secret: "secret",

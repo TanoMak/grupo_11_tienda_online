@@ -12,8 +12,14 @@ const userController = {
     if (userToLogin) {
       let isOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
       if (isOk) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
+        /* delete userToLogin.password; */
+        req.session.userLogged = {
+          id: userToLogin.id,
+          name: userToLogin.name,
+          email: userToLogin.email,
+      };
+
+      console.log(req.session.userLogged)
 
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 2 });
