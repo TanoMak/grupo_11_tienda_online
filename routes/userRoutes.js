@@ -3,8 +3,9 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 const usersController = require("../controllers/userController");
+const authMiddleware = require('../middlewares/authMiddleware');
 
-const validations = require ("../validations/userRegisterValidation")
+const validations = require ("../validations/userValidation")
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,9 +44,15 @@ router.get('/registro', usersController.register);
 router.post('/registro', upload.single('imageUser'), validations.registerFormValidation, usersController.processRegister);
 
 // Formulario de login
-router.get('/login', usersController.login);
+router.get("/login", usersController.login);
+router.post("/login",validations.loginValidation, usersController.loginProcess);
+router.post("/logout", usersController.logout);
+
+
 
 // Perfil de usuario
-router.get('/micuenta', usersController.profile);
+router.get("/profile", authMiddleware, usersController.profile);
+// authMiddleware envía al login si el usuario no está logueado
+
 
 module.exports = router

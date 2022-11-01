@@ -10,10 +10,10 @@ main {
 
 
 .container {
-    height: auto;
+   /*  height: auto; */
     padding: 1rem;
     margin: auto;
-    text-align: center;
+   /*  text-align: center; */
     font-size: large;
 
 }
@@ -24,8 +24,8 @@ main {
 .container input[type=text],
 .container input[type=password],
 .container input[list=category],
-.container input[list=line],
-.container input[type=checkbox]{
+.container input[list=line]
+/* .container input[type=checkbox] */{
     width: 100%;
     max-width: 450px;
     padding: 12px 20px;
@@ -91,6 +91,13 @@ main {
     padding: 10px
 }
 
+.profile-user-image{
+    max-width: 200px;
+    background-color: red;
+    border-radius:30px ;
+}
+
+
 #btn-continuar,
 #btn-crear {
 background-color: white;
@@ -119,6 +126,19 @@ color: black;
     margin-top: 9rem;
 
 }
+
+.form-field{
+    text-align: left;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+
+.remember-user{
+    text-align: left;
+}
+
+
 
 
 

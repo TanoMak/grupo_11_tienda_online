@@ -13,10 +13,12 @@
         <label class="logo"><a href="/">EntreCasa</a></label>
 
 
+
+
  
-        <div class="logIcon">
+  <!--       <div class="logIcon">
             <a href="/users/login"> <i class="fa-regular fa-user"></i></a>
-        </div>  
+        </div>   -->
 
 
          <div class="search-box">
@@ -27,13 +29,38 @@
 
 
         <ul>
+            <% if(!locals.usuario){ %>
 
-            <div class="logIcon">
+       <!--      <div class="logIcon">
                 <a href="/users/login"> <i class="fa-regular fa-user"></i></a>
-            </div>  
+            </div>   -->
 
-            <li><a href="/users/registro">Registrate</a></li>
-            <li><a href="/carrito">Mis Compras</a></li>
+            <li><a href="/users/login">Iniciar sesion </a></li>
+            <li><a href="/users/registro">Registrarse </a></li>
+
+            <% }else{ %>
+                <div class = "user-on-session">
+                    <br>
+                    <label class ="username" for="">Hola! <%= usuario.name %></label>
+                    
+        
+                    <form  action="/users/logout" method="post">
+                        <button class ="logout" type="submit">Cerrar sesion</button>
+                      
+                    </form>
+                    
+                    <a href="/carrito" class ="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+
+                    <a href="/users/profile" class ="profile">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    
+
+                </div>
+              <% } %> 
+      
 
             <li>
                 <div class="logIcon-sidebar">

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+        <link href="/css/style.css" rel="stylesheet" />
+        <link href="/css/login-style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/footer.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <div class="profile-container">
+                <br>
+                <h2>¡Hola <%= usuario.name %> !</h2>
+                <div class="profile-container-a">
+                    <div>
+                        <div class="profile-user-image-container">
+                            <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
+                        </div>
+                        <div class="email">
+                            <%= usuario.email %>
+                        </div>
+                        <br>
+
+                        <div>
+                            <ul>
+                                <li>Modificar datos</li>
+                                <br>
+                                <li>Historial de compras</li>
+                                <br>
+                                <li>Dar de baja cuenta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <!-- footer -->
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

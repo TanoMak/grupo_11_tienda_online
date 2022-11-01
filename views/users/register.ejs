@@ -22,8 +22,8 @@
         <br>
 
         <div>
-            <div>
-
+            <div class =form-field>
+                <label for="">Nombre </label>
                 <input 
                     type="text" 
                     placeholder="Nombre" 
@@ -37,7 +37,8 @@
                 <% } %>
             </div>
 
-            <div>
+            <div class =form-field>
+                <label for="">Apellido </label>
                 <input 
                     type="text" 
                     placeholder="Apellido" 
@@ -53,7 +54,8 @@
                 <% } %>
             </div>
 
-            <div>
+            <div class =form-field>
+                <label for="">Teléfono </label>
                 <input 
                     type="text" 
                     placeholder="Teléfono" 
@@ -70,7 +72,8 @@
             </div>
 
         
-            <div>
+            <div class =form-field>
+                <label for="">E-mail </label>
                 <input 
                     type="email" 
                     placeholder="Email" 
@@ -85,7 +88,8 @@
                 <% } %>
             </div>
 
-            <div>
+            <div class =form-field>
+                <label for="">Dirección </label>
                 <input 
                     type="text" 
                     placeholder="Direccion" 
@@ -101,7 +105,8 @@
                 <% } %>
             </div>
 
-            <div>
+            <div class =form-field>
+                <label for="">Contraseña </label>
                 <input type="password" placeholder="Contraseña" name="password">
 
                 <% if (locals.errors && errors.password){ %>
@@ -111,7 +116,8 @@
                 <% } %>
             </div>
 
-            <div>
+            <div class =form-field>
+                <label for="">Repetir Contraseña </label>
                 <input type="password" placeholder="Repetir contraseña" name = "passwordConfim">
                 <% if (locals.errors && errors.passwordConfim){ %>
                     <div class="text-danger">
@@ -122,8 +128,8 @@
 
             </div><br>
 
-            <div>
-                <label for="avatar"> Subir foto de perfil</label>
+            <div class =form-field>
+                <label for="">Subir foto de perfil </label>
                 <br>
                 <input type="file" name="imageUser" placeholder="Imagen">
 

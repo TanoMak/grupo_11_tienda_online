@@ -15,51 +15,90 @@
 
     <!-- header  -->
     <%- include("../partials/header.ejs") %>
- 
 
-    <!-- main -->
+
+        <!-- main -->
         <main>
-        <div>
+            <div>
 
-            <!-- <h2>Ingresá con tu cuenta</h2> -->
+                <!-- <h2>Ingresá con tu cuenta</h2> -->
 
-            <form class="container" action="#" method="post">
+                <form class="container" action="/users/login" method="POST">
 
-                <h1>Login</h1>
+                    <h1>Login</h1>
 
-                <br>
-                <br>
+                    <br>
+                    <br>
 
-                <input type="text" id="username" placeholder="Teléfono,e-mail o usuario" required>
+                    <div class="text-danger">
+                        <% if(locals.errorLogin){ %>
+                            <p class="msg-error">
+                                <%= errorLogin %>
+                            </p>
+                            <%}%>
+                    </div>
 
-                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <div class="form-field">
+                        <label for=""> E-mail</label>
+                        <input type="text" id="username" placeholder="Ej : juan@mail.com" name="email">
+                        <div class=text-danger>
+                            <% if(locals.errors && locals.errors.email){ %>
+                                <p class="msg-error">
+                                    <%= locals.errors.email.msg %>
+                                </p>
+                                <%}%>
+                        </div>
+                    </div>
+                    <br>
 
 
-                <div><button type="submit" id="btn-continuar">Continuar</button></div>
 
+                    <div class="form-field">
+                        <label for=""> Contraseña</label>
+                        <input type="password" name="password" id="password">
+                        <div>
+                            <% if(locals.errors && locals.errors.password){ %>
+                                <p class="text-danger">
+                                    <%= locals.errors.password.msg %>
+                                </p>
+                                <% } %>
+                        </div>
 
-
-
-
-                <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
-
-                <button class="google"><i class="fab fa-google"></i> Google</button>
-
-
-                <div class='bottom-form'>
-                    <a href="#">
-                        <h4>Crear una cuenta</h4>
-                    </a>
+                    </div>
 
                     <br>
 
-                    <a href="#">
-                        <h4>Necesito ayuda para ingresar</h4>
-                    </a>
-                </div>
 
-            </form>
-        </div>
+                    <div class="remember-user">
+                        <input type="checkbox" name="remember" class="form-check-input">
+                        <label class="form-check-label" for="exampleCheck1"> Mantener la sesión iniciada</label>
+                    </div>
+
+                    <br>
+
+
+
+                    <div><button type="submit" id="btn-continuar">Continuar</button></div>
+
+                    <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+
+                    <button class="google"><i class="fab fa-google"></i> Google</button>
+
+
+                    <div class='bottom-form'>
+                        <a href="#">
+                            <h4>Crear una cuenta</h4>
+                        </a>
+
+                        <br>
+
+                        <a href="#">
+                            <h4>Necesito ayuda para ingresar</h4>
+                        </a>
+                    </div>
+
+                </form>
+            </div>
 
 
 

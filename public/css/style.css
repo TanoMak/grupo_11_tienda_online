@@ -90,6 +90,33 @@ a.active {
     color: #2E920C;
 }
 
+.username{
+    color: white;
+    font-size: x-large;
+}
+
+.cart{
+    color: white;
+    position: relative;
+    right: 50px;
+    bottom: 40px;
+}
+
+.profile{
+    color: white;
+    position: relative;
+    right: 120px;
+    bottom: 40px;
+}
+
+.logout{
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: medium;
+   
+}
+
+
 
 
 /* ------------ SEARCH-BAR ------------------ */
@@ -106,7 +133,7 @@ a.active {
     top: 1rem;
     left: 58%;
     color: white;
-    display: block;
+    display: none;
 }
 
 .search-box-sidebar {
@@ -208,10 +235,10 @@ a.active {
 }
 
 
-.search-box-sidebar {
+/* .search-box-sidebar {
     display: none;
 }
-
+ */
 
 
 /* ---------------- SIDE-BAR ---------------- */

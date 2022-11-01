@@ -328,5 +328,55 @@
         "adress": "juan carlos 2016",
         "password": "$2a$10$VbfaOTww3NCPsw5Y3aqnjeieQyt7UNJAU9Pu1twEkGnLmzBVG.JOW",
         "imageUser": "imageUser1667053149063-.jpg"
+    },
+    {
+        "id": 34,
+        "name": "martin",
+        "lastName": "carlitos",
+        "phone": "1234567895",
+        "email": "pato@mail.com",
+        "adress": "hasdhasd",
+        "password": "$2a$10$NMOUI/fhiNCh0u8uiQ8ffOitVVAIwP/raH3/w42Q17RG8TLpHYWTa",
+        "imageUser": "imageUser1667269600647-.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Juan carlos",
+        "lastName": "perez",
+        "phone": "1234567895",
+        "email": "cacho@mail.com",
+        "adress": "asdasdasdasd",
+        "password": "$2a$10$vl5DXJ.3n7no6uvXIdbF/.TH3N4nLxIqXYOdC967BIE9tGEDD7dC.",
+        "imageUser": "imageUser1667271090844-.jpg"
+    },
+    {
+        "id": 36,
+        "name": "martin",
+        "lastName": "carlitos",
+        "phone": "2121212121",
+        "email": "cacho1@mail.com",
+        "adress": "hasdhasd",
+        "password": "$2a$10$ca8ktEkqrLeAOJOpL9DRaO.CqsGD8jsVuHX.drDB0l8Ju2urm2xe6",
+        "imageUser": "imageUser1667322609925-.jpg"
+    },
+    {
+        "id": 37,
+        "name": "Carlos",
+        "lastName": "miguel",
+        "phone": "121212121212",
+        "email": "carlos@gmail.com",
+        "adress": "sdsdsdsds",
+        "password": "$2a$10$f2MmiMTQ68yAm1pgJaIzZOGGKMy8E7hZ.77yThqdcHmS/W/aSDBC2",
+        "imageUser": "imageUser1667336342882-.jpg"
+    },
+    {
+        "id": 38,
+        "name": "juan",
+        "lastName": "pedro",
+        "phone": "11212121212",
+        "email": "pedro@martin.com",
+        "adress": "charlone 111",
+        "password": "$2a$10$oBGr9Nki6YpRtmxuDauo2elySxVlk1x076uUU.gGs4u8YaxtTgbQu",
+        "imageUser": "imageUser1667337186070-.jpg"
     }
 ]
