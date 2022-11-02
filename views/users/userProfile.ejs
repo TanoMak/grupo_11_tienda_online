@@ -14,33 +14,34 @@
         <main>
             <div class="profile-container">
                 <br>
-                <h2>¡Hola <%= usuario.name %> !</h2>
+                <h2>¡Hola, <%= usuario.name %> !</h2>
+                <br>
+                <br>
                 <div class="profile-container-a">
-                    <div>
-                        <div class="profile-user-image-container">
-                            <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
-                        </div>
-                        <div class="email">
-                            <%= usuario.email %>
-                        </div>
-                        <br>
+                    <div class="profile-user-image-container">
+                        <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
+                    </div>
+                    <div class="email">
+                        <%= usuario.email %>
+                    </div>
+                    <br>
 
-                        <div>
-                            <ul>
-                                <li>Modificar datos</li>
-                                <br>
-                                <li>Historial de compras</li>
-                                <br>
-                                <li>Dar de baja cuenta</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <ul>
+                            <li>Modificar datos</li>
+                            <br>
+                            <li>Historial de compras</li>
+                            <br>
+                            <li>Dar de baja cuenta</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
         </main>
-    <!-- footer -->
+        <!-- footer -->
 
-    <%- include("../partials/footer.ejs") %>
+        <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>
