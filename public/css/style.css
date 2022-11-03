@@ -90,30 +90,30 @@ a.active {
     color: #2E920C;
 }
 
-.username{
+.username {
     color: white;
     font-size: x-large;
 }
 
-.cart{
+.cart {
     color: white;
     position: relative;
     right: 50px;
     bottom: 40px;
 }
 
-.profile{
+.profile {
     color: white;
     position: relative;
     right: 120px;
     bottom: 40px;
 }
 
-.logout{
+.logout {
     cursor: pointer;
     border-radius: 5px;
     font-size: medium;
-   
+
 }
 
 
@@ -165,13 +165,13 @@ a.active {
 }
 
 .logIcon i:hover,
-.logIcon-sidebar i:hover {    
+.logIcon-sidebar i:hover {
     color: #2E920C;
 }
 
 .input-search {
     height: 50px;
-    width: 50px;    
+    width: 50px;
     border-style: none;
     padding: 10px;
     font-size: 18px;
@@ -182,7 +182,7 @@ a.active {
     background-color: white;
     padding-right: 40px;
     color: white;
-    
+
 }
 
 .input-search::placeholder {
@@ -190,10 +190,10 @@ a.active {
     font-size: 18px;
     letter-spacing: 2px;
     font-weight: 100;
-    
+
 }
 
-.btn-search {    
+.btn-search {
     width: 50px;
     height: 50px;
     border-style: none;
@@ -207,7 +207,7 @@ a.active {
     color: black;
     background-color: transparent;
     pointer-events: painted;
-    
+
 }
 
 .btn-search:hover {
@@ -364,7 +364,7 @@ h3 {
         display: none;
     }
 
-    .search-box-sidebar {
+    /* .search-box-sidebar {
         display: block;
     }
 
@@ -376,8 +376,29 @@ h3 {
     .logIcon-sidebar,
     .logIcon-sidebar i {
         display: block;
-    }  
-  
+    }   */
+
+
+    .user-on-session {
+        height: 150px;
+        position: relative;
+    }
+
+
+    .cart {
+        color: white;
+        position: absolute;
+        right: 150px;
+        bottom: 0px;        
+    }   
+
+    .profile {
+        color: white;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+
 
 }
 
@@ -391,7 +412,7 @@ h3 {
     nav ul li a {
         font-size: 1rem;
 
-    }  
+    }
 }
 
 
