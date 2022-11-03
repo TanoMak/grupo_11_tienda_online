@@ -92,9 +92,10 @@ main {
 }
 
 .profile-user-image{
-    max-width: 200px;
-    background-color: red;
-    border-radius:30px ;
+    width: 150px;
+    height: 150px;
+    border-radius: 750px;
+    background-color: red
 }
 
 
