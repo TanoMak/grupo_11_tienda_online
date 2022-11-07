@@ -3,7 +3,7 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
-        <link href="/css/style.css" rel="stylesheet" />
+        <link href="/css/style.css" rel="stylesheet" />       
         <link href="/css/userProfile.css" rel="stylesheet">
 
 </head>
@@ -14,10 +14,16 @@
         <main>
             <main>
 
-                <div class="container">
-                    <div class="miCuenta">
+                <div class="profile-user-image-container">
+                    <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
+                </div> 
+                 
 
-                        <%= user.image %> 
+                <div class="container">
+                    
+                    <div class="miCuenta">
+                       
+                        
                         <ul>
                             <li><a href="/users/profile">PERFIL</a></li>
                             <li><a href="">SEGUIMIENTO DE PEDIDOS</a></li>

@@ -1,3 +1,7 @@
+main {
+    margin-top: 8rem;
+}
+
 .container {
     display: grid;
     gap: 1rem;
@@ -102,5 +106,18 @@ input:focus {
     cursor: pointer;
 
 }
+
+
+
+
+.profile-user-image{
+    display: flex;
+    max-width: 200px;
+    background-color: red;
+    border-radius: 50px ;
+    margin: auto;
+    
+}
+
 
 @media(max-width: 750px) {}
