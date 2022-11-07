@@ -386,18 +386,31 @@ h3 {
 
 
     .cart {
+        width: 50px;
         color: white;
         position: absolute;
-        right: 150px;
-        bottom: 0px;        
+        left: 50%;
+        bottom: 0px;  
+        display: none;      
     }   
 
     .profile {
+        width: 50px;
         color: white;
         position: absolute;
-        left: 0px;
+        left: 50%;
         bottom: 0px;
+        display: none;     
     }
+
+    .video {
+        display: none;
+
+        /* CHECKEAR EL ERROR QUE TIENE  */
+    }
+
+ 
+ 
 
 
 }
@@ -491,13 +504,100 @@ main {
 }
 
 
+/* VIDEO GALLERY */
+
+
+.video-gallery {
+
+
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 250px;
+    padding-top: 10px;
+    grid-gap: 5px;
+    max-width: 1400px;
+    
+}
+
+
+
+.video {
+    position: relative;    
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video:nth-child(1) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+.video:nth-child(2) {
+    grid-column-start: span 1;
+}
+
+.video:nth-child(3) {
+    grid-row-start: span 1;
+}
+
+
+/* Newsletter home */
+
+.form-newsletter{     
+    width: 100%;
+    height: 250px;
+    margin-top: 5rem;
+    margin-bottom: -2rem;
+    background-color: rgb(182, 182, 182);
+    color: white;
+    
+    display: flex;
+    text-align: center;    
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{}
+.newsletter-title{}
+
+
+.form-newsletter input{
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid white;
+}
+
+
+#suscribirme {
+    max-width: 150px;  
+}
+
+
+.form-newsletter input:hover {
+    opacity: 0.6;
+}
+
+
+
+
+
+
 /* NUEVA TEMPORADA */
 
 
 
 /* titulo de la seccion */
 #ofertas,
-#nueva-temporada {
+#nueva-temporada,
+#consejos {
     margin-top: 5rem;
     color: black;
     font-size: 25px;
