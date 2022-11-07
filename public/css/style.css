@@ -111,9 +111,17 @@ a.active {
 
 .logout {
     cursor: pointer;
+    padding: 2px;
+
     border-radius: 5px;
     font-size: medium;
 
+}
+
+.logout:hover{
+    background-color: green;
+    color: white;
+    transition: .5s;
 }
 
 
