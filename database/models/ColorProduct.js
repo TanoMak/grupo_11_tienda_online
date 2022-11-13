@@ -13,13 +13,13 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         color_id: {
-
+            type: dataTypes.INTEGER
         },
         field: {
 
         },
         product_id: {
-
+            type: dataTypes.INTEGER
         } 
     
     };
