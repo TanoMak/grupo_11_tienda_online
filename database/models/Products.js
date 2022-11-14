@@ -41,6 +41,47 @@ module.exports = (sequelize, dataTypes) => {
     
     const Product = sequelize.define(alias, cols, config);
 
+    Product.associate = function(models){
+        Product.belongsToMany(models.Images, {
+            as: "images",
+            through: "image_product",
+            foreignKey: "product_id",
+            otherKey: "image_id",
+            timestamps: false
+        });
+
+        Product.belongsToMany(models.Colors, {
+            as: "colors",
+            through: "color_product",
+            foreignKey: "product_id",
+            otherKey: "color_id",
+            timestamps: false
+        });
+
+        Product.belongsToMany(models.Sizes, {
+            as: "sizes",
+            through: "product_size",
+            foreignKey: "product_id",
+            otherKey: "size_id",
+            timestamps: false
+        });
+
+        Product.hasMany(models.ProductCart, {
+            as: "productcarts",
+            foreignKey: "product_id",
+        });
+
+        Product.belongsTo(models.CategoryProduct, {
+            as: 'categories',
+            foreignKey: 'category_id',
+        });
+
+        Product.belongsTo(models.LineProduct, {
+            as: 'lines',
+            foreignKey: 'line_id',
+        });
+    }
+
 
     return Product;
 };
