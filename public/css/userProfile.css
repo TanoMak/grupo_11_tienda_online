@@ -25,12 +25,11 @@ main {
 
 .miCuenta {
     grid-column: span 1;
-    grid-row-start: span 40;
+    grid-row-start: span 35;
     padding: 1rem;
 
 
     border: solid 2px black;
-
 }
 
 
@@ -41,7 +40,7 @@ main {
 
 .perfil {
     grid-column: span 3;
-    grid-row-start: span 40;
+    grid-row-start: span 35;
 
 
 
