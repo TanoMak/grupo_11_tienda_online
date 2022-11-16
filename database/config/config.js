@@ -1,9 +1,9 @@
-{
+module.exports ={
   "development": {
     "username": "sanmigue_entrecasa",
     "password": 'entrecasa1234',
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "database": "sanmigue_entrecasa",
+    "host": "aimara.lineadns.com",
     "dialect": "mysql"
   },
   "test": {

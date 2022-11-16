@@ -378,5 +378,15 @@
         "adress": "charlone 111",
         "password": "$2a$10$oBGr9Nki6YpRtmxuDauo2elySxVlk1x076uUU.gGs4u8YaxtTgbQu",
         "imageUser": "imageUser1667337186070-.jpg"
+    },
+    {
+        "id": 39,
+        "name": "carlos",
+        "lastName": "garcia",
+        "phone": "1167958797",
+        "email": "carlos@mail.com",
+        "adress": "asdasdasdasd",
+        "password": "$2a$10$pIxAlKnOql.OCelLY6E6oeludhb/2TOUFViCqdqwKQp6Ad6BZy0t6",
+        "imageUser": "imageUser1668635841473-.jpg"
     }
 ]
