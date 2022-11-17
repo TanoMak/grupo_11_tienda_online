@@ -30,8 +30,8 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     
-    const CategoryProduct = sequelize.define(alias, cols, config);
+    const CartDetailProduct = sequelize.define(alias, cols, config);
 
 
-    return CategoryProduct;
+    return CartDetailProduct;
 };
