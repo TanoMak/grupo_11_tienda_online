@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'products';
+    let alias = 'Product';
 
     let cols = {
         id: {
@@ -21,10 +21,6 @@ module.exports = (sequelize, dataTypes) => {
         price: {
             type: dataTypes.NUMBER
         },
-        size: {
-            type: dataTypes.INTEGER
-        }
-
     };
 
     let config = {
@@ -35,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-   /*  Product.associate = function (models) {
+    Product.associate = function (models) {
         Product.belongsToMany(models.Image, {
             as: "images",
             through: "image_product",
@@ -60,21 +56,21 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         });
 
-        Product.hasMany(models.ProductCart, {
+/*         Product.hasMany(models.ProductCart, {
             as: "productcarts",
             foreignKey: "product_id",
-        });
+        }); */
 
-        Product.belongsTo(models.CategoryProduct, {
+        Product.belongsTo(models.Category, {
             as: 'categories',
             foreignKey: 'category_id',
         });
 
-        Product.belongsTo(models.LineProduct, {
+        Product.belongsTo(models.Line, {
             as: 'lines',
             foreignKey: 'line_id',
         });
-    } */
+    }
 
 
     return Product;

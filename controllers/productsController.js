@@ -3,9 +3,12 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+
+// Se requieren los modelos //
 const Products = db.Product
 
-sequelize.authenticate().then(function(errors) { console.log(errors) });
+sequelize.authenticate()
+.then(function(errors) { console.log(errors) });
 
 
 function findAll() {
@@ -22,17 +25,10 @@ function writeFile(data) {
 }
 
 const productsController = {
-  /*   list: (req, res) => {
-      const data = findAll();
-      res.render("products/productList", { products: data });
-    }, */
-
-    
-
   list: (req, res) => {
     Products.findAll()
       .then(products => {
-        res.render('productslist.ejs', { products })
+        res.render('products/productlist', { products })
       })
 
   },
