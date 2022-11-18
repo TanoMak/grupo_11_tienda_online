@@ -1,5 +1,12 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+const Products = db.Product
+
+sequelize.authenticate().then(function(errors) { console.log(errors) });
+
 
 function findAll() {
   const jsonData = fs.readFileSync(
@@ -15,20 +22,21 @@ function writeFile(data) {
 }
 
 const productsController = {
+  /*   list: (req, res) => {
+      const data = findAll();
+      res.render("products/productList", { products: data });
+    }, */
+
+    
+
   list: (req, res) => {
-    const data = findAll();
-    res.render("products/productList", { products: data });
+    Products.findAll()
+      .then(products => {
+        res.render('productslist.ejs', { products })
+      })
+
   },
 
-/*   offerlist: (req, res) => {
-    const data = findAll();
-    const listadoOfertas = data.filter(function(prenda){
-      return prenda.offerlist == true
-    })
-
-    res.render("index", { productos: listadoOfertas });
-
-  }, */
   productDetail: (req, res) => {
     const data = findAll();
     const prendaEncontrada = data.find(function (prenda) {
@@ -44,10 +52,10 @@ const productsController = {
     const data = findAll();
 
     const newProduct = {
-      id: data.length+1,
+      id: data.length + 1,
       name: req.body.name,
       description: req.body.description,
-      price:Number(req.body.price),
+      price: Number(req.body.price),
       line: req.body.line,
       category: req.body.category,
       color: req.body.color,
@@ -65,19 +73,19 @@ const productsController = {
     res.redirect("/products/create");
   },
 
-  edit: (req, res) =>{
+  edit: (req, res) => {
     const data = findAll();
-    const prendaEncontrada = data.find(function(prenda){
-      return prenda.id ==req.params.id
+    const prendaEncontrada = data.find(function (prenda) {
+      return prenda.id == req.params.id
 
     })
-    res.render ("products/productUpdateForm", {prenda : prendaEncontrada})
+    res.render("products/productUpdateForm", { prenda: prendaEncontrada })
   },
 
-  update: (req, res) =>{
+  update: (req, res) => {
     const data = findAll()
-    const prendaEncontrada = data.find(function(prenda){
-        return prenda.id ==req.params.id
+    const prendaEncontrada = data.find(function (prenda) {
+      return prenda.id == req.params.id
     })
 
     prendaEncontrada.name = req.body.name;
@@ -87,31 +95,31 @@ const productsController = {
     prendaEncontrada.category = req.body.category;
     prendaEncontrada.color = req.body.color;
     prendaEncontrada.size = req.body.size;
-    prendaEncontrada.offerlist= req.body.offerlist;
+    prendaEncontrada.offerlist = req.body.offerlist;
     prendaEncontrada.image = req.file.filename
 
     writeFile(data)
 
- res.redirect("/products/list")
+    res.redirect("/products/list")
 
-},
+  },
 
-destroy: (req, res) =>{
-  const data = findAll();
-  const prendaEncontrada = data.findIndex(function(prenda){
+  destroy: (req, res) => {
+    const data = findAll();
+    const prendaEncontrada = data.findIndex(function (prenda) {
       return prenda.id == req.params.id
-      
 
 
-  })
 
-  data.splice(prendaEncontrada, 1)
+    })
 
-  writeFile(data)
+    data.splice(prendaEncontrada, 1)
 
-  res.redirect("/products/list")
+    writeFile(data)
 
-}
+    res.redirect("/products/list")
+
+  }
 
 };
 

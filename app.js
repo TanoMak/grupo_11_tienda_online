@@ -9,6 +9,7 @@ const productsRouter = require("./routes/productsRoutes");
 const localsMiddleware = require('./middlewares/localsMiddlware');
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookieParser = require('cookie-parser');
+const models = require('./database/models').default
 
 
 // view engine setup

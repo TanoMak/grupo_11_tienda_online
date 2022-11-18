@@ -38,13 +38,13 @@ module.exports = (sequelize, dataTypes) => {
     
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = function(models){
+/*     User.associate = function(models){
         User.hasMany(models.ProductCart, {
             as: "ProductCarts",
             foreignKey: "user_id",            
         });
     }
-
+ */
 
     return User;
 };

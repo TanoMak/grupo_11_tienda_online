@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'image_product';
+    let alias = 'images';
 
     let cols = {
         id: {
@@ -9,22 +9,22 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        image_id: {
-            type: dataTypes.INTEGER
+        name: {
+            type: dataTypes.STRING
         },
-        product_id: {
-            type: dataTypes.INTEGER
+        path: {
+            type: dataTypes.STRING
         }
     };
     
     let config = {
         timestamps: false,
-        tableName: 'image_product'
+        tableName: 'images'
     };
 
     
-    const ImageProduct = sequelize.define(alias, cols, config);
+    const Image = sequelize.define(alias, cols, config);
 
 
-    return ImageProduct;
+    return Image;
 };
