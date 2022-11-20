@@ -18,25 +18,25 @@
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
-          <img src="/images/Pants.jpg" width="100%" id="ProductImg" />
+          <img src="/images/<%= prenda.image ? prenda.image : "remera-blanca.jpg" %>" alt="x" class="product_img" />
           <div class="small-img-row">
             <div class="small-img-col">
-              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/<%= prenda.image ? prenda.image : "remera-blanca.jpg" %>" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/<%= prenda.image ? prenda.image : "remera-blanca.jpg" %>" width="100%" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/<%= prenda.image ? prenda.image : "remera-blanca.jpg" %>" width="100%" class="small-img" />
             </div>
             <div class="small-img-col">
-              <img src="/images/Pants.jpg" alt="" width="100%" class="small-img" />
+              <img src="/images/<%= prenda.image ? prenda.image : "remera-blanca.jpg" %>" width="100%" class="small-img" />
             </div>
           </div>
         </div>
         <div class="col-2">
           <p>Home / Pants</p>
-          <h1><%= prenda.name %></h1>
+          <h1><%= prenda.product_name %></h1>
           <h4><%= prenda.price %></h4>
           <select name="" id="" class="select">
             <option value="">Select Size</option>
@@ -53,7 +53,7 @@
               <span>Añadir al carrito</span>
             </button>
           </div>
-          <h3>Producto details</h3>
+          <h3>Descrpción del Producto</h3>
           <p>
             <%= prenda.description %>
           </p>

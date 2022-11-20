@@ -4,25 +4,23 @@ const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
-// Se requieren los modelos //
+// Se requieren las tablas  //
 const Products = db.Product
+const Categories = db.Category
+const Colors = db.Color
+const Lines = db.Line
+const Sizes = db.Size
+const ColorProduct = db.color_product
 
+// Revisa si la conexíon con la base de datos es corercta //
 sequelize.authenticate()
-.then(function(errors) { console.log(errors) });
-
-
-function findAll() {
-  const jsonData = fs.readFileSync(
-    path.join(__dirname, "../data/products.json")
-  );
-  const data = JSON.parse(jsonData);
-  return data;
-}
-
-function writeFile(data) {
-  const dataString = JSON.stringify(data, null, 4);
-  fs.writeFileSync(path.join(__dirname, "../data/products.json"), dataString);
-}
+  .then(function (errors) {
+    if (errors != undefined) {
+      console.log(errors)
+    } else {
+      console.log("Acceso exitoso a la base de datos ")
+    }
+  });
 
 const productsController = {
   list: (req, res) => {
@@ -34,38 +32,48 @@ const productsController = {
   },
 
   productDetail: (req, res) => {
-    const data = findAll();
-    const prendaEncontrada = data.find(function (prenda) {
-      return prenda.id == req.params.id;
-    });
-
-    res.render("products/productDetail", { prenda: prendaEncontrada });
+    Products.findByPk(req.params.id)
+      .then(prenda => {
+        res.render("products/productDetail", { prenda });
+      })
   },
-  create: (req, res) => {
-    res.render("products/productRegister");
+
+  add: (req, res) => {
+    let listadoCategorias = Categories.findAll()
+    let listadoColores = Colors.findAll()
+    let listadoLineas = Lines.findAll()
+    let listadoTalles = Sizes.findAll()
+
+    Promise.all([listadoCategorias, listadoColores, listadoLineas, listadoTalles])
+      .then(function ([Category, Color, Line, Size]) {
+        res.render("products/productRegister", {
+          Categories: Category,
+          Colors: Color,
+          Lines: Line,
+          Sizes: Size
+        })
+      })
   },
   store: (req, res) => {
-    const data = findAll();
-
-    const newProduct = {
-      id: data.length + 1,
-      name: req.body.name,
+    const newProduct = Products.create({
+      product_code: req.body.code,
+      line_id: req.body.line,
+      product_name: req.body.name,
+      price: req.body.price,
       description: req.body.description,
-      price: Number(req.body.price),
-      line: req.body.line,
-      category: req.body.category,
-      color: req.body.color,
-      size: req.body.size,
-      offerlist: Boolean(req.body.offerlist),
-      image: req.file.filename,
-    };
+      color_id: req.body.color,
+      size_id: req.body.size,
+      category_id: req.body.category,
+      image_id: req.file.filename
+    })
 
-    data.push(newProduct);
-
-    console.log(newProduct)
-
-    writeFile(data);
-
+    // Hay que hacer el regsitro en la tabla color_product //
+ /*    const newColorSelection = ColorProduct.create({
+      product_id : newProduct.id,
+      color_id : req.body.color
+     })
+ */
+   
     res.redirect("/products/create");
   },
 

@@ -7,13 +7,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
         },
         product_code: {
             type: dataTypes.STRING
-        },
-        line_id: {
-            type: dataTypes.INTEGER
         },
         product_name: {
             type: dataTypes.STRING
@@ -21,6 +17,11 @@ module.exports = (sequelize, dataTypes) => {
         price: {
             type: dataTypes.NUMBER
         },
+        description : {
+            type : dataTypes.STRING
+        }
+
+
     };
 
     let config = {
@@ -33,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = function (models) {
         Product.belongsToMany(models.Image, {
-            as: "images",
+            as: "image",
             through: "image_product",
             foreignKey: "product_id",
             otherKey: "image_id",
@@ -41,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
         });
 
         Product.belongsToMany(models.Color, {
-            as: "colors",
+            as: "color_select",
             through: "color_product",
             foreignKey: "product_id",
             otherKey: "color_id",
@@ -49,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
         });
 
         Product.belongsToMany(models.Size, {
-            as: "sizes",
+            as: "size",
             through: "product_size",
             foreignKey: "product_id",
             otherKey: "size_id",
@@ -62,12 +63,12 @@ module.exports = (sequelize, dataTypes) => {
         }); */
 
         Product.belongsTo(models.Category, {
-            as: 'categories',
+            as: 'category',
             foreignKey: 'category_id',
         });
 
         Product.belongsTo(models.Line, {
-            as: 'lines',
+            as: 'line',
             foreignKey: 'line_id',
         });
     }

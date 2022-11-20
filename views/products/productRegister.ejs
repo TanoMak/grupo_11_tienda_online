@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-   
+
 <header>
     <%- include("../partials/head.ejs") %>
-    <link href="/css/style.css" rel="stylesheet">
-	<link href="/css/login-style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/login-style.css" rel="stylesheet">
 </header>
 
 <body>
@@ -13,93 +13,87 @@
     <%- include("../partials/header.ejs") %>
 
 
-    <!-- main -->
-    <main>
-        <form class="container" enctype="multipart/form-data" action="/products/create" method="POST">
-            <h1>Registro de producto</h1>        
-            <br>
-         <div>
-             <div>
-                <input type="text" name="name" placeholder="Nombre">
-             </div>
-             <div>
-                <input type="text" name="description" placeholder="Descripción">
-             </div>
+        <!-- main -->
+        <main>
+            <form class="container" enctype="multipart/form-data" action="/products/create" method="POST">
+                <h1>Registro de producto</h1>
+                <br>
+                <div>
+                    <div>
+                        <input type="text" name="code" placeholder="Codigo">
+                    </div>
+                    <div>
+                        <input type="text" name="name" placeholder="Nombre">
+                    </div>
+                    <div>
+                        <input type="text" name="description" placeholder="Descripción">
+                    </div>
+                    <div>
+                        <input type="number" name="price" placeholder="Precio">
+                    </div>
+                    <div>
+                        <select name="line" class="line" >
+                            <option value="" disabled selected>- Seleccionar Linea - </option>
+                            <% Lines.forEach(Line => { %>
+                            <option value="<%= Line.id %>"><%= Line.name %> </option>
+                            <% }) %>
+                        </select>
+
+                    </div>
+                    <div>
+                        <select name="category" class="category" >
+                            <option value="" disabled selected>- Seleccionar Categoria - </option>
+                            <% Categories.forEach(Category=> { %>
+                            <option value="<%= Category.id %>"><%= Category.name %> </option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="color-selection-register">
+                        <label for="color">Disponible en color</label><br>
+                        <% Colors.forEach(Color=> { %>
+                        <label><input type="checkbox" name="color" value="<%= Color.id %>"> <%= Color.name %></label><br>
+                        <% }) %>
+
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="size-selection-register">
+                        <label for="size">Disponible en Talles</label><br>
+                        <% Sizes.forEach(Size=> { %>
+                        <label><input type="checkbox" name="size" value="<%= Size.id %>"> <%= Size.name %></label><br>
+                        <% }) %>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div>
+                        <input type="file" name="image" placeholder="Imagen">
+                    </div>
+                </div>
+
+                <div><button type="submit"> Agregar Producto </button></div>
+            </form>
+
             <div>
-                <input type="number" name="price" placeholder="Precio">
+                <a href="/products/list">
+                    <button class="back-to-product-list-btn" type="button">Volver al listado de productos
+                    </button>
+                </a>
             </div>
-            <div>
-                <input list="line" name="line" placeholder="Elija una Linea">
-                <datalist id ="line">
-                    <option value="Mujer"></option>
-                    <option value="Hombre"></option>
-                </datalist>
-            </div>
-            <div>
-                <input list="category" name="category" placeholder="Elija una categoría">
-                <datalist id = "category">
-                    <option value="Pantalones"></option>
-                    <option value="Remeras"></option>
-                    <option value="Camperas"></option>
-                    <option value="Accesorios"></option>
-                </datalist>
-            </div>
-            <br>
-
-            <div class ="color-selection-register">
-                <label for="color">Disponible en color</label><br>
-                <label><input type="checkbox" name ="color", value="Blanco"> Blanco</label><br>
-                <label><input type="checkbox" name ="color", value="Negro"> Negro</label><br>
-        
-            </div>
-            <br>
-            <br>
-
-            <div class ="size-selection-register">
-                <label for="size">Disponible en talles </label><br>
-                <label><input type="checkbox" name ="size", value="S">S</label><br>
-                <label><input type="checkbox" name ="size", value="M">M</label><br>
-                <label><input type="checkbox" name ="size", value="L">L</label><br>
-                <label><input type="checkbox" name ="size", value="X">XL</label><br>
-        
-            </div>
-            <br>
-            <br>
-
-            <div class = "offer-selection-register">
-                <label for="offerlist">Sección de Ofertas</label>
-                <input type="radio" name="offerlist" value= false checked="yes">NO
-                <input type="radio" name="offerlist" value= true>SI
-
-            </div>
-            <br>
 
 
 
-            <div>
-                <input type="file" name="image" placeholder="Imagen">
-            </div>            
-            </div>
-      
-            <div><button type="submit"> Agregar Producto </button></div> 
-        </form>
-
-        <div>
-            <a href="/products/list">
-                <button class="back-to-product-list-btn" type="button">Volver al listado de productos
-                </button>
-            </a>
-        </div>
-
-        
 
 
-        
-    </main>
+        </main>
 
 
-    <!-- footer -->
-    <%- include("../partials/footer.ejs") %>
+        <!-- footer -->
+        <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>

@@ -7,7 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
         },
         name: {
             type: dataTypes.STRING
@@ -20,8 +19,14 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     
-    const LineProduct = sequelize.define(alias, cols, config);
+    const Line = sequelize.define(alias, cols, config);
 
+    Line.associate = function(models){
+        Line.hasMany(models.Product, {
+            as : "Product",
+            foreignKey : "line_id"
+        })
+    }
 
-    return LineProduct;
+    return Line;
 };
