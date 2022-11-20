@@ -21,12 +21,12 @@ module.exports = {
     } else {
       db.User.create({
         name: req.body.name,
-        lastName: req.body.lastName,
+        lastname: req.body.lastName,
         phone: req.body.phone,
         email: req.body.email,
-        adress: req.body.adress,
+        address: req.body.adress,
         password: bcryptjs.hashSync(req.body.password, 10),
-        imageUser: req.file.filename,
+        profile_photo: req.file.filename,
       });
 
       res.redirect("/users/login");

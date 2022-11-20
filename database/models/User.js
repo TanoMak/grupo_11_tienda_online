@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING
         },
-        last_name: {
+        lastname: {
             type: dataTypes.STRING
         },
         email: {
@@ -27,12 +27,15 @@ module.exports = (sequelize, dataTypes) => {
         phone: {
             type: dataTypes.STRING
         },
+        password :{
+            type: dataTypes.STRING
+        }
     
     };
     
     let config = {
         timestamps: false,
-        tableName: 'user'
+        tableName: 'users'
     };
 
     
