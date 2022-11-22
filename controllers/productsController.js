@@ -10,7 +10,6 @@ const Categories = db.Category
 const Colors = db.Color
 const Lines = db.Line
 const Sizes = db.Size
-const ColorProduct = db.color_product
 
 // Revisa si la conexíon con la base de datos es corercta //
 sequelize.authenticate()
@@ -55,76 +54,84 @@ const productsController = {
       })
   },
   store: (req, res) => {
-    const newProduct = Products.create({
+    Products.create({
       product_code: req.body.code,
       line_id: req.body.line,
       product_name: req.body.name,
       price: req.body.price,
       description: req.body.description,
-      color_id: req.body.color,
-      size_id: req.body.size,
       category_id: req.body.category,
       image_id: req.file.filename
     })
+      .then((producto) => {
+        producto.setColors(req.body.color)
+        producto.setSizes(req.body.size)
 
-    // Hay que hacer el regsitro en la tabla color_product //
- /*    const newColorSelection = ColorProduct.create({
-      product_id : newProduct.id,
-      color_id : req.body.color
-     })
- */
-   
-    res.redirect("/products/create");
+        res.redirect("/products/create");
+      })
+
   },
 
   edit: (req, res) => {
-    const data = findAll();
-    const prendaEncontrada = data.find(function (prenda) {
-      return prenda.id == req.params.id
+    let productSelected = Products.findByPk(req.params.id);
+    let listadoCategorias = Categories.findAll()
+    let listadoColores = Colors.findAll()
+    let listadoLineas = Lines.findAll()
+    let listadoTalles = Sizes.findAll()
 
-    })
-    res.render("products/productUpdateForm", { prenda: prendaEncontrada })
+    Promise.all([productSelected, listadoCategorias, listadoColores, listadoLineas, listadoTalles])
+      .then(function ([Product, Category, Color, Line, Size]) {
+        res.render("products/productUpdateForm", {
+          Products: Product,
+          Categories: Category,
+          Colors: Color,
+          Lines: Line,
+          Sizes: Size
+        })
+      })
+
   },
 
   update: (req, res) => {
-    const data = findAll()
-    const prendaEncontrada = data.find(function (prenda) {
-      return prenda.id == req.params.id
-    })
+    Products.update({
+      product_code: req.body.code,
+      line_id: req.body.line,
+      product_name: req.body.name,
+      price: req.body.price,
+      description: req.body.description,
+      category_id: req.body.category,
+    },
+      {
+        where: {
+          id: req.params.id
+        }
+      })
 
-    prendaEncontrada.name = req.body.name;
-    prendaEncontrada.description = req.body.description;
-    prendaEncontrada.price = req.body.price;
-    prendaEncontrada.line = req.body.line;
-    prendaEncontrada.category = req.body.category;
-    prendaEncontrada.color = req.body.color;
-    prendaEncontrada.size = req.body.size;
-    prendaEncontrada.offerlist = req.body.offerlist;
-    prendaEncontrada.image = req.file.filename
+      .then(() => {
+        res.redirect("/products/list")
+      })
 
-    writeFile(data)
-
-    res.redirect("/products/list")
-
+      .catch((error) => {
+        res.send(error)
+      })
   },
 
   destroy: (req, res) => {
-    const data = findAll();
-    const prendaEncontrada = data.findIndex(function (prenda) {
-      return prenda.id == req.params.id
-
-
-
+    Products.findByPk()
+    Products.destroy({
+      where: { id: req.params.id },
+      force: true
     })
 
-    data.splice(prendaEncontrada, 1)
+      .then(() => {
+        res.redirect("/products/list")
+      })
 
-    writeFile(data)
-
-    res.redirect("/products/list")
+      .catch((error) => {
+        res.send(error)
+      })
 
   }
-
 };
 
 module.exports = productsController;

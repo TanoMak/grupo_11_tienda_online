@@ -26,7 +26,8 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        tableName: 'products'
+        tableName: 'products',
+        paranoid : true
     };
 
 
@@ -42,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
         });
 
         Product.belongsToMany(models.Color, {
-            as: "color_select",
+            as: "colors",
             through: "color_product",
             foreignKey: "product_id",
             otherKey: "color_id",
@@ -50,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
         });
 
         Product.belongsToMany(models.Size, {
-            as: "size",
+            as: "sizes",
             through: "product_size",
             foreignKey: "product_id",
             otherKey: "size_id",
