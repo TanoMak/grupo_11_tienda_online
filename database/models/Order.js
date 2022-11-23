@@ -1,4 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
+    
+    // VOLVER A PLANTEAR CON LOS NUEVOS CAMPOS //
 
     let alias = 'product_cart';
 
