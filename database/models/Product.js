@@ -19,14 +19,19 @@ module.exports = (sequelize, dataTypes) => {
         },
         description : {
             type : dataTypes.STRING
-        }
+        },
+
+
 
 
     };
 
     let config = {
-        timestamps: false,
         tableName: 'products',
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
         paranoid : true
     };
 
@@ -34,12 +39,9 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
-        Product.belongsToMany(models.Image, {
-            as: "image",
-            through: "image_product",
-            foreignKey: "product_id",
-            otherKey: "image_id",
-            timestamps: false
+        Product.hasMany(models.Image, {
+            as: "images",
+            foreignKey: "product_id"
         });
 
         Product.belongsToMany(models.Color, {

@@ -14,8 +14,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     
     let config = {
-        timestamps: false,
-        tableName: 'line_product'
+        timestamps: true,
+        tableName: 'line_product',
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid : true
     };
 
     

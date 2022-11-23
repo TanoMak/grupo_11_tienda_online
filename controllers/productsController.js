@@ -10,6 +10,7 @@ const Categories = db.Category
 const Colors = db.Color
 const Lines = db.Line
 const Sizes = db.Size
+const Images = db.Image
 
 // Revisa si la conexíon con la base de datos es corercta //
 sequelize.authenticate()
@@ -23,7 +24,9 @@ sequelize.authenticate()
 
 const productsController = {
   list: (req, res) => {
-    Products.findAll()
+    Products.findAll(
+      { include: [{ association: "images" }] }
+    )
       .then(products => {
         res.render('products/productlist', { products })
       })
@@ -31,9 +34,10 @@ const productsController = {
   },
 
   productDetail: (req, res) => {
-    Products.findByPk(req.params.id)
-      .then(prenda => {
-        res.render("products/productDetail", { prenda });
+    Products.findByPk(req.params.id,
+      { include: ["colors", "images", "sizes", "category", "line"] })
+      .then(prendas => {
+        res.render("products/productDetail", { prendas });
       })
   },
 
@@ -53,22 +57,29 @@ const productsController = {
         })
       })
   },
-  store: (req, res) => {
-    Products.create({
+  store: async (req, res) => {
+    let productToCretae = await Products.create({
       product_code: req.body.code,
       line_id: req.body.line,
       product_name: req.body.name,
       price: req.body.price,
       description: req.body.description,
       category_id: req.body.category,
-      image_id: req.file.filename
     })
-      .then((producto) => {
-        producto.setColors(req.body.color)
-        producto.setSizes(req.body.size)
 
-        res.redirect("/products/create");
-      })
+    let imagesTocreate = req.files.map(file => {
+      return {
+        name: file.filename,
+        product_id: productToCretae.id,
+      }
+    })
+    await Images.bulkCreate(imagesTocreate);
+    await productToCretae.setColors(req.body.color);
+    await productToCretae.setSizes(req.body.size)
+
+
+    res.redirect("/products/create");
+
 
   },
 
@@ -92,8 +103,8 @@ const productsController = {
 
   },
 
-  update: (req, res) => {
-    Products.update({
+  update: async (req, res) => {
+    await Products.update({
       product_code: req.body.code,
       line_id: req.body.line,
       product_name: req.body.name,
@@ -107,29 +118,25 @@ const productsController = {
         }
       })
 
-      .then(() => {
-        res.redirect("/products/list")
-      })
+    let productFound = await Products.findByPk(req.params.id);
+    if (productFound) {
+      await productFound.setColors(req.body.color);
+      await productFound.setSizes(req.body.size);
+    }
+    res.redirect("/products/list");
 
-      .catch((error) => {
-        res.send(error)
-      })
   },
 
-  destroy: (req, res) => {
-    Products.findByPk()
-    Products.destroy({
-      where: { id: req.params.id },
-      force: true
+  destroy: async (req, res) => {
+    let productToDelete = await Products.findByPk(req.params.id);
+    await productToDelete.setColors([]);
+    await productToDelete.setSizes([]);
+    await productToDelete.destroy({
+      where: {
+        id: req.params.id
+      }
     })
-
-      .then(() => {
-        res.redirect("/products/list")
-      })
-
-      .catch((error) => {
-        res.send(error)
-      })
+    res.redirect("/products/list");
 
   }
 };
