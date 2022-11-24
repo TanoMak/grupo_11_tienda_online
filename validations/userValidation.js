@@ -1,4 +1,4 @@
-const { body} = require("express-validator");
+const { body } = require("express-validator");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
@@ -29,11 +29,12 @@ module.exports = {
             .withMessage("Campo email incompleto")
             .isEmail()
             .withMessage("formato de email invalido")
-            .custom(function (value, { req }) {
-                const usuarioEncontrado = db.User.findOne({ where: { email: value } })
-                    .then(() => {
-                        if (usuarioEncontrado) {
-                            return false;
+            .custom(function (thisEmail, { req }) {
+                db.User.findOne({ where: { email: thisEmail } })
+                    .then((user) => {
+                        if (user) {
+                            console.log(user);
+                           return Promise.reject('E-mail already in use');
                         } else {
                             return true;
                         }

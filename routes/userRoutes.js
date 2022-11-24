@@ -5,7 +5,8 @@ const multer = require("multer");
 const usersController = require("../controllers/userController");
 const authMiddleware = require('../middlewares/authMiddleware');
 
-const validations = require ("../validations/userValidation")
+const validations = require ("../validations/userValidation");
+const userController = require("../controllers/userController");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -53,6 +54,12 @@ router.post("/logout", usersController.logout);
 // Perfil de usuario
 router.get("/profile", authMiddleware, usersController.profile);
 // authMiddleware envía al login si el usuario no está logueado
+
+// Formulario para actualizar datos del usuario
+// router.put("profile", usersController.update);
+
+// Boton que elimina la cuenta del usuario
+// router.delete("profile",userController.softDelete);
 
 
 module.exports = router
