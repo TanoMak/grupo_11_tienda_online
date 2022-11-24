@@ -1,5 +1,4 @@
 const { validationResult } = require("express-validator");
-const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
@@ -44,11 +43,11 @@ module.exports = {
     }
 
     let userFound = db.User.findOne({
-      where:{
+      where: {
         email: req.body.email,
         password: bcryptjs.compareSync(req.body.password, user.password),
       }
-    }).then(()=>{
+    }).then(() => {
 
     });
 
