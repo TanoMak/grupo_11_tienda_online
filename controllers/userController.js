@@ -47,33 +47,30 @@ module.exports = {
         });
     } else {
 
-      // Toma datos del body y crea variable usuario
-      const { email, password } = req.body;
-      let userFound;
+      // Toma datos del body 
+      const { email, password } = req.body;      
 
       // Busca usario por el mail.
       // Luego compara su password con la del body
-      const user = await db.User.findOne({ where: { email: email } });
-      const checkPassword = await bcryptjs.compare(password, user.password);
+      const userFound = await db.User.findOne({ where: { email: email } });
+      const checkPassword = await bcryptjs.compare(password, userFound.password);
 
-      //  Si la comparacion es true, se asigna a la variable userFound. Y Luego a la variable 'usuario logueado' en session.
+      //  Si la comparacion es true se asignan los datos a la variable 'usuario logueado' en session.
 
       if (checkPassword) {
-        userFound = user;
+        req.session.usuarioLogueado = {
+          id: userFound.id,
+          name: userFound.name,
+          email: userFound.email,
+          imageUser: userFound.imageUser,
+        };        
       } else {
         return res.render('users/login',
           {
             errors: [{ msg: 'Invalid credentials' }]
           });
       }
-
-      req.session.usuarioLogueado = {
-        id: userFound.id,
-        name: userFound.name,
-        email: userFound.email,
-        imageUser: userFound.imageUser,
-      };
-
+      
       // cookies
       if (req.body.remember) {
         res.cookie("recordame", userFound.id, { maxAge: 1000 * 60 * 2 });

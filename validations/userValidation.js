@@ -29,17 +29,17 @@ module.exports = {
             .withMessage("Campo email incompleto")
             .isEmail()
             .withMessage("formato de email invalido")
-            .custom(function (thisEmail, { req }) {
-                db.User.findOne({ where: { email: thisEmail } })
-                    .then((user) => {
-                        if (user) {
-                            console.log(user);
-                           return Promise.reject('E-mail already in use');
-                        } else {
-                            return true;
-                        }
-                    })
-                    .catch(error => console.log(error))
+            .custom(function (value) {
+                return db.User.findOne({
+                    where: {
+                        email: value
+                    }
+                }).then(user => {
+                    if (user) {
+                        return Promise.reject("Email ya registrado!")
+                    }
+                }).catch(error => console.log(error))
+                
             }).withMessage("Email ya registrado"),
         body("adress")
             .notEmpty()
