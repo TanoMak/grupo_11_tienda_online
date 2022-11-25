@@ -37,8 +37,13 @@ const productsController = {
     Products.findByPk(req.params.id,
       { include: ["colors", "images", "sizes", "category", "line"] })
       .then(prendas => {
+        console.log(prendas.images)
         res.render("products/productDetail", { prendas });
       })
+
+
+
+      
   },
 
   add: (req, res) => {
@@ -58,7 +63,7 @@ const productsController = {
       })
   },
   store: async (req, res) => {
-    let productToCretae = await Products.create({
+    let productToCreate = await Products.create({
       product_code: req.body.code,
       line_id: req.body.line,
       product_name: req.body.name,
@@ -70,12 +75,12 @@ const productsController = {
     let imagesTocreate = req.files.map(file => {
       return {
         name: file.filename,
-        product_id: productToCretae.id,
+        product_id: productToCreate.id,
       }
     })
     await Images.bulkCreate(imagesTocreate);
-    await productToCretae.setColors(req.body.color);
-    await productToCretae.setSizes(req.body.size)
+    await productToCreate.setColors(req.body.color);
+    await productToCreate.setSizes(req.body.size)
 
 
     res.redirect("/products/create");
