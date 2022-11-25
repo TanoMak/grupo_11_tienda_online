@@ -47,36 +47,37 @@ module.exports = {
         });
     } else {
 
-      // Toma datos del body 
-      const { email, password } = req.body;      
 
-      // Busca usario por el mail.
-      // Luego compara su password con la del body
-      const userFound = await db.User.findOne({ where: { email: email } });
-      const checkPassword = await bcryptjs.compare(password, userFound.password);
+      // Toma datos del body 
+      const { email, password } = req.body;
+
+      // Busca usario por el mail.   
+      // Luego compara su password con la del body  
+
+      const user = await db.User.findOne({ where: { email: email } });
+      const checkPassword = await bcryptjs.compare(password, user.password);
 
       //  Si la comparacion es true se asignan los datos a la variable 'usuario logueado' en session.
-
       if (checkPassword) {
         req.session.usuarioLogueado = {
-          id: userFound.id,
-          name: userFound.name,
-          email: userFound.email,
-          imageUser: userFound.imageUser,
-        };        
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          imageUser: user.imageUser,
+        };
       } else {
         return res.render('users/login',
           {
             errors: [{ msg: 'Invalid credentials' }]
           });
       }
-      
+
       // cookies
       if (req.body.remember) {
         res.cookie("recordame", userFound.id, { maxAge: 1000 * 60 * 2 });
       }
 
-      return res.redirect("/products/list");
+      return res.redirect("/");
     }
   },
   profile: (req, res) => {
@@ -108,9 +109,12 @@ module.exports = {
       )
     }
   },
-  softDelete: (req,res) => {
-
-
+  softDelete: (req, res) => {
+    db.User.delete({
+      where: { id: req.session.usuarioLogueado.id }
+    }).then(() => {
+      res.redirect('/');
+    }).catch(error => console.log(error))
   },
   logout: (req, res) => {
     req.session.destroy();
