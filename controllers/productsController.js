@@ -23,6 +23,26 @@ sequelize.authenticate()
   });
 
 const productsController = {
+
+  search: function (req, res, next) {
+    let productToFind = req.query.product;
+    Products.findAll({
+        include: [{ association: "images" }],
+        where: {
+          [Op.or]:{
+              product_name: { [Op.like]: '%' + productToFind + '%' },
+              description: { [Op.like]: '%' + productToFind + '%' } 
+            }
+        }
+    })
+    .then(function (products) {
+        res.render("products/productlist", { products});
+    })
+    .catch(function(error){
+        res.send(error);
+    })
+  },
+
   list: (req, res) => {
     Products.findAll(
       { include: [{ association: "images" }] }
