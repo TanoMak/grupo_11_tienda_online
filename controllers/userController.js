@@ -1,8 +1,8 @@
 const { validationResult } = require("express-validator");
-const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
+const e = require("express");
 
 
 module.exports = {
@@ -36,45 +36,82 @@ module.exports = {
   login: (req, res) => {
     return res.render("users/login");
   },
-  loginProcess: (req, res) => {
-    const error = validationResult(req);
+  loginProcess: async (req, res) => {
+    let errors = validationResult(req);
 
-    if (!error.isEmpty()) {
-      return res.render("users/login", { errors: error.mapped() });
-    }
-
-    let userFound = db.User.findOne({
-      where:{
-        email: req.body.email,
-        password: bcryptjs.compareSync(req.body.password, user.password),
-      }
-    }).then(()=>{
-
-    });
-
-    if (!userFound) {
-      return res.render("users/login", {
-        errorLogin: "Credenciales invalidas",
-      });
+    if (!errors.isEmpty()) {
+      return res.render('users/login',
+        {
+          errors: errors.array(),
+          oldData: req.body
+        });
     } else {
-      req.session.usuarioLogueado = {
-        id: userFound.id,
-        name: userFound.name,
-        email: userFound.email,
-        imageUser: userFound.imageUser,
-      };
 
+      // Toma datos del body 
+      const { email, password } = req.body;      
+
+      // Busca usario por el mail.
+      // Luego compara su password con la del body
+      const userFound = await db.User.findOne({ where: { email: email } });
+      const checkPassword = await bcryptjs.compare(password, userFound.password);
+
+      //  Si la comparacion es true se asignan los datos a la variable 'usuario logueado' en session.
+
+      if (checkPassword) {
+        req.session.usuarioLogueado = {
+          id: userFound.id,
+          name: userFound.name,
+          email: userFound.email,
+          imageUser: userFound.imageUser,
+        };        
+      } else {
+        return res.render('users/login',
+          {
+            errors: [{ msg: 'Invalid credentials' }]
+          });
+      }
+      
+      // cookies
       if (req.body.remember) {
         res.cookie("recordame", userFound.id, { maxAge: 1000 * 60 * 2 });
       }
 
-      res.redirect("/products/list");
+      return res.redirect("/products/list");
     }
   },
   profile: (req, res) => {
     return res.render("users/userProfile");
   },
+  update: (req, res) => {
+    let errors = validationResult(req);
 
+    if (!errors.isEmpty()) {
+      return res.render('users/userProfile',
+        {
+          errors: errors.array(),
+          oldData: req.body
+        });
+    } else {
+      db.User.update(
+        {
+          name: req.body.name,
+          lastname: req.body.lastName,
+          phone: req.body.phone,
+          email: req.body.email,
+          address: req.body.adress,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          profile_photo: req.file.filename,
+        },
+        {
+          where: { id: req.session.usuarioLogueado.id }
+        }
+      )
+    }
+  },
+  softDelete: (req,res) => {
+
+
+  },
   logout: (req, res) => {
     req.session.destroy();
     res.clearCookie("recordame");

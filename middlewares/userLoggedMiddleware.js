@@ -1,19 +1,12 @@
-const fs = require("fs");
+const { body } = require("express-validator");
 const path = require("path");
+const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
-function findAll(){
-    const jsonData = fs.readFileSync(path.join(__dirname, "../data/users.json"))
-    const data = JSON.parse(jsonData);
-    return data;
-}
 
 function recordame (req, res, next){
-    if(!req.session.usuarioLogueado && req.cookies.recordame){
-        const users = findAll();
-
-        const userFound = users.find(function(user){
-            return user.id == req.cookies.recordame;
-        })
+    if(!req.session.usuarioLogueado && req.cookies.recordame){      
+        const userFound = db.User.findByPk(req.cookies.recordame);      
 
         req.session.usuarioLogueado = {
             id: userFound.id,

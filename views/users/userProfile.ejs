@@ -3,8 +3,7 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
-        <link href="/css/style.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/css/login-style.css">
+        <link href="/css/style.css" rel="stylesheet" />       
         <link href="/css/userProfile.css" rel="stylesheet">
 
 </head>
@@ -14,38 +13,124 @@
     <%- include("../partials/header.ejs") %>
         <main>
             <main>
-                <div class="profile-container">
-                    <br>
-                    <h2>¡Hola, <%= usuario.name %> !</h2>
-                    <br>
-                    <br>
-                    <div class="profile-container-a">
-                        <div class="profile-user-image-container">
-                            <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
-                        </div>
-                        <div class="email">
-                            <%= usuario.email %>
-                        </div>
-                        <br>
-    
-                        <div>
-                            <ul>
-                                <li>Modificar datos</li>
+
+                <div class="profile-user-image-container">
+                    <img class="profile-user-image" src="/images/users/<%= usuario.imageUser %>" alt="" />
+                </div> 
+                 
+
+                <div class="container">
+                    
+                    <div class="miCuenta">
+                       
+                        
+                        <ul>
+                            <li><a href="/users/profile">PERFIL</a></li>
+                            <li><a href="">SEGUIMIENTO DE PEDIDOS</a></li>
+                            <li><a href="">HISTORIAL DE COMPRAS</a></li>
+                            <li><a href="">HISTORIAL DE CAMBIOS</a></li>
+                        </ul>
+                    </div>
+                    <div class="perfil">
+                        <h2>1.Tus datos Personales</h2>
+                        <form class="formulario" action="/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+
+
+
+
+                            <div class=form-field>
+                                <label for="name" class="label">Nombre</label>
+                                <input type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>">
+                                <% if (locals.errors && errors.name){ %>
+                                    <div class="text-danger">
+                                        <%= errors.name.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class=form-field>
+                                <label for="lastName" class="label">Apellido</label>
+                                <input type="text" name="lastName"
+                                    value="<%= locals.oldData ? oldData.lastName : null %>">
+
+
+                                <% if (locals.errors && errors.lastName){ %>
+                                    <div class="text-danger">
+                                        <%= errors.lastName.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class=form-field>
+                                <label for="phone" class="label">Teléfono</label>
+                                <input type="text" name="phone" value="<%= locals.oldData ? oldData.phone : null %>">
+
+                                <% if (locals.errors && errors.phone){ %>
+                                    <div class="text-danger">
+                                        <%= errors.phone.msg %>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+
+                            <div class=form-field>
+                                <label for="email" class="label">E-mail</label>
+                                <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+
+                                <% if (locals.errors && errors.email){ %>
+                                    <div class="text-danger">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class=form-field>
+                                <label for="" class="label">Dirección</label>
+                                <input type="text" name="adress" value="<%= locals.oldData ? oldData.adress : null %>">
+
+                                <% if (locals.errors && errors.adress){ %>
+                                    <div class="text-danger">
+                                        <%= errors.adress.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class=form-field>
+                                <label for="" class="label">Contraseña</label>
+                                <input type="password" name="password">
+
+                                <% if (locals.errors && errors.password){ %>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class=form-field>
+                                <label for="" class="label">Cambiar foto de perfil </label>
                                 <br>
-                                <li>Historial de compras</li>
-                                <br>
-                                <li>Dar de baja cuenta</li>
-                            </ul>
-    
-                        </div>
+                                <input type="file" name="imageUser">
+
+                                <% if (locals.errors && errors.imageUser){ %>
+                                    <div class="text-danger">
+                                        <%= errors.imageUser.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+
+                            <h3>
+                                <div><button type="submit" id="btn-crear">ACTUALIZAR</button></div>
+                            </h3>
+                        </form>
                     </div>
                 </div>
+
             </main>
+            <!-- footer -->
 
-        </main>
-        <!-- footer -->
-
-        <%- include("../partials/footer.ejs") %>
+            <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>

@@ -1,12 +1,8 @@
-const path = require("path");
-const fs = require("fs");
 const { body } = require("express-validator");
+const path = require("path");
+const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
-function findAll() {
-    const jsonData = fs.readFileSync(path.join(__dirname, "../data/users.json"))
-    const data = JSON.parse(jsonData);
-    return data;
-}
 
 module.exports = {
     registerFormValidation: [
@@ -33,16 +29,17 @@ module.exports = {
             .withMessage("Campo email incompleto")
             .isEmail()
             .withMessage("formato de email invalido")
-            .custom(function (value, { req }) {
-                const users = findAll()
-                const usuarioEncontrado = users.find(function (user) {
-                    return user.email == value;
-                })
-                if (usuarioEncontrado) {
-                    return false
-                } else {
-                    return true
-                }
+            .custom(function (value) {
+                return db.User.findOne({
+                    where: {
+                        email: value
+                    }
+                }).then(user => {
+                    if (user) {
+                        return Promise.reject("Email ya registrado!")
+                    }
+                }).catch(error => console.log(error))
+                
             }).withMessage("Email ya registrado"),
         body("adress")
             .notEmpty()
@@ -80,14 +77,12 @@ module.exports = {
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
                 }
             }
-
             return true;
         })
 
-
     ],
 
-    loginValidation: [ 
+    loginValidation: [
         body("email")
             .notEmpty()
             .withMessage("Ingresar e-mail"),
