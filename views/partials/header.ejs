@@ -15,65 +15,68 @@
 
 
 
- 
-  <!--       <div class="logIcon">
+
+        <!--       <div class="logIcon">
             <a href="/users/login"> <i class="fa-regular fa-user"></i></a>
         </div>   -->
 
 
-         <div class="search-box">
+        <div class="search-box">
             <button class="btn-search"><i class="fas fa-search"></i></button>
             <input type="text" class="input-search" placeholder="Buscá acá...">
         </div>
-         
 
 
-        <ul>
+
+        <ul class >
             <% if(!locals.usuario){ %>
 
-       <!--      <div class="logIcon">
+                <!--      <div class="logIcon">
                 <a href="/users/login"> <i class="fa-regular fa-user"></i></a>
             </div>   -->
-            </li><div class="search-container">
-                <form class="form-search" action="/products/search" method="GET">
-                    <input type="text" class="input" name="product" placeholder="Buscá acá">
-                    <input type="submit" value="buscar" style="width:100px;">
-                  </form>        
-            </div>
 
-            <li><a href="/users/login">Iniciar sesion </a></li>
-            <li><a href="/users/registro">Registrarse </a></li>
-
-            <% }else{ %>
-                <div class = "user-on-session">
-                    <br>
-                    <label class ="username" for="">Hola, <%= usuario.name %> !</label>
-                    
-        
-                    <form  action="/users/logout" method="post">
-                        <button class ="logout" type="submit">Cerrar sesion</button>
-                      
+                <li>
+                    <form class="form-search" action="/products/search" method="GET">
+                        <input type="text" class="input-search" name="product" placeholder="Buscá productos">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                     </form>
-                    
-                    <a href="/carrito" class ="cart">
-                        <i class="fa-solid fa-cart-shopping" ></i>
-                    </a>
+                </li>
+                <li><a href="/users/login">Iniciar sesion </a></li>
+                <li><a href="/users/registro">Registrarse </a></li>
 
-                    <a href="/users/profile" class ="profile">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                    
+                <% }else{ %>
+                    <div class="user-on-session">
+                        <br>
+                        <label class="username" for="">Hola, <%= usuario.name %> !</label>
 
-                </div>
-              <% } %> 
-      
 
-            
+                        <form action="/users/logout" method="post">
+                            <button class="logout" type="submit">Cerrar sesion</button>
+
+                        </form>
+
+                        <a href="/carrito" class="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+
+                        <a href="/users/profile/<%= usuario.id %>" class="profile">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+       
+                    </div>
+
+                    <form class="form-search-sesion" action="/products/search" method="GET">
+                        <input type="text" class="input-search" name="product" placeholder="Buscá productos">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <% } %>
+
+
+
 
         </ul>
 
     </nav>
-    
+
 
     <div id="sidebar">
         <div class="xMark">

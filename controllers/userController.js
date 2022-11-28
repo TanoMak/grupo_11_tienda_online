@@ -5,6 +5,8 @@ const db = require("../database/models");
 const e = require("express");
 
 
+
+
 module.exports = {
   register: (req, res) => {
     return res.render("users/register");
@@ -40,62 +42,65 @@ module.exports = {
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render('users/login',
-        {
-          errors: errors.array(),
-          oldData: req.body
-        });
+      return res.render("users/login", { errors: errors.mapped() })
     } else {
 
-      // Toma datos del body 
-      const { email, password } = req.body;      
 
-      // Busca usario por el mail.
-      // Luego compara su password con la del body
-      const userFound = await db.User.findOne({ where: { email: email } });
-      const checkPassword = await bcryptjs.compare(password, userFound.password);
+      // Toma datos del body 
+      const { email, password } = req.body;
+
+      // Busca usario por el mail.   
+      // Luego compara su password con la del body  
+
+      const user = await db.User.findOne({ where: { email: email } });
+      const checkPassword = bcryptjs.compareSync(password, user.password);
 
       //  Si la comparacion es true se asignan los datos a la variable 'usuario logueado' en session.
-
       if (checkPassword) {
-        req.session.usuarioLogueado = {
-          id: userFound.id,
-          name: userFound.name,
-          email: userFound.email,
-          imageUser: userFound.imageUser,
-        };        
-      } else {
+        req.session.usuarioLogueado = user
+      }
+      if (user == undefined && checkPassword == false) {
         return res.render('users/login',
           {
             errors: [{ msg: 'Invalid credentials' }]
           });
       }
-      
+
       // cookies
       if (req.body.remember) {
-        res.cookie("recordame", userFound.id, { maxAge: 1000 * 60 * 2 });
+        res.cookie("recordame", user.id, { maxAge: 1000 * 60 * 2 });
       }
 
-      return res.redirect("/products/list");
+      return res.redirect("/");
     }
   },
   profile: (req, res) => {
-    return res.render("users/userProfile");
+    db.User.findByPk(req.params.id)
+      .then((users) => {
+        res.render("users/userProfile", { users: users });
+      })
+
   },
-  update: (req, res) => {
+
+  edit: (req, res) => {
+    db.User.findByPk(req.params.id)
+      .then((userInfo) => {
+        res.render("users/userUpdate", { userInfo: userInfo })
+      })
+
+
+
+  },
+  update: async (req, res) => {
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render('users/userProfile',
-        {
-          errors: errors.array(),
-          oldData: req.body
-        });
+      return res.render("users/userUpdate", { errors: errors.mapped() })
     } else {
-      db.User.update(
+      await db.User.update(
         {
           name: req.body.name,
-          lastname: req.body.lastName,
+          lastname: req.body.lastname,
           phone: req.body.phone,
           email: req.body.email,
           address: req.body.adress,
@@ -107,10 +112,18 @@ module.exports = {
         }
       )
     }
+
+    let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
+    req.session.usuarioLogueado = userFound;
+    res.redirect("users/userProfile");
+
   },
-  softDelete: (req,res) => {
-
-
+  softDelete: (req, res) => {
+    db.User.delete({
+      where: { id: req.session.usuarioLogueado.id }
+    }).then(() => {
+      res.redirect('/');
+    }).catch(error => console.log(error))
   },
   logout: (req, res) => {
     req.session.destroy();

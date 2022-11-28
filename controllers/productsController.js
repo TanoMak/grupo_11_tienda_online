@@ -23,7 +23,6 @@ sequelize.authenticate()
   });
 
 const productsController = {
-
   search: function (req, res, next) {
     let productToFind = req.query.product;
     Products.findAll({
@@ -42,7 +41,6 @@ const productsController = {
         res.send(error);
     })
   },
-
   list: (req, res) => {
     Products.findAll(
       { include: [{ association: "images" }] }

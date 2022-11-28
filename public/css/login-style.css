@@ -34,6 +34,22 @@ main {
     border: 1px solid #ccc;
 }
 
+.container-edit-user input[type=file],
+.container-edit-user[type=email],
+.container-edit-user[type=number],
+.container-edit-user[type=text],
+.container-edit-user[type=password],
+.container-edit-user[class=category],
+.container-edit-user[list=line],
+.container-edit-user[class=line]{
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: red;
+}
 
 
 .color-selection-register{
@@ -97,7 +113,6 @@ main {
     width: 150px;
     height: 150px;
     border-radius: 750px;
-    background-color: red
 }
 
 
@@ -141,7 +156,11 @@ color: black;
     text-align: left;
 }
 
-/* UserProfile */
+.user_img{
+    width: 100px;
+    height:100px;
+    border-radius: 50px;
+}
 
 
 
