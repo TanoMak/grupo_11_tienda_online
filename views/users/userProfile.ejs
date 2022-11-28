@@ -3,8 +3,10 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
-    <link href="/css/style.css" rel="stylesheet">
-	<link href="/css/login-style.css" rel="stylesheet">
+        <link href="css/all.css" rel="stylesheet">
+
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/login-style.css" rel="stylesheet">
 
 </head>
 
@@ -15,27 +17,41 @@
             <main>
 
                 <div class="container">
-                    
+
                     <div class="miCuenta">
 
-                    
-                       
-                        
+
+
+
                         <ul>
-                                       
-                            <li>Hola <%=users.name %> </li>
+
+                            <li>Hola <%=users.name %>
+                            </li>
                             <li>
-                                <img src="/images/users/<%= users.profile_photo ? users.profile_photo : "avatar.png" %>" alt="x" class="user_img"/>
+                                <img src="/images/users/<%= users.profile_photo ? users.profile_photo : " avatar.png"
+                                    %>" alt="x" class="user_img"/>
                             </li>
                             <a href="/users/editar/<%=users.id %>">Actualizar datos</a>
-             
-                           
-                 
-                            <li><a href="">SEGUIMIENTO DE PEDIDOS</a></li>
-                            <li><a href="">HISTORIAL DE COMPRAS</a></li>
-                            <li><a href="">HISTORIAL DE CAMBIOS</a></li>
-                          
-                         
+                            <br>
+                            <br>
+                            <% if(users.admin==1){ %>
+                                <li class="admin-links"><a href="/products/create">Crear nuevo producto</a></li>
+                                <br>
+                                <li class="admin-links"><a href="">Editar producto</a></li>
+
+                                <% }else{ %>
+
+
+
+
+
+                                    <li><a href="">SEGUIMIENTO DE PEDIDOS</a></li>
+                                    <li><a href="">HISTORIAL DE COMPRAS</a></li>
+                                    <li><a href="">HISTORIAL DE CAMBIOS</a></li>
+
+                                    <% } %>
+
+
                         </ul>
                     </div>
                 </div>

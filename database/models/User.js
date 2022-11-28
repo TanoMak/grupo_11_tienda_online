@@ -30,9 +30,8 @@ module.exports = (sequelize, dataTypes) => {
         password :{
             type: dataTypes.STRING
         },
+        admin : dataTypes.BOOLEAN
        
-      
-    
     };
     
     let config = {

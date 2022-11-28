@@ -29,6 +29,7 @@ module.exports = {
         address: req.body.adress,
         password: bcryptjs.hashSync(req.body.password, 10),
         profile_photo: req.file.filename,
+        admin : 0
       });
 
       res.redirect("/users/login");
@@ -77,7 +78,7 @@ module.exports = {
   profile: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((users) => {
-        res.render("users/userProfile", { users: users });
+        res.render("users/userProfile", { users: req.session.usuarioLogueado });
       })
 
   },
