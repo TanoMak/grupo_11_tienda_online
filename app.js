@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
+const colorsRouter = require("./routes/colorsRoutes");
 const productsRouter = require("./routes/productsRoutes");
 const localsMiddleware = require('./middlewares/localsMiddlware');
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -34,6 +35,7 @@ app.use(userLoggedMiddleware)
 app.use('/', mainRouter); 
 app.use('/products', productsRouter);
 app.use('/users', userRouter);
+app.use('/colors', colorsRouter); //creo ruta de colores
 
 
 app.listen(3030, () => {
