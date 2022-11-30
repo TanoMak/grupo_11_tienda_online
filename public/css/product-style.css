@@ -175,6 +175,20 @@ body {
   text-decoration: none;
 }
 
+.small-img{
+  height: 100%;
+  border-radius: 10px;
+}
+
+.product_img{
+  display: flex;
+  flex-wrap: nowrap;
+  height: 646px;
+  width:431px ;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
 .small-img-col:hover {
   position: relative;
   bottom: 5px;

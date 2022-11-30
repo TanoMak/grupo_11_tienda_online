@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <%- include("../partials/head.ejs") %>
-    <link href="css/all.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+  <head>
+    <%- include("../partials/head.ejs") %>
+    <link href="css/all.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/product-style.css" rel="stylesheet" />
-</head>
+  </head>
 
-
-<body>
-
-  <!-- header -->
-  <%- include("../partials/header.ejs") %>
-
+  <body>
+    <!-- header -->
+    <%- include("../partials/header.ejs") %>
 
     <!-- main -->
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
-          <img src="/images/product-images/<%= prendas.images[0].name ? prendas.images[0].name : "noimageproduct.jpg" %>"
-          alt="x" class="product_img" />
+          <img src="/images/product-images/<%= prendas.images.length > 0 ?
+          prendas.images[0].name : "noimageproduct.jpg" %>" alt="x"
+          class="product_img" />
           <div class="small-img-row">
-            <div class="small-img-col">
-              <img src="/images/product-images/<%= prendas.images[1].name ? prendas.images[1].name : "noimageproduct.jpg" %>"
-              class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="/images/product-images/<%= prendas.images[2].name ? prendas.images[2].name : "noimageproduct.jpg" %>"
-              width="100%" class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="/images/product-images/<%= prendas.images[3].name ? prendas.images[3].name : "noimageproduct.jpg"
-                %>"width="100%" class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="/images/product-images/<%= prendas.images[4].name ? prendas.images[4].name : "noimageproduct.jpg" %>"
-              width="100%" class="small-img" />
-            </div>
+            <% if (prendas.images.length > 1) { %> 
+              <% for( let i = 1; i < prendas.images.length; i++ ) { %>
+                <div class="small-img-col">
+                  <img
+                    src="/images/product-images/<%= prendas.images[i].name %>"
+                    class="small-img"
+                  />
+                </div>
+              <% } %>
+             <% } else { %>
+            
+              <% for( let index = 0; index <= 3; index++ ) { %>
+                <div class="small-img-col">
+                  <img
+                    src="/images/product-images/noimageproduct.jpg"
+                    class="small-img"
+                  />              
+                </div>            
+              <% } %>
+             <% } %>
           </div>
         </div>
 
         <div class="col-2">
-          <p>Productos / <%= prendas.category.name %>
-          </p>
-          <h1>
-            <%= prendas.product_name %>
-          </h1>
-          <h4>
-            <%= prendas.price %>
-          </h4>
+          <p>Productos / <%= prendas.category.name %></p>
+          <h1><%= prendas.product_name %></h1>
+          <h4><%= prendas.price %></h4>
 
           <select name="size-selection-product" class="size-selection-product">
-            <option value="" disabled selected>- Seleccionar Talle - </option>
+            <option value="" disabled selected>- Seleccionar Talle -</option>
             <% prendas.sizes.forEach(Size=> { %>
-              <option value="<%= Size.name %>">
-                <%= Size.name %>
-              </option>
-              <% }) %>
+            <option value="<%= Size.name %>"><%= Size.name %></option>
+            <% }) %>
           </select>
 
-          <select name="color-selection-product" class="color-selection-product">
-            <option value="" disabled selected>- Seleccionar Color - </option>
+          <select
+            name="color-selection-product"
+            class="color-selection-product"
+          >
+            <option value="" disabled selected>- Seleccionar Color -</option>
             <% prendas.colors.forEach(Color=> { %>
-              <option value="<%= Color.name %>">
-                <%= Color.name %>
-              </option>
-              <% }) %>
+            <option value="<%= Color.name %>"><%= Color.name %></option>
+            <% }) %>
           </select>
 
           <input type="number" value="1" name="" class="cant" />
@@ -76,16 +71,12 @@
             </button>
           </div>
           <h3>Descrpción del Producto</h3>
-          <p>
-            <%= prendas.description %>
-          </p>
+          <p><%= prendas.description %></p>
         </div>
       </div>
     </div>
 
     <!-- footer -->
     <%- include("../partials/footer.ejs") %>
-
-</body>
-
+  </body>
 </html>

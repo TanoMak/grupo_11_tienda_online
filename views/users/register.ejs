@@ -17,6 +17,7 @@
 
     <!-- main -->
     <main>
+        <form action=""></form>
     <form class="container" action="/users/registro" method="POST" enctype="multipart/form-data">
         <h1>Registro</h1>
         <br>
@@ -43,14 +44,14 @@
                 <input 
                     type="text" 
                     placeholder="Apellido" 
-                    name="lastName"
-                    value="<%= locals.oldData ? oldData.lastName : null %>"   
+                    name="lastname"
+                    value="<%= locals.oldData ? oldData.lastname : null %>"   
                 >
 
                 
-                <% if (locals.errors && errors.lastName){ %>
+                <% if (locals.errors && errors.lastname){ %>
                     <div class="text-danger">
-                        <%= errors.lastName.msg %> 
+                        <%= errors.lastname.msg %> 
                     </div>
                 <% } %>
             </div>
@@ -94,14 +95,14 @@
                 <input 
                     type="text" 
                     placeholder="Direccion" 
-                    name="adress"
-                    value="<%= locals.oldData ? oldData.adress : null %>"
+                    name="address"
+                    value="<%= locals.oldData ? oldData.address : null %>"
                     
                 >
 
-                <% if (locals.errors && errors.adress){ %>
+                <% if (locals.errors && errors.address){ %>
                     <div class="text-danger">
-                        <%= errors.adress.msg %> 
+                        <%= errors.address.msg %> 
                     </div>
                 <% } %>
             </div>

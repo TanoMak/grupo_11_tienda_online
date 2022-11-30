@@ -722,7 +722,7 @@ iframe {
     color: red
 }
 
-.delete-product-btn {
+form .delete-user-btn {
     background-color: red;
     max-width: 450px;
     color: white;
@@ -732,6 +732,8 @@ iframe {
     width: 100%;
     border-radius: 80px;
 }
+
+
 
 .back-to-product-list-btn {
     background-color: whitesmoke;
@@ -760,6 +762,9 @@ iframe {
         max-height: 620px;
         border-radius: 1cm;
     }
+
+
+
 }
 
 

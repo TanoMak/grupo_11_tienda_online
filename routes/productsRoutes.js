@@ -21,10 +21,10 @@ const upload = multer({ storage: storage })
 router.get("/list", productsController.list);
 router.get("/detail/:id", productsController.productDetail);
 router.get("/create",admin, productsController.add);
-router.post("/create", upload.any("image"), productsController.store);
-router.get("/edit/:id",productsController.edit);
-router.put("/edit/:id",upload.any("image"),productsController.update)
-router.delete("/delete/:id",productsController.destroy)
+router.post("/create", upload.any("image"), admin, productsController.store);
+router.get("/edit/:id", admin,productsController.edit);
+router.put("/edit/:id",upload.any("image"), admin, productsController.update)
+router.delete("/delete/:id",admin ,productsController.destroy)
 router.get("/search", productsController.search);
 
 module.exports = router;

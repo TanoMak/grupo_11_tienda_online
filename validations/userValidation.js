@@ -12,7 +12,7 @@ module.exports = {
             .bail()
             .isLength({ min: 2 })
             .withMessage('Completar con su nombre completo'),
-        body("lastName")
+        body("lastname")
             .notEmpty()
             .withMessage('Por favor escriba su apellido')
             .bail()
@@ -24,11 +24,11 @@ module.exports = {
             .bail()
             .isLength({ min: 10 })
             .withMessage('El número de telefono debe tener como mínimo 10 caracteres'),
+
         body("email")
-            .notEmpty()
-            .withMessage("Campo email incompleto")
             .isEmail()
-            .withMessage("formato de email invalido")
+            .withMessage("El Email debe ser valido")
+            .bail()
             .custom(function (value) {
                 return db.User.findOne({
                     where: {
@@ -38,10 +38,10 @@ module.exports = {
                     if (user) {
                         return Promise.reject("Email ya registrado!")
                     }
-                }).catch(error => console.log(error))
-                
-            }).withMessage("Email ya registrado"),
-        body("adress")
+                })
+            }),
+
+        body("address")
             .notEmpty()
             .withMessage("Por favor complete su direccion, calle, número y depto si corresponde")
             .bail()
@@ -65,30 +65,51 @@ module.exports = {
                     throw new Error('Las contraseñas no coinciden')
                 }
             }),
-        body('imageUser').custom((value, { req }) => {
-            let file = req.file;
-            let acceptedExtensions = ['.jpg', '.png', '.gif'];
-
-            if (!file) {
-                throw new Error('Tienes que subir una imagen');
-            } else {
-                let fileExtension = path.extname(file.originalname);
-                if (!acceptedExtensions.includes(fileExtension)) {
-                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-                }
-            }
-            return true;
-        })
+         body('imageUser').custom((value, { req }) => {
+             let file = req.file;
+             let acceptedExtensions = ['.jpg', '.png', '.gif'];
+ 
+             if (!file) {
+                 throw new Error('Tienes que subir una imagen');
+             } else {
+                 let fileExtension = path.extname(file.originalname);
+                 if (!acceptedExtensions.includes(fileExtension)) {
+                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                 }
+             }
+             return true;
+         })
 
     ],
 
     loginValidation: [
         body("email")
             .notEmpty()
-            .withMessage("Ingresar e-mail"),
+            .withMessage("Completar campo de Email")
+            .bail()
+            .isEmail()
+            .withMessage("Email con formato incorrecto")
+            .bail()
+            .custom(function (value, { req }) {
+                return db.User.findOne({
+                    where: {
+                        email: value
+                    }
+                }).then(user => {
+                    if (!user) {
+                        return Promise.reject("Usuario o contraseña invalidos")
+                    }
+                    if (!bcryptjs.compareSync(req.body.password, user.password)) {
+                        return Promise.reject("Usuario o contraseña invalidos")
+                    }
+                })
+            }),
         body("password")
             .notEmpty()
-            .withMessage("Ingresar contraseña")
+            .withMessage("Completar campo de contraseña")
     ]
+
+
+
 
 }

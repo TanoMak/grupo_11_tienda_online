@@ -55,13 +55,8 @@ const productsController = {
     Products.findByPk(req.params.id,
       { include: ["colors", "images", "sizes", "category", "line"] })
       .then(prendas => {
-        /*   res.json(prendas.images[1].name) */
         res.render("products/productDetail", { prendas });
       })
-
-
-
-
   },
 
   add: (req, res) => {
@@ -99,11 +94,7 @@ const productsController = {
     await Images.bulkCreate(imagesTocreate);
     await productToCreate.setColors(req.body.color);
     await productToCreate.setSizes(req.body.size)
-
-
-    res.redirect("/products/create");
-
-
+    res.redirect("/products/create",);
   },
 
   edit: (req, res) => {

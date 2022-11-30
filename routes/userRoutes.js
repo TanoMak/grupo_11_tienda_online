@@ -56,12 +56,12 @@ router.get("/profile/:id", authMiddleware, usersController.profile);
 // authMiddleware envía al login si el usuario no está logueado
 
 // Formulario para actualizar datos del usuario
-router.get("/editar/:id", authMiddleware, usersController.edit);
+router.get("/editar/:id", authMiddleware,usersController.edit);
 
-router.put("editar/:id",  upload.single('imageUser'), validations.registerFormValidation,usersController.update);
+router.put("/editar/:id",  upload.single('imageUser'), authMiddleware, validations.registerFormValidation,usersController.update);
 
 // Boton que elimina la cuenta del usuario
-// router.delete("profile",userController.softDelete);
+router.delete("/delete/:id",userController.softDelete);
 
 
 module.exports = router
