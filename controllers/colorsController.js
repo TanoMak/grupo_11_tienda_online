@@ -6,18 +6,21 @@ const colorsController = {
     list: function(req, res) {
         db.Color.findAll()
         .then(function(colors){
-            res.render("colors", {colors})
+            res.render("../views/colors/colors.ejs", {colors})
         })
+        .catch(function (error) {
+            res.send(error);
+          })
     },
 
     create: function (req, res) {
-        res.render("colorsForm");
+        res.render("../views/colors/colorsForm.ejs");
     },
 
     store: function (req, res) {
         let newColor = {
-            name: req.body.name
-            //codigo hexadecimal
+            name: req.body.name,
+            color: req.body.color
         }
 
         db.Color.create(newColor)
@@ -35,7 +38,8 @@ const colorsController = {
 
     update: function(req, res) {
         let editColor = {
-            name: req.body.name
+            name: req.body.name,
+            color: req.body.color
             //codigo hexadecimal
         }
 

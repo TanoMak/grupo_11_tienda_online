@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/colors/create" method="POST"></form>
-</body>
+  <head>
+    <%- include("../partials/head.ejs") %>
+    <link href="css/all.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/login-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- main -->
+    <main>
+      <form
+        class="container"
+        action="/users/registro"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h1>Color</h1>
+        <br />
+        <br />
+
+        <div>
+          <div class="form-field">
+            <label for="">Nombre </label>
+            <input
+              type="text"
+              placeholder="Nombre"
+              name="name"
+              value="<%= locals.oldData ? oldData.name : null %>"
+            />
+            <% if (locals.errors && errors.name){ %>
+            <div class="text-danger"><%= errors.name.msg %></div>
+            <% } %>
+          </div>
+
+          <div class="form-field">
+            <label for="">Color </label>
+            <input
+              type="color"
+              name="color"
+              value="<%= locals.oldData ? oldData.name : null %>"
+            />
+          </div>
+        </div>
+        <h3>
+          <div><button type="submit" id="btn-crear">Crear Color</button></div>
+        </h3>
+        <div>
+          <button class="facebook">
+            <i class="fab fa-facebook"></i> Facebook
+          </button>
+          <button class="google"><i class="fab fa-google"></i> Google</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- footer -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
 </html>

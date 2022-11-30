@@ -1,41 +1,42 @@
 module.exports = (sequelize, dataTypes) => {
-    
-    // VOLVER A PLANTEAR CON LOS NUEVOS CAMPOS //
+  // VOLVER A PLANTEAR CON LOS NUEVOS CAMPOS //
 
-    let alias = 'product_cart';
+  let alias = "Order";
 
-    let cols = {
-        id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
-        },
-        product_cart_detail_id: {
-            type: dataTypes.INTEGER
-        },
-        user_id: {
-            type: dataTypes.INTEGER
-        },
-            
-    };
-    
-    let config = {
-        timestamps: false,
-        tableName: 'product_cart'
-    };
+  let cols = {
+    id: {
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+    subtotal: {
+      type: dataTypes.INTEGER,
+    },
+    delivery_cost: {
+      type: dataTypes.INTEGER,
+    },
+    total_order: {
+      type: dataTypes.INTEGER,
+    },
+  };
 
-    
-    const ProductCart = sequelize.define(alias, cols, config);
+  let config = {
+    tableName: "orders",
+    timestamps: false,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: "deleted_at",
+    paranoid: true,
+  };
 
-/*     ProductCart.associate = function(models){
-        ProductCart.belongsTo(models.User, {
-            as: 'users',
-            foreignKey: 
-        })
+  const Order = sequelize.define(alias, cols, config);
 
-    }
- */
-
-    return ProductCart;
+  Order.associate = (models) => {
+    Order.belongsTo(models.User, {
+      as: "User",
+      foreignKey: "users_id",
+    });
+  };
+  return Order;
 };
