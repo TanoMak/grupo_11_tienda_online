@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
+const usersApiRouter = require("./routes/api/userApi");
 const productsRouter = require("./routes/productsRoutes");
 const localsMiddleware = require('./middlewares/localsMiddlware');
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -21,9 +22,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({
-  secret:"Secreto",
-  resave: false ,
-  saveUninitialized: true 
+  secret: "Secreto",
+  resave: false,
+  saveUninitialized: true
 }));
 
 app.use(localsMiddleware);
@@ -31,9 +32,10 @@ app.use(userLoggedMiddleware)
 
 
 // Routers
-app.use('/', mainRouter); 
+app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', userRouter);
+app.use("/api/users", usersApiRouter);
 
 
 app.listen(3030, () => {
