@@ -1,8 +1,8 @@
+const { validationResult } = require("express-validator");
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const fs = require("fs");
-const path = require("path");
+
 
 // Se requieren las tablas  //
 const Products = db.Product
@@ -76,25 +76,35 @@ const productsController = {
       })
   },
   store: async (req, res) => {
-    let productToCreate = await Products.create({
-      product_code: req.body.code,
-      line_id: req.body.line,
-      product_name: req.body.name,
-      price: req.body.price,
-      description: req.body.description,
-      category_id: req.body.category,
-    })
+    const resultValidation = validationResult(req);
 
-    let imagesTocreate = req.files.map(file => {
-      return {
-        name: file.filename,
-        product_id: productToCreate.id,
-      }
-    })
-    await Images.bulkCreate(imagesTocreate);
-    await productToCreate.setColors(req.body.color);
-    await productToCreate.setSizes(req.body.size)
-    res.redirect("/products/create",);
+    if (resultValidation.errors.length > 0) {
+      return res.render("products/productRegister", {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      });
+    } else{
+      let productToCreate = await Products.create({
+        product_code: req.body.code,
+        line_id: req.body.line,
+        product_name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        category_id: req.body.category,
+      })
+  
+      let imagesTocreate = req.files.map(file => {
+        return {
+          name: file.filename,
+          product_id: productToCreate.id,
+        }
+      })
+      await Images.bulkCreate(imagesTocreate);
+      await productToCreate.setColors(req.body.color);
+      await productToCreate.setSizes(req.body.size)
+      res.redirect("/products/create",);
+    }
+    
   },
 
   edit: (req, res) => {
