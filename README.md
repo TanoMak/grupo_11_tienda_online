@@ -52,6 +52,8 @@ WireFrame del sitio : https://miro.com/app/board/uXjVOgvmqXo=/?share_link_id=214
 
 Tablero de Trabajo : https://trello.com/b/5azf2mM3/grupo-11
 
+Scrypt Base de datos : https://github.com/TanoMak/grupo_11_tienda_online/tree/main/database/DB%20scrypts
+
 **Sprint #2**
 
 Resultado de retrospectiva
