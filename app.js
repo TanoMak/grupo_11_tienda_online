@@ -35,6 +35,12 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', userRouter);
 
+//routes API
+const apiProductsRouter = require('./routes/api/productAPIRoutes');
+
+// Coleccion recursos API
+app.use('/api/products', apiProductsRouter);
+
 
 app.listen(3030, () => {
   console.log("Servidor corriendo, puerto 3030");
