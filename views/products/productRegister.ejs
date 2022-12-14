@@ -24,41 +24,87 @@
                 <br>
                 <div>
                     <div>
-                        <input type="text" name="code" placeholder="Codigo">
+                        <input type="text" name="code" placeholder="Codigo"
+                            value="<%= locals.oldData ? oldData.code : null %>">
+
+                        <% if (locals.errors && errors.code){ %>
+                            <div class="text-danger">
+                                <%= errors.code.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
-                        <input type="text" name="name" placeholder="Nombre">
-                    </div>
-                    <div>
-                        <input type="text" name="description" placeholder="Descripción">
-                    </div>
-                    <div>
-                        <input type="number" name="price" placeholder="Precio">
-                    </div>
-                    <div>
-                        <select name="line" class="line" >
-                            <option value="" disabled selected>- Seleccionar Linea - </option>
-                            <% Lines.forEach(Line => { %>
-                            <option value="<%= Line.id %>"><%= Line.name %> </option>
-                            <% }) %>
-                        </select>
+                        <input type="text" name="name" placeholder="Nombre"
+                            value="<%= locals.oldData ? oldData.name : null %>">
+
+                        <% if (locals.errors && errors.name){ %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
 
                     </div>
                     <div>
-                        <select name="category" class="category" >
-                            <option value="" disabled selected>- Seleccionar Categoria - </option>
-                            <% Categories.forEach(Category=> { %>
-                            <option value="<%= Category.id %>"><%= Category.name %> </option>
-                            <% }) %>
+                        <input type="text" name="description" placeholder="Descripción"
+                            value="<%= locals.oldData ? oldData.description : null %>">
+
+                        <% if (locals.errors && errors.description){ %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+                    <div>
+                        <input type="number" name="price" placeholder="Precio"
+                            value="<%= locals.oldData ? oldData.price : null %>">
+
+                        <% if (locals.errors && errors.price){ %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+                    <div>
+                        <select name="line" class="line">
+                            <option value="" disabled selected>- Seleccionar Linea - </option>
+                            <%Lines.forEach(Line=> { %>
+                                <option value="<%= Line.id %>"><%= Line.name %></option>
+                                <% }) %>
                         </select>
+                    </div>
+                    <div>
+                        <select name="category" class="category">
+                            <option value="" disabled selected>- Seleccionar Categoria - </option>
+                            <%Categories.forEach(Category=> { %>
+                                <option value="<%= Category.id %>">
+                                    <%= Category.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                        <% if (locals.errors && errors.category){ %>
+                            <div class="text-danger">
+                                <%= errors.phone.category %>
+                            </div>
+                            <% } %>
                     </div>
                     <br>
 
                     <div class="color-selection-register">
                         <label for="color">Disponible en color</label><br>
                         <% Colors.forEach(Color=> { %>
-                        <label><input type="checkbox" name="color" value="<%= Color.id %>"> <%= Color.name %></label><br>
-                        <% }) %>
+                            <label><input type="checkbox" name="color" value="<%= Color.id %>">
+                                <%= Color.name %>
+                            </label><br>
+                            <% }) %>
+
+                                <% if (locals.errors && errors.color){ %>
+                                    <div class="text-danger">
+                                        <%= errors.phone.color %>
+                                    </div>
+                                    <% } %>
 
                     </div>
                     <br>
@@ -67,8 +113,16 @@
                     <div class="size-selection-register">
                         <label for="size">Disponible en Talles</label><br>
                         <% Sizes.forEach(Size=> { %>
-                        <label><input type="checkbox" name="size" value="<%= Size.id %>"> <%= Size.name %></label><br>
-                        <% }) %>
+                            <label><input type="checkbox" name="size" value="<%= Size.id %>">
+                                <%= Size.name %>
+                            </label><br>
+                            <% }) %>
+
+                                <% if (locals.errors && errors.size){ %>
+                                    <div class="text-danger">
+                                        <%= errors.phone.size %>
+                                    </div>
+                                    <% } %>
                     </div>
                     <br>
                     <br>
@@ -76,6 +130,11 @@
 
                     <div>
                         <input type="file" name="image" placeholder="Imagen" multiple>
+                        <% if (locals.errors && errors.image){ %>
+                            <div class="text-danger">
+                                <%= errors.image.msg %>
+                            </div>
+                            <% } %>
                     </div>
                 </div>
 
