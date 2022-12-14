@@ -17,7 +17,7 @@
 
     <!-- main -->
     <main>
-        <form action=""></form>
+        <ul class="errors"></ul>
     <form class="container" action="/users/registro" method="POST" enctype="multipart/form-data">
         <h1>Registro</h1>
         <br>
@@ -30,6 +30,7 @@
                     type="text" 
                     placeholder="Nombre" 
                     name="name" 
+                    id="name"
                     value="<%= locals.oldData ? oldData.name : null %>"
                 >
                 <% if (locals.errors && errors.name){ %>
@@ -45,6 +46,7 @@
                     type="text" 
                     placeholder="Apellido" 
                     name="lastname"
+                    id="lastname"
                     value="<%= locals.oldData ? oldData.lastname : null %>"   
                 >
 
@@ -62,6 +64,7 @@
                     type="text" 
                     placeholder="Teléfono" 
                     name="phone"
+                    id="phone"
                     value="<%= locals.oldData ? oldData.phone : null %>"
                 >
 
@@ -80,6 +83,7 @@
                     type="email" 
                     placeholder="Email" 
                     name="email"
+                    id="email"
                     value="<%= locals.oldData ? oldData.email : null %>"
                 >
 
@@ -96,6 +100,7 @@
                     type="text" 
                     placeholder="Direccion" 
                     name="address"
+                    id="address"
                     value="<%= locals.oldData ? oldData.address : null %>"
                     
                 >
@@ -109,7 +114,7 @@
 
             <div class =form-field>
                 <label for="">Contraseña </label>
-                <input type="password" placeholder="Contraseña" name="password">
+                <input type="password" placeholder="Contraseña" name="password" id="password">
 
                 <% if (locals.errors && errors.password){ %>
                     <div class="text-danger">
@@ -153,9 +158,11 @@
         
     </main>
 
-
+    
+    
     <!-- footer -->
     <%- include("../partials/footer.ejs") %>
+    <script src="../../public/js/registerValidations.js"></script>
 </body>
 
 </html>

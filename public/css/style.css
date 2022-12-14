@@ -15,6 +15,13 @@ main {
     min-height: 80vh;
 }
 
+.is-valid {
+    color: #198754
+}
+
+.is-invalid {
+    color: #842029
+}
 
 
 
