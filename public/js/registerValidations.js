@@ -1,6 +1,8 @@
 window.onload = function () {
+
   let form = document.querySelector(".container");
   form.name.focus();
+
 
   form.addEventListener("submit", function (e) {
     let errors = [];
@@ -15,6 +17,7 @@ window.onload = function () {
     if (name.value == "") {
       errors.push("nombre obligatorio");
       name.classList.add("is-invalid");
+      name.classList.remove("is-valid");
     } else {
       name.classList.add("is-valid");
       name.classList.remove("is-invalid");
@@ -22,15 +25,17 @@ window.onload = function () {
 
     if (lastName.value == "") {
       errors.push("apellido obligatorio");
-      lastname.classList.add("is-invalid");
+      lastName.classList.add("is-invalid");
+      lastName.classList.remove("is-valid");
     } else {
-      lastname.classList.add("is-valid");
-      lastname.classList.remove("is-invalid");
+      lastName.classList.add("is-valid");
+      lastName.classList.remove("is-invalid");
     }
 
     if (phone.value == "") {
       errors.push("celular obligatorio");
       phone.classList.add("is-invalid");
+      phone.classList.remove("is-valid");
     } else {
       phone.classList.add("is-valid");
       phone.classList.remove("is-invalid");
@@ -39,6 +44,7 @@ window.onload = function () {
     if (email.value == "") {
       errors.push("email obligatorio");
       email.classList.add("is-invalid");
+      email.classList.remove("is-valid");
     } else {
       email.classList.add("is-valid");
       email.classList.remove("is-invalid");
@@ -47,6 +53,7 @@ window.onload = function () {
     if (address.value == "") {
       errors.push("dirección obligatorio");
       address.classList.add("is-invalid");
+      address.classList.remove("is-valid");
     } else {
       address.classList.add("is-valid");
       address.classList.remove("is-invalid");
@@ -55,6 +62,7 @@ window.onload = function () {
     if (password.value == "") {
       errors.push("contraseña obligatoria");
       password.classList.add("is-invalid");
+      password.classList.remove("is-valid");
     } else {
       password.classList.add("is-valid");
       password.classList.remove("is-invalid");
