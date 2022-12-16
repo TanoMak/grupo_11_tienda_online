@@ -41,6 +41,7 @@
                     <div class="form-field">
                         <label for=""> E-mail</label>
                         <input type="text" id="email" placeholder="Ej : juan@mail.com" name="email">
+                        <div class="emailError"></div>
                         <div class=text-danger>
                             <% if(locals.errors && locals.errors.email){ %>
                                 <p class="msg-error">
@@ -54,6 +55,7 @@
                     <div class="form-field">
                         <label for=""> Contraseña</label>
                         <input type="password" name="password" id="password">
+                        <div class="passwordError"></div>
                         <div>
                             <% if(locals.errors && locals.errors.password){ %>
                                 <p class="text-danger">

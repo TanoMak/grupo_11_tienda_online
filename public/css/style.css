@@ -16,11 +16,13 @@ main {
 }
 
 .is-valid {
-    color: #198754
+    color: #198754;
+    text-align: center;
 }
 
 .is-invalid {
-    color: #842029
+    color: #842029;
+    text-align: center;
 }
 
 
