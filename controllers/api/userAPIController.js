@@ -1,7 +1,7 @@
 const db = require('../../database/models');
 
 
-const userApi = {
+const userApiController = {
     allUsers: (req, res) => {
         db.User.findAll()
             .then(users => {
@@ -54,4 +54,4 @@ const userApi = {
     }
 }
 
-module.exports = userApi;
+module.exports = userApiController;

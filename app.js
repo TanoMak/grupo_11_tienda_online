@@ -37,9 +37,11 @@ app.use('/users', userRouter);
 
 //routes API
 const apiProductsRouter = require('./routes/api/productAPIRoutes');
+const usersApiRouter = require('./routes/api/userAPIRoutes');
 
 // Coleccion recursos API
 app.use('/api/products', apiProductsRouter);
+app.use("/api/users", usersApiRouter);
 
 
 app.listen(3030, () => {
