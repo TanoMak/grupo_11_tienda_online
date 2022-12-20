@@ -76,39 +76,56 @@ const productsController = {
       })
   },
   store: async (req, res) => {
-    const resultValidation = validationResult(req);
+    try {
+      let categorias = await Categories.findAll()
+      let colores = await Colors.findAll()
+      let lineas = await Lines.findAll()
+      let talles = await Sizes.findAll()
 
-    if (resultValidation.errors.length > 0) {
-      return res.render("products/productRegister", {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-      });
-    } else{
-      let productToCreate = await Products.create({
-        product_code: req.body.code,
-        line_id: req.body.line,
-        product_name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        category_id: req.body.category,
-      })
-  
-      let imagesTocreate = req.files.map(file => {
-        return {
-          name: file.filename,
-          product_id: productToCreate.id,
-        }
-      })
-      await Images.bulkCreate(imagesTocreate);
-      await productToCreate.setColors(req.body.color);
-      await productToCreate.setSizes(req.body.size)
-      res.redirect("/products/create",);
-    }
-    
+      const resultValidation = validationResult(req);
+
+
+      if (resultValidation.errors.length > 0) {
+        return res.render("products/productRegister", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          Categories: categorias,
+          Colors: colores,
+          Lines: lineas,
+          Sizes: talles
+        });
+      } else {
+        let productToCreate = await Products.create({
+          product_code: req.body.code,
+          line_id: req.body.line,
+          product_name: req.body.name,
+          price: req.body.price,
+          description: req.body.description,
+          category_id: req.body.category,
+        })
+
+        let imagesTocreate = req.files.map(file => {
+          return {
+            name: file.filename,
+            product_id: productToCreate.id,
+          }
+        })
+        await Images.bulkCreate(imagesTocreate);
+        await productToCreate.setColors(req.body.color);
+        await productToCreate.setSizes(req.body.size)
+        res.redirect("/products/create",);
+      }
+    } catch (error) {
+      console.log(error);
+    };
+
+
+
   },
 
   edit: (req, res) => {
-    let productSelected = Products.findByPk(req.params.id);
+    let productSelected = Products.findByPk(req.params.id,
+      { include: ["colors", "images", "sizes", "category", "line"] });
     let listadoCategorias = Categories.findAll()
     let listadoColores = Colors.findAll()
     let listadoLineas = Lines.findAll()
@@ -128,26 +145,63 @@ const productsController = {
   },
 
   update: async (req, res) => {
-    await Products.update({
-      product_code: req.body.code,
-      line_id: req.body.line,
-      product_name: req.body.name,
-      price: req.body.price,
-      description: req.body.description,
-      category_id: req.body.category,
-    },
-      {
-        where: {
-          id: req.params.id
-        }
-      })
+    try {
+      let Product = Products.findByPk(req.params.id,
+        { include: ["colors", "images", "sizes", "category", "line"] });
+      let categorias = await Categories.findAll()
+      let colores = await Colors.findAll()
+      let lineas = await Lines.findAll()
+      let talles = await Sizes.findAll()
 
-    let productFound = await Products.findByPk(req.params.id);
-    if (productFound) {
-      await productFound.setColors(req.body.color);
-      await productFound.setSizes(req.body.size);
+      const resultValidation = validationResult(req);
+
+
+      if (resultValidation.errors.length > 0) {
+        return res.render("products/productUpdateForm", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          Products: Product,
+          Categories: categorias,
+          Colors: colores,
+          Lines: lineas,
+          Sizes: talles
+        });
+      } else {
+        await Products.update({
+          product_code: req.body.code,
+          line_id: req.body.line,
+          product_name: req.body.name,
+          price: req.body.price,
+          description: req.body.description,
+          category_id: req.body.category,
+        },
+          {
+            where: {
+              id: req.params.id
+            }
+          })
+
+
+
+        let productFound = await Products.findByPk(req.params.id);
+        if (productFound) {
+          await productFound.setColors(req.body.color);
+          await productFound.setSizes(req.body.size);
+          let imagesTocreate = req.files.map(file => {
+            return {
+              name: file.filename,
+              product_id: productFound.id,
+            }
+          })
+          await Images.bulkCreate(imagesTocreate);
+        }
+        res.redirect("/products/list");
+      }
+
+    } catch (error) {
+      console.log(error);
     }
-    res.redirect("/products/list");
+
 
   },
 

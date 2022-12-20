@@ -25,7 +25,7 @@ router.get("/detail/:id", productsController.productDetail);
 router.get("/create",admin, productsController.add);
 router.post("/create", upload.any("image"), admin, validations.create, productsController.store);
 router.get("/edit/:id", admin,productsController.edit);
-router.put("/edit/:id",upload.any("image"), admin, productsController.update)
+router.put("/edit/:id",upload.any("image"), admin, validations.edit, productsController.update)
 router.delete("/delete/:id",admin ,productsController.destroy)
 router.get("/search", productsController.search);
 

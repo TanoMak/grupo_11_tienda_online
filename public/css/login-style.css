@@ -51,6 +51,17 @@ main {
     background-color: red;
 }
 
+#error-front-msg-1 p,
+#error-front-msg-2 p,
+#error-front-msg-3 p,
+#error-front-msg-4 p,
+#error-front-msg-5 p,
+#error-front-msg-6 p,
+#error-front-msg-7 p,
+#error-front-msg-8 p{
+    color: red;
+}
+
 
 .color-selection-register{
     display: flex;

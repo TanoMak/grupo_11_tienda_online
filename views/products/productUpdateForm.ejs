@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-   
+
 <header>
     <%- include("../partials/head.ejs") %>
-    <link href="css/all.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-	<link href="/css/login-style.css" rel="stylesheet">
+        <link href="css/all.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/login-style.css" rel="stylesheet">
 </header>
 
 <body>
@@ -14,86 +14,166 @@
     <%- include("../partials/header.ejs") %>
 
 
-    <!-- main -->
-    <main>
-        <form class="container" enctype="multipart/form-data" action="/products/edit/<%= Products.id %>?_method=PUT" method="POST">
-            <h1>Editar Producto</h1>
-            <label class="update-form-fields"><%= Products.name %> </label>        
-            <br>
-            <div>
-                <div>
-                    <input type="text" name="code" placeholder="Codigo" value="<%= Products.product_code %>">
-                </div>
-                <div>
-                    <input type="text" name="name" placeholder="Nombre" value="<%= Products.product_name %>">
-                </div>
-                <div>
-                    <input type="text" name="description" placeholder="Descripción" value="<%= Products.description %>">
-                </div>
-                <div>
-                    <input type="number" name="price" placeholder="Precio" value="<%= Products.price %>">
-                </div>
-                <div>
-                    <select name="line" class="line" >
-                        
-                        
-                        <option value="">- Modificar Linea - </option>
-                        <% Lines.forEach(Line => { %>
-                        <option value="<%= Line.id %>"><%= Line.name %> </option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div>
-                    <select name="category" class="category" >
-                        
-                        <option value="" >- Modificar Categoria - </option>
-                        <% Categories.forEach(Category=> { %>
-                        <option value="<%= Category.id %>"><%= Category.name %> </option>
-                        <% }) %>
-                    </select>
-                </div>
+        <!-- main -->
+        <main>
+            <form action=""></form>
+            <form class="container" enctype="multipart/form-data" action="/products/edit/<%= Products.id %>?_method=PUT"
+                method="POST">
+                <h1>Editar Producto</h1>
+                <label class="update-form-fields">
+                    <%= Products.product_name %>
+                </label>
                 <br>
+                <div>
+                    <div>
+                        <input type="text" name="code" placeholder="Codigo"
+                            value="<%= locals.oldData ? oldData.code : Products.product_code %>">
 
-                <div class ="color-selection-register">
-                    <label for="color">Disponible en color</label><br>
+                        <div id="error-front-msg-1"></div>
+                        <% if (locals.errors && errors.code){ %>
+                            <div class="text-danger">
+                                <%= errors.code.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div>
+                        <input type="text" name="name" placeholder="Nombre"
+                            value="<%= locals.oldData ? oldData.name : Products.product_name %>">
+                        <div id="error-front-msg-2"></div>
+                        <% if (locals.errors && errors.name){ %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div>
+                        <input type="text" name="description" placeholder="Descripción"
+                            value="<%= locals.oldData ? oldData.description : Products.description %>">
+                        <div id="error-front-msg-3"></div>
+                        <% if (locals.errors && errors.description){ %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div>
+                        <input type="number" name="price" placeholder="Precio"
+                            value="<%= locals.oldData ? oldData.price : Products.price %>">
+                        <div id="error-front-msg-4"></div>
+                        <% if (locals.errors && errors.price){ %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div>
+
+                        <select name="line" class="line">
+
+
+                            <option value="">- Modificar Linea - </option>
+                            <% Lines.forEach(Line=> { %>
+                                <option value="<%= Line.id %>">
+                                    <%= Line.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                        <% if (locals.errors && errors.line){ %>
+                            <div class="text-danger">
+                                <%= errors.line.msg %>
+                            </div>
+                            <% } %>
+                                <div id="error-front-msg-5"></div>
+                    </div>
+                    <div>
+                        <select name="category" class="category">
+
+                            <option value="">- Modificar Categoria - </option>
+                            <% Categories.forEach(Category=> { %>
+                                <option value="<%= Category.id %>">
+                                    <%= Category.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                        <% if (locals.errors && errors.category){ %>
+                            <div class="text-danger">
+                                <%= errors.category.msg %>
+                            </div>
+                            <% } %>
+                                <div id="error-front-msg-6"></div>
+                    </div>
+                    <br>
+
+
+                    <div class="color-selection-register">
+                        <label for="color">Disponible en color</label><br>
                         <% Colors.forEach(Color=> { %>
-                        <label><input type="checkbox" name="color" value="<%= Color.id %>"> <%= Color.name %></label><br>
-                        <% }) %>
-            
+                            <label><input type="checkbox" name="color" value="<%= Color.id %>">
+                                <%= Color.name %>
+                            </label><br>
+                            <% }) %>
+
+                    </div>
+                    <% if (locals.errors && errors.color){ %>
+                        <div class="text-danger">
+                            <%= errors.color.msg %>
+                        </div>
+                        <% } %>
+
+                            <br>
+                            <br>
+
+
+                            <div class="size-selection-register">
+
+                                <label class="update-form-fields">
+                                    <%= Products.size %>
+                                </label>
+                                <label for="size">Disponible en Talles</label><br>
+                                <% Sizes.forEach(Size=> { %>
+                                    <label><input type="checkbox" name="size" value="<%= Size.id %>">
+                                        <%= Size.name %>
+                                    </label><br>
+                                    <% }) %>
+
+
+                            </div>
+                            <% if (locals.errors && errors.size){ %>
+                                <div class="text-danger">
+                                    <%= errors.size.msg %>
+                                </div>
+                                <% } %>
+
+                                    <br>
+                                    <div>
+                                        <input type="file" name="image" placeholder="Imagen" multiple>
+                                        <% if (locals.errors && errors.image){ %>
+                                            <div class="text-danger">
+                                                <%= errors.image.msg %>
+                                            </div>
+                                            <% } %>
+                                    </div>
                 </div>
-                <br>
-                <br>
-
-                <div class ="size-selection-register">
-
-                    <label class="update-form-fields"><%= Products.size %></label>
-                    <label for="size">Disponible en Talles</label><br>
-                    <% Sizes.forEach(Size=> { %>
-                    <label><input type="checkbox" name="size" value="<%= Size.id %>"> <%= Size.name %></label><br>
-                    <% }) %>
-            
                 </div>
-                <br>
-                <div>
-                    <input type="file" name="image" placeholder="Imagen">
-                </div>            
-            </div>
-            <h3>
-                <div><button type="submit"> Editar Producto </button></div> 
-            </h3>
-        </form>
+                </div>
+                <h3>
 
-    
-
-        <form action="/products/delete/<%= Products.id %>?_method=DELETE" method="POST">
-            <button class = "delete-product-btn">Borrar</button>
-        </form>
-        
-    </main>
+                    <div><button type="submit"> Editar Producto </button></div>
+                </h3>
+            </form>
 
 
-    <!-- footer -->
-    <%- include("../partials/footer.ejs") %>
+
+            <form action="/products/delete/<%= Products.id %>?_method=DELETE" method="POST">
+                <button class="delete-product-btn">Borrar</button>
+            </form>
+
+        </main>
+
+
+        <!-- footer -->
+        <%- include("../partials/footer.ejs") %>
+            <script src="/js/productValidation.js"></script>
 </body>
 
 </html>

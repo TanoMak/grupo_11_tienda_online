@@ -725,6 +725,7 @@ iframe {
 
 }
 
+
 .update-form-fields {
     color: red
 }
@@ -768,6 +769,11 @@ form .delete-user-btn {
         max-width: 428px;
         max-height: 620px;
         border-radius: 1cm;
+    }
+
+    #error-front-msg{
+        color : red;
+        background-color: #198754;
     }
 
 
