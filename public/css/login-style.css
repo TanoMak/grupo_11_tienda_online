@@ -173,6 +173,19 @@ color: black;
     border-radius: 50px;
 }
 
+.delete-product-btn{
+    background-color: red;
+    max-width: 450px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 80px;
+    font-size: 20px;
+
+}
+
 
 
 @media(min-width: 750px) {

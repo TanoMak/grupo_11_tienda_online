@@ -206,7 +206,7 @@ const productsController = {
   },
 
   destroy: async (req, res) => {
-    let productToDelete = await Products.findByPk(req.params.id);
+    try {let productToDelete = await Products.findByPk(req.params.id);
     await productToDelete.setColors([]);
     await productToDelete.setSizes([]);
     await productToDelete.destroy({
@@ -215,6 +215,9 @@ const productsController = {
       }
     })
     res.redirect("/products/list");
+  }catch (error) {
+    console.log(error);
+  }
 
   }
 };

@@ -21,7 +21,6 @@ window.onload = function () {
     let precio = document.querySelector("#price")
     let linea = document.querySelector("#line")
     let categoria = document.querySelector("#category")
-    let color = document.querySelector("#color")
 
    
     
