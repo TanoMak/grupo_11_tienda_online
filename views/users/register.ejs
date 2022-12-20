@@ -34,6 +34,7 @@
                     id="name"
                     value="<%= locals.oldData ? oldData.name : null %>"
                 >
+                <div class="nameError"></div>
                 <% if (locals.errors && errors.name){ %>
                     <div class="text-danger">
                         <%= errors.name.msg %> 
@@ -50,6 +51,7 @@
                     id="lastname"
                     value="<%= locals.oldData ? oldData.lastname : null %>"   
                 >
+                <div class="lastNameError"></div>
 
                 
                 <% if (locals.errors && errors.lastname){ %>
@@ -68,6 +70,7 @@
                     id="phone"
                     value="<%= locals.oldData ? oldData.phone : null %>"
                 >
+                <div class="phoneError"></div>
 
                 <% if (locals.errors && errors.phone){ %>
                     <div class="text-danger">
@@ -88,6 +91,8 @@
                     value="<%= locals.oldData ? oldData.email : null %>"
                 >
 
+                <div class="emailError"></div>
+
                 <% if (locals.errors && errors.email){ %>
                     <div class="text-danger">
                         <%= errors.email.msg %> 
@@ -106,6 +111,8 @@
                     
                 >
 
+                <div class="addressError"></div>
+
                 <% if (locals.errors && errors.address){ %>
                     <div class="text-danger">
                         <%= errors.address.msg %> 
@@ -116,6 +123,8 @@
             <div class =form-field>
                 <label for="">Contraseña </label>
                 <input type="password" placeholder="Contraseña" name="password" id="password">
+
+                <div class="passwordError"></div>
 
                 <% if (locals.errors && errors.password){ %>
                     <div class="text-danger">
