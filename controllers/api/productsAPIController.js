@@ -12,19 +12,32 @@ const Sizes = db.Size
 const Images = db.Image
 
 const productsAPIController = {
+    
 
     list: async (req, res) => {
         try {
             let products = await Products.findAll(
-                { include: [{ association: "images" }] 
+                { include: [{ association: "images"}] 
               });
+            
+            let newData = products.map(product => {
+                return {
+                    id: product.id,
+                    name: product.product_name,
+                    description: product.description,
+                    category: product.category_id,
+                    image: product.images,
+                    
+                }
+            })  
+
               let response = {
-                  meta: {
+                      meta: {
                       status: 200,
                       total: products.length,
                       url: 'api/products/list'
                   },
-                  data: products
+                  data: newData
               };
               res.send(response); 
             
