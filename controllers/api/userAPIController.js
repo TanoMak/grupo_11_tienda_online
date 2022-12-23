@@ -51,6 +51,31 @@ const userApiController = {
 
             })
 
+    },
+	
+	userLast: (req, res) => {
+        db.User.findOne({order: [ [ 'id', 'DESC' ]]})
+            .then(user => {
+                let jsonUser = {
+                    meta: {
+                        status: 200,
+                        url: '/api/users/last'
+                    },
+                    data: {
+                        id: user.id,
+                        name: user.name,
+                        lastname: user.lastname,
+                        phone: user.phone,
+                        email: user.email,
+                        address: user.address,
+                        profile_photo: user.profile_photo,
+                        admin: user.admin,                        
+                    }
+                }
+                res.json(jsonUser);
+
+            })
+
     }
 }
 
