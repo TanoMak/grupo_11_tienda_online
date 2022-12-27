@@ -18,7 +18,7 @@ const productsAPIController = {
         try {
             let products = await Products.findAll(
                 { include: [{ association: "images"}] 
-              });
+              });              
             
             let newData = products.map(product => {
                 return {
@@ -66,6 +66,25 @@ const productsAPIController = {
             console.log(error) ;           
         };
       },
+
+      prodCategories: async (req, res) => {
+        try {
+           let categories = await Categories.findAll();
+           console.log("El producto ", categories);  
+           let response = {
+                 meta: {
+                     status: 200,
+                     total: categories.length,
+                     url: 'api/products/categories'
+                 },
+                 data: categories
+             };
+             res.send(response);
+           
+       } catch (error) {
+           console.log(error) ;           
+       };
+     },
    
 
 };
