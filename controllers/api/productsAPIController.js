@@ -96,7 +96,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: products.length,
-                        url: 'api/products/categories'
+                        url: 'api/products/last'
                     },
                     data: products
                 };
