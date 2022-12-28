@@ -100,7 +100,7 @@ window.onload = function () {
 
 
 
-  form.addEventListener("submit", function (e) {
+  /* form.addEventListener("submit", function (e) {
     let errors = [];
 
     let name = document.querySelector("#name");
@@ -175,5 +175,5 @@ window.onload = function () {
     } else {
       alert("Logueado satisfactoriamente");
     }
-  });
+  }); */
 };

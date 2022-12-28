@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { async } = require("validate.js");
 
 
 // Se requieren las tablas  //
@@ -11,6 +12,7 @@ const Colors = db.Color
 const Lines = db.Line
 const Sizes = db.Size
 const Images = db.Image
+const Users = db.User
 
 // Revisa si la conexíon con la base de datos es corercta //
 sequelize.authenticate()
@@ -23,40 +25,41 @@ sequelize.authenticate()
   });
 
 const productsController = {
-  search: function (req, res, next) {
+  search: async function (req, res, next) {
     let productToFind = req.query.product;
-    Products.findAll({
-      include: [{ association: "images" }],
+    let users = req.session.usuarioLogueado
+
+    let products = await Products.findAll({
+      include: [{ all: true }],
       where: {
         [Op.or]: {
           product_name: { [Op.like]: '%' + productToFind + '%' },
-          description: { [Op.like]: '%' + productToFind + '%' }
+          description: { [Op.like]: '%' + productToFind + '%' },
+          id: { [Op.like]: '%' + productToFind + '%' }
         }
       }
     })
-      .then(function (products) {
-        res.render("products/productlist", { products });
-      })
-      .catch(function (error) {
-        res.send(error);
-      })
+    res.render("products/productlist", { products, users });
   },
-  list: (req, res) => {
-    Products.findAll(
-      { include: [{ association: "images" }] }
-    )
-      .then(products => {
-        res.render('products/productlist', { products })
-      })
+  list: async (req, res) => {
+    let products = await Products.findAll({ include: [{ association: "images" }] })
+    let users = req.session.usuarioLogueado
 
+    res.render('products/productlist', {
+      products: products,
+      users: users
+    })
   },
 
-  productDetail: (req, res) => {
-    Products.findByPk(req.params.id,
+  productDetail: async (req, res) => {
+    let users = req.session.usuarioLogueado
+    let prendas = await Products.findByPk(req.params.id,
       { include: ["colors", "images", "sizes", "category", "line"] })
-      .then(prendas => {
-        res.render("products/productDetail", { prendas });
-      })
+
+   
+
+    res.render("products/productDetail", { prendas, users });
+
   },
 
   add: (req, res) => {
@@ -122,6 +125,7 @@ const productsController = {
 
 
   },
+
 
   edit: (req, res) => {
     let productSelected = Products.findByPk(req.params.id,
@@ -206,18 +210,19 @@ const productsController = {
   },
 
   destroy: async (req, res) => {
-    try {let productToDelete = await Products.findByPk(req.params.id);
-    await productToDelete.setColors([]);
-    await productToDelete.setSizes([]);
-    await productToDelete.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    res.redirect("/products/list");
-  }catch (error) {
-    console.log(error);
-  }
+    try {
+      let productToDelete = await Products.findByPk(req.params.id);
+      await productToDelete.setColors([]);
+      await productToDelete.setSizes([]);
+      await productToDelete.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      res.redirect("/products/list");
+    } catch (error) {
+      console.log(error);
+    }
 
   }
 };

@@ -37,15 +37,26 @@
                 <h4 class="description">
                   <%=prenda.product_name%>
                 </h4>
+                <% if(users && users.admin==1){ %>
+                  <p> ID --- <%=prenda.id%></p>
+                  
+                  <% }else{ %>
+                    <div class="add-to-cart">
+                      <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                 
+                  <% } %>
                 <br />
-                <div class="add-to-cart">
-                  <i class="fa-solid fa-bag-shopping"></i>
-                </div>
+            
+                
+            
               </div>
             </article>
           </a>
 
           <%})%>
+
+   
 
          
      
