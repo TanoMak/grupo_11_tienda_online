@@ -26,7 +26,7 @@
                     <div>
                         <input id="code" type="text" name="code" placeholder="Codigo"
                             value="<%= locals.oldData ? oldData.code : null %>">
-                            <div id="error-front-msg-1"></div>
+                        <div id="error-front-msg-1"></div>
 
                         <% if (locals.errors && errors.code){ %>
                             <div class="text-danger">
@@ -34,7 +34,7 @@
                             </div>
                             <% } %>
 
-                               
+
                     </div>
                     <div>
                         <input type="text" name="name" placeholder="Nombre" id="name"
@@ -45,7 +45,7 @@
                                 <%= errors.name.msg %>
                             </div>
                             <% } %>
-                            <div id="error-front-msg-2"></div>
+                                <div id="error-front-msg-2"></div>
 
                     </div>
                     <div>
@@ -158,7 +158,15 @@
 
 
                                     <div>
-                                        <input type="file" name="image" placeholder="Imagen" multiple id="image">
+                                        <input 
+                                        accept="image/png, image/jpeg,image/gif"
+                                        required 
+                                        type="file" 
+                                        name="image" 
+                                        placeholder="Imagen" 
+                                        multiple 
+                                        id="image"
+                                        >
                                         <% if (locals.errors && errors.image){ %>
                                             <div class="text-danger">
                                                 <%= errors.image.msg %>

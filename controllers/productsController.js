@@ -116,12 +116,11 @@ const productsController = {
         await Images.bulkCreate(imagesTocreate);
         await productToCreate.setColors(req.body.color);
         await productToCreate.setSizes(req.body.size)
-        res.redirect("/products/create",);
+        res.redirect("/products/list");
       }
     } catch (error) {
       console.log(error);
     };
-
 
 
   },

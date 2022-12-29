@@ -1,5 +1,6 @@
 const { body } = require("express-validator");
 const db = require("../database/models");
+const path = require("path");
 
 module.exports = {
     create: [
@@ -37,8 +38,8 @@ module.exports = {
             .notEmpty()
             .withMessage("El producto debe tener un precio")
             .isNumeric()
-            .withMessage('Solo de admiten números'),
-        body('image').custom((value, { req }) => {
+            .withMessage('Solo de admiten números')
+        /* body('image').custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
@@ -51,7 +52,7 @@ module.exports = {
                 }
             }
             return true;
-        })
+        }) */
 
     ],
     edit: [
