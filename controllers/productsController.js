@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 const { async } = require("validate.js");
 
 
@@ -43,6 +43,20 @@ const productsController = {
   },
   list: async (req, res) => {
     let products = await Products.findAll({ include: [{ association: "images" }] })
+    let users = req.session.usuarioLogueado
+
+    res.render('products/productlist', {
+      products: products,
+      users: users
+    })
+  },
+
+  offer: async (req, res) => {
+    let products = await Products.findAll({ 
+      include: [{ association: "images" }],
+      order : [["price", "DESC"]],
+      limit : 15
+    })
     let users = req.session.usuarioLogueado
 
     res.render('products/productlist', {
@@ -183,9 +197,6 @@ const productsController = {
               id: req.params.id
             }
           })
-
-
-
         let productFound = await Products.findByPk(req.params.id);
         if (productFound) {
           await productFound.setColors(req.body.color);

@@ -3,35 +3,22 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const mainController = {
-  home: (req, res) => {
-    res.render("index")
+  home: async (req, res) => {
+    let products = await db.Product.findAll({ 
+      include: [{ association: "images" }],
+      order : [["price", "ASC"]],
+      limit : 20
+    })
+    let users = req.session.usuarioLogueado
+
+    res.render('index', {
+      products: products,
+      users: users
+    })
   },
   cart: (req, res) => {
     res.render("products/productCart")
   },
-  /* offer: async (req, res) => {
-     let ofertas =  await db.Product.findAll({
-      include: [{ association: "images" }],
-      where: {
-        price: {[db.Sequelize.Op.lte]: 5000 },
-      },
-
-      order : [
-        ['price', 'DESC']
-    ]
-    })
-
-    console.log(ofertas)
-
-    .then(ofertas =>{
-      res.render("/", {ofertas : ofertas} )
-
-    })
-
-    .catch(function (error) {
-      res.send(error);
-    })
-  }
- */};
+};
 
 module.exports = mainController;

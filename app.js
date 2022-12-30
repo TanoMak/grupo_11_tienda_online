@@ -1,15 +1,16 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const methodOverride = require("method-override");
 const session = require("express-session");
 const mainRouter = require("./routes/mainRoutes");
 const userRouter = require("./routes/userRoutes");
 const productsRouter = require("./routes/productsRoutes");
+const methodOverride = require("method-override");
 const localsMiddleware = require('./middlewares/localsMiddlware');
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookieParser = require('cookie-parser');
 const models = require('./database/models').default
+
 
 
 // view engine setup
