@@ -90,7 +90,7 @@ const productsAPIController = {
 
     last: async (req, res) => {
             try {
-                let products = await Products.findOne({ order: [['id', 'DESC']] });
+                let products = await Products.findOne({ include: [{ association: "images" }] }, { order: [['id', 'DESC']] });
                 console.log("El producto ", products);
                 let response = {
                     meta: {
