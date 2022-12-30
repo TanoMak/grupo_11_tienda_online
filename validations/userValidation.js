@@ -107,9 +107,44 @@ module.exports = {
         body("password")
             .notEmpty()
             .withMessage("Completar campo de contraseña")
-    ]
+    ],
 
+    edit: [
+        body('name')
+            .notEmpty()
+            .withMessage('Por favor escriba su nombre')
+            .bail()
+            .isLength({ min: 2 })
+            .withMessage('Completar con su nombre completo'),
+        body("lastname")
+            .notEmpty()
+            .withMessage('Por favor escriba su apellido')
+            .bail()
+            .isLength({ min: 2 })
+            .withMessage('Completar con su apellido completo'),
+        body("phone")
+            .notEmpty()
+            .withMessage("Por favor complete su número de telefono")
+            .bail()
+            .isLength({ min: 10 })
+            .withMessage('El número de telefono debe tener como mínimo 10 caracteres'),
 
+        body("email")
+            .isEmail()
+            .withMessage("El Email debe ser valido"),
 
+        body("address")
+            .notEmpty()
+            .withMessage("Por favor complete su direccion, calle, número y depto si corresponde")
+            .bail()
+            .isLength({ min: 2 })
+            .withMessage('La dirección debe tener como mínimo 2 caracteres'),
+/*         body("password")
+            .notEmpty()
+            .withMessage("Por favor escriba una contraseña")
+            .isLength({ min: 8 })
+            .isAlphanumeric()
+            .withMessage('La contraseña debe tener como mínimo 8 caracteres y ser alfanumérica'), */
 
+    ],
 }

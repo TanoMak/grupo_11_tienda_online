@@ -148,13 +148,31 @@
 
             <!-- DELETE -->
             <form action="/products/delete/<%= Products.id %>?_method=DELETE" method="POST">
-                <button class="delete-product-btn">Borrar</button>
+                <button class="delete-btn">Borrar</button>
             </form>
         </main>
+
+        <div class="modal-container">
+            <div class="modal modal-close">
+                <div class="modal-textos">
+                    <p class ="confirm-msg">¿Confirma la eliminacion del producto?</p>
+                    <br>
+                    <br>
+                    <div class="confirm-cancel">
+                        <form action="/products/delete/<%= Products.id %>?_method=DELETE" method="POST">
+                            <button class="delete-product-btn-modal">Borrar</button>
+                        </form>
+                        <button class="cancel">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <!-- footer -->
         <%- include("../partials/footer.ejs") %>
             <script src="/js/productValidation.js"></script>
+            <script src="/js/deleteConfirm.js"></script>
 </body>
 
 </html>

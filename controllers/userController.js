@@ -29,7 +29,7 @@ module.exports = {
         address: req.body.address,
         password: bcryptjs.hashSync(req.body.password, 10),
         profile_photo: req.file.filename,
-        admin : 0
+        admin: 0
       });
 
       res.redirect("/users/login");
@@ -87,41 +87,48 @@ module.exports = {
 
   },
   update: async (req, res) => {
-    let errors = validationResult(req);
+    try {
+      let errors = validationResult(req);
 
-    let userInfo = await  db.User.findByPk(req.params.id)
+      let userInfo = await db.User.findByPk(req.params.id)
 
-    if (!errors.isEmpty()) {
-      return res.render("users/userUpdate", { errors: errors.mapped() , userInfo })
-    } else {
-      await db.User.update(
-        {
-          name: req.body.name,
-          lastname: req.body.lastname,
-          phone: req.body.phone,
-          email: req.body.email,
-          address: req.body.address,
-          password: req.body.password == "" ? userInfo.password : bcryptjs.hashSync(req.body.password, 10),
-          passwordConfim : userInfo.password,
-          profile_photo: req.file == undefined ? userInfo.profile_photo : req.file.filename,
-        },
-        {
-          where: { id: userInfo.id }
-        }
-      )
+      if (!errors.isEmpty()) {
+        return res.render("users/userUpdate", {
+          errors: errors.mapped(),
+          userInfo,
+          oldDat: req.body
+        })
+      } else {
+        await db.User.update(
+          {
+            name: req.body.name,
+            lastname: req.body.lastname,
+            phone: req.body.phone,
+            email: req.body.email,
+            address: req.body.address,
+            /*             password: req.body.password == "" ? userInfo.password : bcryptjs.hashSync(req.body.password, 10),
+                        passwordConfim: userInfo.password, */
+            profile_photo: req.file == undefined ? userInfo.profile_photo : req.file.filename
+          },
+          {
+            where: { id: userInfo.id }
+          }
+        )
+      }
+
+      let userFound = await db.User.findByPk(userInfo.id)
+      req.session.usuarioLogueado = userFound;
+      res.redirect("/users/login");
+    } catch (error) {
+      console.log(error)
     }
-
-    let userFound = await db.User.findByPk(userInfo.id)
-    req.session.usuarioLogueado = userFound;
-    res.redirect("/");
-
   },
   softDelete: (req, res) => {
     db.User.destroy({
       where: { id: req.session.usuarioLogueado.id }
     }).then(() => {
       req.session.destroy();
-      res.redirect('/');
+      res.redirect("/users/login");
     }).catch(error => console.log(error))
   },
   logout: (req, res) => {

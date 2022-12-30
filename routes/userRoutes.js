@@ -4,7 +4,6 @@ const path = require("path");
 const multer = require("multer");
 const usersController = require("../controllers/userController");
 const authMiddleware = require('../middlewares/authMiddleware');
-
 const validations = require ("../validations/userValidation");
 const userController = require("../controllers/userController");
 
@@ -58,7 +57,7 @@ router.get("/profile/:id", authMiddleware, usersController.profile);
 // Formulario para actualizar datos del usuario
 router.get("/editar/:id", authMiddleware,usersController.edit);
 
-router.put("/editar/:id",  upload.single('imageUser'), authMiddleware, validations.registerFormValidation,usersController.update);
+router.put("/editar/:id",  upload.single('imageUser'), authMiddleware, validations.edit,usersController.update);
 
 // Boton que elimina la cuenta del usuario
 router.delete("/delete/:id",userController.softDelete);

@@ -3,7 +3,7 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
-        <link href="css/all.css" rel="stylesheet">
+        <link href="/css/all.css" rel="stylesheet">
         <link href="/css/login-style.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/footer.css">
@@ -18,7 +18,8 @@
         <!-- main -->
         <main>
             <form action=""></form>
-            <form class="container" action="/users/editar/<%= userInfo.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="container" action="/users/editar/<%= userInfo.id %>?_method=PUT" method="POST"
+                enctype="multipart/form-data">
                 <h1>Actualizar datos </h1>
                 <br>
                 <br>
@@ -26,7 +27,14 @@
                 <div>
                     <div class=form-field>
                         <label for="">Nombre </label>
-                        <input type="text" placeholder="Nombre" name="name" value="<%= userInfo.name %>">
+                        <input 
+                        type="text" 
+                        id="name"
+                        placeholder="Nombre" 
+                        name="name" value="<%= userInfo.name %>"
+                        >
+
+                        <div class="nameError"></div>
                         <% if (locals.errors && errors.name){ %>
                             <div class="text-danger">
                                 <%= errors.name.msg %>
@@ -36,7 +44,13 @@
 
                     <div class=form-field>
                         <label for="">Apellido </label>
-                        <input type="text" placeholder="Apellido" name="lastName" value="<%= userInfo.lastname %>">
+                        <input 
+                        type="text"
+                        id="lastname" 
+                        placeholder="Apellido" 
+                        name="lastName" value="<%= userInfo.lastname %>"
+                        >
+                        <div class="lastNameError"></div>
 
 
                         <% if (locals.errors && errors.lastName){ %>
@@ -48,7 +62,12 @@
 
                     <div class=form-field>
                         <label for="">Teléfono </label>
-                        <input type="text" placeholder="Teléfono" name="phone" value="<%= userInfo.phone %>">
+                        <input type="text" 
+                        placeholder="Teléfono" 
+                        id="phone" 
+                        name="phone" value="<%= userInfo.phone %>"
+                        >
+                        <div class="phoneError"></div>
 
                         <% if (locals.errors && errors.phone){ %>
                             <div class="text-danger">
@@ -61,7 +80,15 @@
 
                     <div class=form-field>
                         <label for="">E-mail </label>
-                        <input type="email" placeholder="Email" name="email" value="<%= userInfo.email %>">
+                        <input 
+                        type="email" 
+                        id="email"
+                        placeholder="Email" 
+                        name="email" 
+                        value="<%= userInfo.email %>"
+                        >
+
+                        <div class="emailError"></div>
 
                         <% if (locals.errors && errors.email){ %>
                             <div class="text-danger">
@@ -72,7 +99,15 @@
 
                     <div class=form-field>
                         <label for="">Dirección </label>
-                        <input type="text" placeholder="Direccion" name="address" value="<%= userInfo.address %>">
+                        <input 
+                        type="text" 
+                        placeholder="Direccion" 
+                        name="address" 
+                        id="address"
+                        value="<%= userInfo.address %>"
+                        >
+
+                        <div class="addressError"></div>
 
                         <% if (locals.errors && errors.address){ %>
                             <div class="text-danger">
@@ -81,52 +116,42 @@
                             <% } %>
                     </div>
 
-                    <div class=form-field>
-                        <label for="">Nueva contraseña </label>
-                        <input type="password" placeholder="Contraseña" name="password">
-
-                        <% if (locals.errors && errors.password){ %>
-                            <div class="text-danger">
-                                <%= errors.password.msg %>
-                            </div>
-                            <% } %>
-                    </div>
-
-                    <div class=form-field>
-                        <label for="">Repetir Contraseña </label>
-                        <input type="password" placeholder="Repetir contraseña" name="passwordConfim">
-                        <% if (locals.errors && errors.passwordConfim){ %>
-                            <div class="text-danger">
-                                <%= errors.passwordConfim.msg %>
-                            </div>
-                            <% } %>
-
-
-                    </div><br>
 
                     <div class=form-field>
                         <label for="">Subir foto de perfil </label>
                         <br>
                         <input type="file" name="imageUser" placeholder="Imagen">
-
-                        <% if (locals.errors && errors.imageUser){ %>
-                            <div class="text-danger">
-                                <%= errors.imageUser.msg %>
-                            </div>
-                            <% } %>
                     </div>
                 </div>
+
                 <button type="submit">Modificar datos</button>
-                <div>
+
             </form>
             <form action="/users/delete/<%= userInfo.id %>?_method=DELETE" method="POST">
-                <button class = "delete-user-btn">Dar de baja cuenta</button>
+                <button class="delete-btn" style="background-color: red;">Dar de baja cuenta</button>
             </form>
         </main>
+
+        <div class="modal-container">
+            <div class="modal modal-close">
+                <div class="modal-textos">
+                    <p class="confirm-msg">¿Confirma la eliminacion de su cuenta?</p><br><br>
+                    <div class="confirm-cancel">
+                        <form action="/users/delete/<%= userInfo.id %>?_method=DELETE" method="POST">
+                            <button class="delete-product-btn-modal">Borrar</button>
+                        </form>
+                        <button class="cancel">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- footer -->
         <%- include("../partials/footer.ejs") %>
+            <script src="/js/registerValidations.js"></script>
+            <script src="/js/deleteConfirm.js"></script>
+
 </body>
 
 </html>
