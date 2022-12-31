@@ -1,7 +1,10 @@
 const path = require('path');
 const db = require('../../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op, QueryTypes } = require("sequelize");
+const { async } = require('validate.js');
+const prodQuery = 'SELECT * from products left join images on products.id = images.product_id order by products.id DESC limit 1';
+
 
 // Se requieren las tablas  //
 const Products = db.Product
@@ -21,7 +24,7 @@ const productsAPIController = {
                     include: [{ association: "images" }]
                 });
 
-            let newData = products.map(product => {
+            let newData = await products.map(product => {
                 return {
                     id: product.id,
                     name: product.product_name,
@@ -88,9 +91,13 @@ const productsAPIController = {
         };
     },
 
-    last: async (req, res) => {
-            try {
-                let products = await Products.findOne({ include: [{ association: "images" }] }, { order: [['id', 'DESC']] });
+    last: async (req, res) => {   
+
+        try {
+                let products = await Products.findOne(
+                    { include:["colors", "images", "sizes", "category", "line"], order:[['id','DESC']]}                    
+                );
+                //let products = await sequelize.query(prodQuery, { type: QueryTypes.SELECT });
                 console.log("El producto ", products);
                 let response = {
                     meta: {
@@ -105,9 +112,8 @@ const productsAPIController = {
             } catch (error) {
                 console.log(error);
             };
-        
-    }   
-            
+
+    }            
 
 };
 module.exports = productsAPIController;
