@@ -163,7 +163,7 @@ const productsController = {
 
   update: async (req, res) => {
     try {
-      let Product = Products.findByPk(req.params.id,
+      let Product = await Products.findByPk(req.params.id,
         { include: ["colors", "images", "sizes", "category", "line"] });
       let categorias = await Categories.findAll()
       let colores = await Colors.findAll()

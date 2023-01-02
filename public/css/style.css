@@ -138,6 +138,16 @@ a.active {
     right: 43px;
 }
 
+.fa-trash{
+    color: black;
+    width: 5px;
+    position: relative;
+    bottom: 100px;
+    left: 150px;
+
+
+}
+
 
 
 
