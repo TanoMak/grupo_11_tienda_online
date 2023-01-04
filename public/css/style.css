@@ -46,7 +46,7 @@ label.logo {
     line-height: 5rem;
     padding: 0, 3em, 0, 2em;
     font-weight: bold;
-    
+
 
 }
 
@@ -126,19 +126,19 @@ a.active {
 
 }
 
-.input-search{
+.input-search {
     border-radius: 10px;
 }
 
 
-.fa-sharp{
+.fa-sharp {
     color: black;
     width: 5px;
     position: relative;
     right: 43px;
 }
 
-.fa-trash{
+.fa-trash {
     color: black;
     width: 5px;
     position: relative;
@@ -266,10 +266,10 @@ a.active {
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
-.form-search-sesion{
-   position: absolute;
-   right: 300px;
-   bottom: 10px;
+.form-search-sesion {
+    position: absolute;
+    right: 300px;
+    bottom: 10px;
 }
 
 
@@ -426,29 +426,36 @@ h3 {
     .cart {
         width: 50px;
         color: white;
-        position: absolute;
-        left: 50%;
-        bottom: 0px;  
-        display: none;      
-    }   
+        position: relative;
+        left: -100px;
+        bottom: 50px;
+        /*  display: none;       */
+    }
 
     .profile {
         width: 50px;
         color: white;
-        position: absolute;
-        left: 50%;
-        bottom: 0px;
-        display: none;     
+        position: relative;
+        left: 100px;
+        bottom: 50px;
+        /*     display: none;    */
     }
 
     .video {
         display: none;
-
-        /* CHECKEAR EL ERROR QUE TIENE  */
     }
 
- 
- 
+    .form-search-sesion {
+        position: absolute;
+        right: 100px;
+        bottom: 500px;
+
+    }
+
+
+
+
+
 
 
 }
@@ -518,18 +525,18 @@ main {
 
     display: grid;
     margin: auto;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 250px;
     padding-top: 10px;
     grid-gap: 5px;
     max-width: 1200px;
-    
+
 }
 
 
 
 .video {
-    position: relative;    
+    position: relative;
 }
 
 iframe {
@@ -554,25 +561,26 @@ iframe {
 
 /* Newsletter home */
 
-.form-newsletter{     
+.form-newsletter {
     width: 100%;
     height: 250px;
     margin-top: 5rem;
     margin-bottom: -2rem;
     background-color: rgb(182, 182, 182);
     color: white;
-    
+
     display: flex;
-    text-align: center;    
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.form-container{}
-.newsletter-title{}
+.form-container {}
+
+.newsletter-title {}
 
 
-.form-newsletter input{
+.form-newsletter input {
     width: 100%;
     max-width: 450px;
     padding: 12px 20px;
@@ -583,7 +591,7 @@ iframe {
 
 
 #suscribirme {
-    max-width: 150px;  
+    max-width: 150px;
 }
 
 
@@ -751,8 +759,8 @@ form .delete-user-btn {
         border-radius: 1cm;
     }
 
-    #error-front-msg{
-        color : red;
+    #error-front-msg {
+        color: red;
         background-color: #198754;
     }
 

@@ -43,47 +43,47 @@
 
           <h1>
             <%= prendas.product_name %>
-            <% if(users && users.admin==1){ %>
-            
-            <a href="/products/edit/<%= prendas.id %>">
-              <i class="fa-solid fa-pen-to-square"></i>
-            </a>
+              <% if(users && users.admin==1){ %>
+
+                <a href="/products/edit/<%= prendas.id %>">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </a>
           </h1>
           <% } %>
 
 
-          <h4>
-            <%= prendas.price %>
-          </h4>
+            <h4>
+              <%= prendas.price %>
+            </h4>
 
-          <select name="size-selection-product" class="size-selection-product">
-            <option value="" disabled selected>- Seleccionar Talle -</option>
-            <% prendas.sizes.forEach(Size=> { %>
-              <option value="<%= Size.name %>">
-                <%= Size.name %>
-              </option>
-              <% }) %>
-          </select>
+            <select name="size-selection-product" class="size-selection-product">
+              <option value="" disabled selected>- Seleccionar Talle -</option>
+              <% prendas.sizes.forEach(Size=> { %>
+                <option value="<%= Size.name %>">
+                  <%= Size.name %>
+                </option>
+                <% }) %>
+            </select>
 
-          <select name="color-selection-product" class="color-selection-product">
-            <option value="" disabled selected>- Seleccionar Color -</option>
-            <% prendas.colors.forEach(Color=> { %>
-              <option value="<%= Color.name %>">
-                <%= Color.name %>
-              </option>
-              <% }) %>
-          </select>
+            <select name="color-selection-product" class="color-selection-product">
+              <option value="" disabled selected>- Seleccionar Color -</option>
+              <% prendas.colors.forEach(Color=> { %>
+                <option value="<%= Color.name %>">
+                  <%= Color.name %>
+                </option>
+                <% }) %>
+            </select>
 
-          <input type="number" value="1" name="" class="cant" />
-          <div class="div-button">
-            <button class="button" style="vertical-align: middle">
-              <span>Añadir al carrito</span>
-            </button>
-          </div>
-          <h3>Descrpción del Producto</h3>
-          <p>
-            <%= prendas.description %>
-          </p>
+            <input type="number" value="1" name="" class="cant" />
+            <div class="div-button">
+              <button class="button" style="vertical-align: middle">
+                <span>Añadir al carrito</span>
+              </button>
+            </div>
+            <h3>Descrpción del Producto</h3>
+            <p>
+              <%= prendas.description %>
+            </p>
         </div>
       </div>
     </div>

@@ -42,7 +42,10 @@ const productsController = {
     res.render("products/productlist", { products, users });
   },
   list: async (req, res) => {
-    let products = await Products.findAll({ include: [{ association: "images" }] })
+    let products = await Products.findAll({ 
+      include: [{ association: "images" }],
+      order : [["id", "DESC"]] 
+    })
     let users = req.session.usuarioLogueado
 
     res.render('products/productlist', {
@@ -174,6 +177,7 @@ const productsController = {
 
 
       if (resultValidation.errors.length > 0) {
+        
         return res.render("products/productUpdateForm", {
           errors: resultValidation.mapped(),
           oldData: req.body,

@@ -18,12 +18,8 @@
                 <%= Products.product_name %>
             </label>
             <form action=""></form>
-            <form 
-            class="container" 
-            enctype="multipart/form-data" 
-            action="/products/edit/<%= Products.id%>?_method=PUT" 
-            method="POST"
-            >
+            <form class="container" enctype="multipart/form-data" action="/products/edit/<%= Products.id%>?_method=PUT"
+                method="POST">
                 <br />
                 <div>
                     <div>
@@ -159,7 +155,7 @@
         <div class="modal-container">
             <div class="modal modal-close">
                 <div class="modal-textos">
-                    <p class ="confirm-msg">¿Confirma la eliminacion del producto?</p>
+                    <p class="confirm-msg">¿Confirma la eliminacion del producto?</p>
                     <br>
                     <br>
                     <div class="confirm-cancel">
@@ -172,11 +168,13 @@
             </div>
 
         </div>
+        
 
         <!-- footer -->
         <%- include("../partials/footer.ejs") %>
+
             <script src="/js/productValidation.js"></script>
-            <script src="/js/deleteConfirm.js"></script>
+
 </body>
 
 </html>

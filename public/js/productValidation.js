@@ -2,7 +2,7 @@ window.onload = function () {
     let form = document.querySelector(".container");
     form.code.focus();
 
-    // Se caputuran lasetiqetas de error de cada input //
+    // Se caputuran las etiqetas de error de cada input //
 
     let errorMesg1 = document.querySelector("#error-front-msg-1")
     let errorMesg2 = document.querySelector("#error-front-msg-2")
@@ -10,7 +10,7 @@ window.onload = function () {
     let errorMesg4 = document.querySelector("#error-front-msg-4")
     let errorMesg5 = document.querySelector("#error-front-msg-5")
     let errorMesg6 = document.querySelector("#error-front-msg-6")
-    let errorMesg7 = document.querySelector("#error-front-msg-7")
+  
 
     // Se captura cada input //
 
@@ -98,6 +98,27 @@ window.onload = function () {
         }
     
     })
+
+    let cancel = document.querySelector(".cancel")
+    let preDelete = document.querySelector(".delete-btn")
+    let modal = document.querySelector(".modal")
+    let modalC = document.querySelector(".modal-container")
+
+    preDelete.addEventListener("click", function(e){
+        e.preventDefault();
+        modalC.style.opacity = "1"
+        modalC.style.visibility = "visible"
+        modal.classList.toggle("modal-close")
+    })
+
+    cancel.addEventListener("click", function(){
+        modal.classList.toggle("modal-close")
+        setTimeout(function(){
+            modalC.style.opacity = "0"
+            modalC.style.visibility = "hidden"
+        },700)
+    })
+
 
 }
 
